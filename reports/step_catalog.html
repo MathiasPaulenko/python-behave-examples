@@ -1,0 +1,1808 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Step Catalog</title>
+  <meta name="generator" content="behave-modern-html-report" />
+  <style>/* ============================================================
+   Behave Modern Report — stylesheet
+   Design tokens, layout, components, themes.
+   ============================================================ */
+
+:root {
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-1: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.08);
+  --shadow-2: 0 4px 12px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --transition: 160ms cubic-bezier(.2,.7,.3,1);
+
+  /* status palette (works for both themes) */
+  --c-passed: #22c55e;
+  --c-failed: #ef4444;
+  --c-skipped: #94a3b8;
+  --c-undefined: #f59e0b;
+  --c-pending: #8b5cf6;
+  --c-untested: #64748b;
+}
+
+/* ---------- Dark (default) ---------- */
+html[data-theme="dark"], html[data-theme="auto"] {
+  --bg: #0b0f17;
+  --bg-elev: #111827;
+  --bg-elev-2: #1f2937;
+  --border: #1f2937;
+  --border-strong: #334155;
+  --text: #e5e7eb;
+  --text-dim: #9ca3af;
+  --text-faint: #6b7280;
+  --primary: #60a5fa;
+  --primary-strong: #3b82f6;
+  --code-bg: #0f172a;
+}
+@media (prefers-color-scheme: light) {
+  html[data-theme="auto"] {
+    --bg: #f8fafc; --bg-elev: #ffffff; --bg-elev-2: #f1f5f9;
+    --border: #e5e7eb; --border-strong: #cbd5e1;
+    --text: #0f172a; --text-dim: #475569; --text-faint: #64748b;
+    --primary: #2563eb; --primary-strong: #1d4ed8; --code-bg: #f1f5f9;
+  }
+}
+/* ---------- Light (explicit) ---------- */
+html[data-theme="light"] {
+  --bg: #f8fafc; --bg-elev: #ffffff; --bg-elev-2: #f1f5f9;
+  --border: #e5e7eb; --border-strong: #cbd5e1;
+  --text: #0f172a; --text-dim: #475569; --text-faint: #64748b;
+  --primary: #2563eb; --primary-strong: #1d4ed8; --code-bg: #f1f5f9;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+a { color: var(--primary); }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+code, pre, kbd { font-family: var(--mono); font-size: 12.5px; }
+pre { margin: 0; }
+
+.skip-link { position: absolute; left: -1000px; }
+.skip-link:focus { left: 8px; top: 8px; background: var(--bg-elev); padding: 8px 12px; border-radius: var(--radius-sm); }
+
+/* ============================================================
+   Sidebar
+   ============================================================ */
+.sidebar {
+  position: sticky; top: 0; height: 100vh;
+  background: var(--bg-elev);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; padding: 18px 12px;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 8px 14px; }
+.brand-mark { display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px; background: var(--bg-elev-2); color: var(--primary); }
+.brand-logo { width: 36px; height: 36px; border-radius: 10px; object-fit: contain; background: var(--bg-elev-2); }
+.brand-title { font-weight: 650; letter-spacing: -.01em; }
+.brand-sub { font-size: 12px; color: var(--text-faint); }
+
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: 10px; color: var(--text-dim);
+  transition: background var(--transition), color var(--transition);
+}
+.nav-item:hover { background: var(--bg-elev-2); color: var(--text); }
+.nav-item.is-active { background: color-mix(in oklab, var(--primary) 14%, transparent); color: var(--text); }
+.nav-item .ico { width: 18px; height: 18px; }
+
+.sidebar-footer { margin-top: auto; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 4px; }
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 8px;
+  color: var(--text-dim); border: 1px solid var(--border);
+  transition: background var(--transition), color var(--transition);
+}
+.icon-btn:hover { background: var(--bg-elev-2); color: var(--text); }
+.icon-btn .ico { width: 14px; height: 14px; }
+.version { font-size: 11px; color: var(--text-faint); }
+
+/* ============================================================
+   Main / topbar
+   ============================================================ */
+.main { padding: 22px 32px 80px; min-width: 0; }
+
+.topbar {
+  display: flex; gap: 14px; align-items: center;
+  margin-bottom: 18px; flex-wrap: wrap;
+}
+.ci-link {
+  margin-left: auto;
+  padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  background: var(--primary); color: var(--bg-elev);
+  text-decoration: none;
+}
+.ci-link:hover { filter: brightness(1.1); }
+.advanced-filters {
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  margin-bottom: 18px; box-shadow: var(--shadow-1);
+}
+.filter-row {
+  display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap;
+}
+.filter-field {
+  display: flex; flex-direction: column; gap: 4px;
+  flex: 1 1 180px;
+}
+.filter-field span { font-size: 12px; color: var(--text-dim); }
+.filter-field input {
+  background: var(--bg-elev-2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text); font-size: 13px;
+}
+.filter-field input:focus { outline: none; border-color: var(--primary); }
+.filter-checkbox {
+  flex-direction: row; align-items: center; gap: 8px;
+  flex: 0 0 auto;
+}
+.filter-checkbox input { width: 16px; height: 16px; accent-color: var(--primary); }
+.search-wrap {
+  position: relative; flex: 1 1 320px;
+  display: flex; align-items: center;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 10px; height: 40px;
+  box-shadow: var(--shadow-1);
+}
+.search-wrap:focus-within { border-color: var(--primary); }
+.search-ico { width: 16px; height: 16px; color: var(--text-faint); }
+#global-search { flex: 1; background: none; border: 0; outline: none; padding: 0 10px;
+  color: var(--text); font-size: 14px; }
+.kbd { font-size: 11px; color: var(--text-faint); border: 1px solid var(--border-strong);
+  padding: 1px 6px; border-radius: 6px; background: var(--bg-elev-2); }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 10px; border-radius: 999px;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  color: var(--text-dim); font-size: 12.5px;
+  transition: all var(--transition);
+}
+.chip .ico { width: 14px; height: 14px; }
+.chip em { font-style: normal; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { color: var(--text); border-color: var(--border-strong); }
+.chip[aria-pressed="false"] { opacity: .45; }
+.chip-passed   { --chip: var(--c-passed);    }
+.chip-failed   { --chip: var(--c-failed);    }
+.chip-skipped  { --chip: var(--c-skipped);   }
+.chip-undefined{ --chip: var(--c-undefined); }
+.chip-pending  { --chip: var(--c-pending);   }
+.chip[aria-pressed="true"] { box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--chip) 55%, transparent); }
+.chip .ico { color: var(--chip); }
+
+/* ============================================================
+   Views & cards
+   ============================================================ */
+.view { animation: fade .25s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.view-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px; gap: 16px; flex-wrap: wrap;
+}
+.view-title { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+.view-sub { margin: 4px 0 0; color: var(--text-dim); }
+.view-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.action-btn {
+  padding: 6px 12px; border-radius: 8px; font-size: 13px;
+  border: 1px solid var(--border); color: var(--text-dim);
+  background: var(--bg-elev); transition: all var(--transition);
+}
+.action-btn:hover { background: var(--bg-elev-2); color: var(--text); border-color: var(--border-strong); }
+
+.card {
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px;
+  box-shadow: var(--shadow-1);
+}
+.card-title { margin: 0 0 12px; font-size: 14px; color: var(--text-dim); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.stat-card { padding: 14px 16px; position: relative; overflow: hidden; }
+.stat-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--text-faint)); }
+.stat-passed   { --accent: var(--c-passed);    }
+.stat-failed   { --accent: var(--c-failed);    }
+.stat-skipped  { --accent: var(--c-skipped);   }
+.stat-undefined{ --accent: var(--c-undefined); }
+.stat-pending  { --accent: var(--c-pending);   }
+.stat-total    { --accent: var(--primary);     }
+.stat-label { color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.stat-value { font-size: 30px; font-weight: 700; letter-spacing: -.02em; margin-top: 2px; }
+.stat-foot  { color: var(--text-faint); font-size: 12px; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.chart-card canvas, .chart-canvas { width: 100% !important; height: auto !important; }
+
+/* ============================================================
+   Status pill & badges
+   ============================================================ */
+.status-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px; font-weight: 600;
+  background: var(--bg-elev); border: 1px solid var(--border);
+}
+.status-pill .ico { width: 16px; height: 16px; }
+.status-pill.status-passed   { color: var(--c-passed);    border-color: color-mix(in oklab, var(--c-passed) 50%, var(--border)); }
+.status-pill.status-failed   { color: var(--c-failed);    border-color: color-mix(in oklab, var(--c-failed) 50%, var(--border)); }
+.status-pill.status-skipped  { color: var(--c-skipped);   }
+.status-pill.status-undefined{ color: var(--c-undefined); }
+.status-pill.status-pending  { color: var(--c-pending);   }
+
+.status-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600;
+  background: color-mix(in oklab, var(--c, var(--text-faint)) 18%, transparent);
+  color: var(--c, var(--text-faint));
+}
+.status-badge .ico { width: 12px; height: 12px; }
+.status-badge.status-passed   { --c: var(--c-passed); }
+.status-badge.status-failed   { --c: var(--c-failed); }
+.status-badge.status-skipped  { --c: var(--c-skipped); }
+.status-badge.status-undefined{ --c: var(--c-undefined); }
+.status-badge.status-pending  { --c: var(--c-pending); }
+.status-badge.status-untested { --c: var(--text-faint); }
+
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--text-faint); flex-shrink: 0; }
+.status-dot.status-passed   { background: var(--c-passed); }
+.status-dot.status-failed   { background: var(--c-failed); }
+.status-dot.status-skipped  { background: var(--c-skipped); }
+.status-dot.status-undefined{ background: var(--c-undefined); }
+.status-dot.status-pending  { background: var(--c-pending); }
+
+/* ============================================================
+   Features / Scenarios / Steps
+   ============================================================ */
+.stack { display: flex; flex-direction: column; gap: 10px; }
+
+.feature, .scenario { transition: border-color var(--transition); }
+.feature.is-hidden, .scenario.is-hidden, .scenario-row.is-hidden { display: none; }
+
+.scenarios-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.scenarios-table th, .scenarios-table td {
+  padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border);
+}
+.scenarios-table th {
+  background: var(--bg-elev-2); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-dim);
+}
+.scenarios-table td { font-size: 13px; }
+.scenarios-table tr:last-child td { border-bottom: 0; }
+.scenarios-table tbody tr:hover { background: var(--bg-elev-2); }
+.scenarios-table .tags { margin-top: 0; }
+
+.feature-head, .scenario-head {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  text-align: left; padding: 14px 16px;
+}
+.feature-head { padding: 16px; }
+.feature-head .chev, .scenario-head .chev {
+  width: 14px; height: 14px; color: var(--text-faint);
+  transition: transform var(--transition);
+}
+[aria-expanded="true"] .chev { transform: rotate(90deg); }
+
+.scenario-row-header {
+  display: flex; align-items: center; gap: 8px;
+}
+.scenario-row-header .scenario-head { flex: 1; padding: 14px 12px; }
+.scenario-row-header .copy-btn {
+  width: 32px; height: 32px; border-radius: 8px;
+  margin-right: 8px; opacity: 0;
+  transition: opacity var(--transition), background var(--transition);
+}
+.scenario-row-header:hover .copy-btn { opacity: 1; }
+.scenario-row-header .copy-btn .ico { width: 14px; height: 14px; }
+.scenario-row-header .copy-btn:hover { background: var(--bg-elev); color: var(--text); }
+
+.feature-meta, .scenario-meta { flex: 1; min-width: 0; }
+.feature-title { margin: 0; font-size: 16px; font-weight: 650; letter-spacing: -.005em; }
+.feature-sub { color: var(--text-dim); font-size: 12.5px; margin-top: 2px; display: flex; gap: 6px; flex-wrap: wrap; }
+.scenario-title { font-weight: 550; }
+.muted { color: var(--text-faint); }
+.small { font-size: 12px; }
+.desc { color: var(--text-dim); margin: 8px 0 4px; white-space: pre-wrap; }
+
+.tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag {
+  font-size: 11px; padding: 2px 8px; border-radius: 999px;
+  color: var(--text-dim); background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+}
+
+.feature-body, .scenario-body { padding: 4px 16px 16px; border-top: 1px solid var(--border); }
+.scenarios { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 8px; }
+
+.rule { margin: 10px 0; }
+.rule-head {
+  width: 100%; display: flex; align-items: center; gap: 10px;
+  text-align: left; padding: 10px 12px;
+  background: var(--bg-elev-2); border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.rule-head .chev { width: 14px; height: 14px; color: var(--text-faint); transition: transform var(--transition); }
+.rule-head[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.rule-label { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-faint); border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; }
+.rule-title { font-weight: 600; flex: 1; }
+.rule-count { font-size: 12px; color: var(--text-faint); }
+.rule-body { padding: 8px 8px 0; }
+.rule.is-hidden { display: none; }
+
+.rule.card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-lg); margin: 0; }
+.rule.card .rule-head { background: transparent; border-radius: var(--radius-lg); padding: 14px 16px; }
+.rule.card .rule-meta { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.rule.card .rule-sub { font-size: 12px; color: var(--text-faint); }
+.rule.card .rule-body { padding: 4px 16px 16px; border-top: 1px solid var(--border); }
+.rule.card .rule-body .scenarios { margin-top: 0; }
+
+.scenario {
+  background: var(--bg-elev-2); border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.steps { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.step { padding: 8px 10px; border-radius: 10px; background: var(--bg-elev); border: 1px solid var(--border); }
+.step-head { display: flex; align-items: center; gap: 10px; }
+.kw { color: var(--primary); font-weight: 600; min-width: 48px; }
+.step-text { flex: 1; word-break: break-word; }
+.step-duration-bar {
+  height: 4px; border-radius: 2px; background: var(--primary);
+  opacity: 0.35; min-width: 1px; max-width: 120px;
+  transition: width var(--transition);
+}
+.step-duration { white-space: nowrap; }
+.step.status-failed { border-color: color-mix(in oklab, var(--c-failed) 60%, var(--border)); }
+.step.status-passed { border-color: color-mix(in oklab, var(--c-passed) 25%, var(--border)); }
+
+.docstring, .traceback {
+  margin-top: 8px; background: var(--code-bg); padding: 10px 12px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  white-space: pre-wrap; word-break: break-word; max-height: 360px; overflow: auto;
+}
+
+.table-wrap { margin-top: 8px; overflow: auto; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.data-table th, .data-table td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+.data-table th { background: var(--bg-elev-2); }
+
+.num-pass { color: var(--c-passed); font-weight: 600; }
+.num-fail { color: var(--c-failed); font-weight: 600; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.span-2 { grid-column: span 2; }
+
+.tag-pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-elev-2); border: 1px solid var(--border); }
+
+.progress-bar {
+  position: relative; height: 22px; border-radius: 999px; background: var(--bg-elev-2);
+  border: 1px solid var(--border); overflow: hidden; min-width: 80px;
+}
+.progress-bar.stacked { display: flex; }
+.progress-segment { height: 100%; transition: width var(--transition); }
+.progress-segment:first-child { border-radius: 999px 0 0 999px; }
+.progress-segment:last-child { border-radius: 0 999px 999px 0; }
+.progress-segment.status-passed   { background: var(--c-passed); }
+.progress-segment.status-failed   { background: var(--c-failed); }
+.progress-segment.status-skipped  { background: var(--c-skipped); }
+.progress-segment.status-undefined{ background: var(--c-undefined); }
+.progress-segment.status-pending  { background: var(--c-pending); }
+
+.progress-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px;
+  transition: width var(--transition);
+}
+.progress-fill.pass-high   { background: var(--c-passed); }
+.progress-fill.pass-medium { background: var(--c-undefined); }
+.progress-fill.pass-low    { background: var(--c-failed); }
+.progress-label {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--text); z-index: 1;
+}
+
+.progress-legend {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  margin-top: 10px; font-size: 12px; color: var(--text-dim);
+}
+.progress-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.progress-legend-item .status-dot { width: 8px; height: 8px; }
+.progress-pass-rate { margin-left: auto; font-weight: 600; color: var(--text); }
+
+.progress-card { padding: 16px; margin-bottom: 16px; }
+
+.dashboard-actions {
+  display: flex; justify-content: flex-end; margin-bottom: 16px;
+}
+.dashboard-actions .copy-btn {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 13px;
+  padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim);
+}
+.dashboard-actions .copy-btn:hover { background: var(--bg-elev-2); color: var(--text); }
+.summary-text {
+  position: absolute; left: -1000px; width: 1px; height: 1px; opacity: 0; pointer-events: none;
+}
+
+.section-subtitle { color: var(--text-dim); margin: 2px 0 14px; font-size: 13.5px; }
+
+.empty { text-align: center; color: var(--text-dim); padding: 24px; }
+
+.background-block {
+  margin: 12px 0; border: 1px dashed var(--border); border-radius: var(--radius);
+  background: var(--bg-elev-2); overflow: hidden;
+}
+.background-head {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .03em;
+}
+.background-head .ico { width: 14px; height: 14px; color: var(--text-faint); }
+.background-label { font-weight: 600; }
+.background-steps { padding: 0 12px 12px; }
+.background-steps .step { background: var(--bg-elev); }
+
+.outline-banner {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 12px 0; padding: 6px 12px; border-radius: var(--radius-sm);
+  background: var(--bg-elev-2); border: 1px solid var(--border);
+  font-size: 12px; color: var(--text-dim);
+}
+.outline-label { font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: .03em; }
+.outline-name { font-style: italic; }
+
+.examples-block { margin: 12px 0; }
+.examples-head { font-size: 12px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 8px; }
+.examples-table { font-size: 12px; }
+
+/* Compact/detailed scenario view toggle */
+.detailed-only { display: none; }
+.detailed .detailed-only { display: block; }
+
+.action-btn.is-active { background: var(--bg-elev-2); color: var(--text); border-color: var(--primary); }
+.mode-group { display: inline-flex; align-items: center; }
+.mode-group .action-btn {
+  border-radius: 0; margin: 0 0 0 -1px; border-right-width: 1px;
+  position: relative;
+}
+.mode-group .action-btn:first-child { margin-left: 0; border-radius: 8px 0 0 8px; }
+.mode-group .action-btn:last-child { border-radius: 0 8px 8px 0; }
+.mode-group .action-btn.is-active { background: var(--bg-elev-2); color: var(--text); border-color: var(--primary); z-index: 1; }
+
+.logs summary { cursor: pointer; color: var(--text-dim); padding: 6px 0; }
+.logs pre { background: var(--code-bg); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); max-height: 240px; overflow: auto; }
+
+/* ============================================================
+   Errors
+   ============================================================ */
+.error-block {
+  margin-top: 10px; border: 1px solid color-mix(in oklab, var(--c-failed) 35%, var(--border));
+  background: color-mix(in oklab, var(--c-failed) 8%, transparent);
+  border-radius: var(--radius); overflow: hidden;
+}
+.error-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px;
+  background: color-mix(in oklab, var(--c-failed) 12%, transparent); color: var(--c-failed); }
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px;
+  padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); }
+.copy-btn:hover { background: var(--bg-elev); color: var(--text); }
+.copy-btn .ico { width: 12px; height: 12px; }
+
+/* ============================================================
+   Attachments
+   ============================================================ */
+.attachments { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.thumb {
+  width: 96px; height: 96px; padding: 0; overflow: hidden;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--bg-elev-2);
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.attach-link {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+  border-radius: var(--radius-sm); background: var(--bg-elev-2); border: 1px solid var(--border);
+  color: var(--text-dim); text-decoration: none; font-size: 12.5px;
+}
+.attach-link:hover { color: var(--text); }
+.attach-link .ico { width: 14px; height: 14px; }
+.attach-text summary { cursor: pointer; padding: 4px 0; color: var(--text-dim); }
+.attach-text pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px; max-height: 320px; overflow: auto; }
+
+/* ============================================================
+   Key/value (environment)
+   ============================================================ */
+.kv { display: grid; grid-template-columns: 180px 1fr; gap: 6px 16px; margin: 0; }
+.kv dt { color: var(--text-dim); }
+.kv dd { margin: 0; word-break: break-all; }
+
+/* ============================================================
+   Lightbox
+   ============================================================ */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.78);
+  display: flex; align-items: center; justify-content: center; z-index: 80;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-content img { max-width: 92vw; max-height: 88vh; border-radius: var(--radius); box-shadow: var(--shadow-2); }
+.lightbox-close { position: absolute; top: 14px; right: 18px; font-size: 28px; color: white; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer { color: var(--text-faint); font-size: 12px; margin-top: 28px; text-align: center; }
+
+/* ============================================================
+   Focus / accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px; border-radius: 6px;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 920px) {
+  body { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; flex-direction: row; align-items: center; gap: 12px; padding: 10px; }
+  .sidebar .brand { padding: 0 6px; }
+  .nav { flex-direction: row; flex-wrap: wrap; }
+  .nav-item span { display: none; }
+  .sidebar-footer { flex-direction: row; margin-left: auto; }
+  .version { display: none; }
+  .main { padding: 16px; }
+  .kv { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .span-2 { grid-column: span 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Applied transiently by JS when switching themes so charts measure a stable layout. */
+.bmr-no-transition, .bmr-no-transition *, .bmr-no-transition *::before, .bmr-no-transition *::after {
+  transition: none !important;
+  animation: none !important;
+}
+</style>
+  <style>
+    .catalog-header { margin-bottom: 24px; }
+    .catalog-header h1 { font-size: 24px; margin: 0 0 4px; }
+    .catalog-header p { color: var(--text-faint); font-size: 14px; margin: 0; }
+
+    .stats-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .stat-card {
+      background: var(--bg-elev); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 20px; min-width: 140px;
+      box-shadow: var(--shadow-1);
+    }
+    .stat-card .stat-num { font-size: 28px; font-weight: 700; color: var(--primary); }
+    .stat-card .stat-lbl { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+    .stat-card::before { display: none; }
+
+    .keyword-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .keyword-chip {
+      padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--bg-elev); cursor: pointer;
+      transition: all .15s;
+    }
+    .keyword-chip:hover { border-color: var(--primary); }
+    .keyword-chip.is-active { background: var(--primary); color: var(--bg-elev); border-color: var(--primary); }
+    .keyword-chip .count { opacity: .7; margin-left: 4px; }
+
+    .search-box { margin-bottom: 20px; }
+    .search-box input {
+      width: 100%; padding: 10px 14px; font-size: 14px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--bg-elev); color: var(--text);
+    }
+    .search-box input:focus { outline: 2px solid var(--primary); }
+
+    .step-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+      background: var(--bg-elev); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .step-table th {
+      text-align: left; padding: 10px 14px; font-weight: 600;
+      border-bottom: 1px solid var(--border); color: var(--text-faint);
+      font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+      cursor: pointer; user-select: none;
+    }
+    .step-table th:hover { color: var(--text); }
+    .step-table th .sort-ico { opacity: .4; margin-left: 4px; }
+    .step-table th.sorted .sort-ico { opacity: 1; color: var(--primary); }
+    .step-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .step-table tr:last-child td { border-bottom: none; }
+    .step-table tr:hover { background: var(--bg-hover); }
+    .step-table tr.is-selected { background: color-mix(in oklab, var(--primary) 10%, transparent); }
+
+    .kw-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+    }
+    .kw-given { background: #3b82f620; color: #60a5fa; }
+    .kw-when { background: #f59e0b20; color: #fbbf24; }
+    .kw-then { background: #22c55e20; color: #4ade80; }
+    .kw-step { background: #8b5cf620; color: #a78bfa; }
+
+    .pattern-cell { font-family: monospace; font-size: 13px; }
+    .pattern-cell .param { color: var(--primary); font-weight: 600; }
+
+    .file-cell { font-size: 12px; color: var(--text-faint); }
+    .file-cell code { font-size: 12px; }
+
+    .params-cell .param-tag {
+      display: inline-block; padding: 1px 6px; border-radius: 3px;
+      background: var(--bg-hover); font-size: 11px; font-family: monospace;
+      margin-right: 2px;
+    }
+
+    .step-detail {
+      background: var(--bg-elev); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; margin-top: 20px;
+      display: none;
+    }
+    .step-detail.is-open { display: block; }
+    .step-detail-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .step-detail-head h3 { margin: 0; font-family: monospace; font-size: 15px; }
+    .step-detail-meta { color: var(--text-faint); font-size: 12px; margin-bottom: 16px; }
+    .step-detail pre {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px; overflow-x: auto;
+      font-size: 13px; line-height: 1.5;
+    }
+    .step-detail pre code { font-family: monospace; }
+    .step-detail .docstring {
+      color: var(--text-faint); font-style: italic; margin-bottom: 12px;
+      padding: 8px 12px; border-left: 3px solid var(--primary);
+      background: var(--bg); border-radius: 0 8px 8px 0;
+    }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-faint); }
+    .empty-state svg { width: 48px; height: 48px; opacity: .3; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h8v8H3V3Zm10 0h8v8h-8V3ZM3 13h8v8H3v-8Zm10 0h8v8h-8v-8Z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20V10h3v10H4Zm6 0V4h3v16h-3Zm6 0v-7h3v7h-3Z"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2v2H7a3 3 0 0 0-3 3v2H2v2h2v2H2v2h2v2a3 3 0 0 0 3 3h2v2h2v-2h2v2h2v-2h2a3 3 0 0 0 3-3v-2h2v-2h-2v-2h2V9h-2V7a3 3 0 0 0-3-3h-2V2h-2v2h-2V2H9Zm-2 5h10v10H7V7Zm2 2v6h6V9H9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4V1h0v3Zm0 19v-3h0v3ZM4 12H1v0h3Zm19 0h-3v0h3ZM5.6 5.6 3.5 3.5l1.4-1.4L7 4.2 5.6 5.6Zm12.8 12.8-2.1-2.1 1.4-1.4 2.1 2.1-1.4 1.4ZM5.6 18.4 4.2 17l2.1-2.1 1.4 1.4-2.1 2.1Zm12.8-12.8L17 7l-2.1-2.1 1.4-1.4 2.1 2.1ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path fill="currentColor" d="M10 2a8 8 0 1 1-5 14.3l-3.4 3.4-1.4-1.4 3.4-3.4A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16.2-3.5-3.5L4 14.2 9 19l11-11-1.5-1.4L9 16.2Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="m12 10.6 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3 1.4-1.4 5.3 5.3Z"/></symbol>
+    <symbol id="i-skip" viewBox="0 0 24 24"><path fill="currentColor" d="M6 5h2v14H6V5Zm4 7 8-7v14l-8-7Z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.5 14h-1v-2h1v2Zm1.7-5.4c-.6.6-1.2 1-1.2 1.9h-2c0-1.6.8-2.2 1.4-2.7.6-.5 1-.8 1-1.6a1.5 1.5 0 1 0-3 0H7.4a3.5 3.5 0 1 1 6.8 1.4Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 11h-5v-2h3V6h2v7Z"/></symbol>
+    <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 4 7.5 13h-15L12 6Zm-1 5h2v5h-2v-5Zm0 6h2v2h-2v-2Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="currentColor" d="m8 6 6 6-6 6 1.4 1.4L16.8 12 9.4 4.6 8 6Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 16.4l-4.7-4.7 1.4-1.4L12 13.6V3h0Zm-8 17h16v2H4v-2Z"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path fill="currentColor" d="M10 2h8a2 2 0 0 1 2 2v8l-10 10L2 14l8-12Zm5 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v2H4V5Zm0 6h12v2H4v-2Zm0 6h9v2H4v-2Zm12 0h5v2h-5v-2Z"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v2.2l-6 6.4V19h-4v-5.4L4 7.2V5Z"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v14H4V5Zm2 2v4h5V7H6Zm7 0v4h5V7h-5ZM6 13v4h5v-4H6Zm7 0v4h5v-4h-5Z"/></symbol>
+    <symbol id="i-rules" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v2H4V4Zm0 6h10v2H4v-2Zm0 6h16v2H4v-2Zm12-6h4v2h-4v-2Z"/></symbol>
+    <symbol id="i-bg" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v2H3V5Zm0 6h12v2H3v-2Zm0 6h18v2H3v-2Z"/></symbol>
+    <symbol id="i-results" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v2H4V4Zm0 5h10v2H4V9Zm0 5h16v2H4v-2Zm0 5h10v2H4v-2Z"/></symbol>
+  </defs>
+</svg>
+  <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.2 6.5 3.6L12 11.4 5.5 7.8 12 4.2ZM5 9.6l6 3.4v7.2L5 16.8V9.6Zm14 0v7.2l-6 3.4V13l6-3.4Z"/></svg>
+        </span>
+        <div class="brand-text">
+          <div class="brand-title">Step Catalog</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <button class="nav-item is-active" data-route="catalog">
+          <svg class="ico"><use href="#i-list"/></svg><span>Step Catalog</span>
+        </button>
+        <button class="nav-item" data-route="metrics">
+          <svg class="ico"><use href="#i-chart"/></svg><span>Metrics</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="footer-row">
+          <span class="version">Behave Modern Report</span>
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+            <svg class="ico"><use href="#i-sun"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="view" data-view="catalog">
+        <div class="catalog-header">
+          <h1>Step Catalog</h1>
+          <p>49 step definitions across 6 files · 11 Given, 16 When, 22 Then</p>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">49</div>
+            <div class="stat-lbl">Total steps</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6</div>
+            <div class="stat-lbl">Files</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">35</div>
+            <div class="stat-lbl">Parameterised</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">49</div>
+            <div class="stat-lbl">With docstring</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0</div>
+            <div class="stat-lbl">Regex patterns</div>
+          </div>
+        </div>
+
+        <div class="keyword-bar" id="keyword-filters">
+          <button class="keyword-chip is-active" data-keyword="all">All <span class="count">(49)</span></button>
+          <button class="keyword-chip" data-keyword="given">Given <span class="count">(11)</span></button>
+          <button class="keyword-chip" data-keyword="when">When <span class="count">(16)</span></button>
+          <button class="keyword-chip" data-keyword="then">Then <span class="count">(22)</span></button>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="step-search" placeholder="Search by pattern, function name or file…" aria-label="Search steps" />
+        </div>
+
+        <table class="step-table" id="step-table">
+          <thead>
+            <tr>
+              <th data-sort="keyword">Keyword <span class="sort-ico">↕</span></th>
+              <th data-sort="pattern">Pattern <span class="sort-ico">↕</span></th>
+              <th data-sort="func_name">Function <span class="sort-ico">↕</span></th>
+              <th data-sort="file_path">File <span class="sort-ico">↕</span></th>
+              <th data-sort="params">Params <span class="sort-ico">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="step-tbody">
+            <tr class="step-row" data-keyword="given" data-pattern="a user exists with email "{email}"" data-func="step_user_exists" data-file="api_steps.py"
+                data-source="def step_user_exists(context, email):
+    &#34;&#34;&#34;Creates a user via POST and stores the id + endpoint for later steps.
+
+    The created user&#39;s endpoint is stored in ``context.created_user_endpoint``
+    so that subsequent GET/DELETE steps can reference it.
+    &#34;&#34;&#34;
+    resp = requests.post(
+        f&#34;{context.api_url}/api/users&#34;,
+        json={&#34;name&#34;: &#34;Temp User&#34;, &#34;email&#34;: email, &#34;role&#34;: &#34;viewer&#34;},
+        timeout=2,
+    )
+    assert resp.status_code == 201, f&#34;Could not create user: {resp.text}&#34;
+    context.created_user_id = resp.json()[&#34;id&#34;]
+    context.created_user_endpoint = f&#34;/api/users/{context.created_user_id}&#34;" data-docstring="Creates a user via POST and stores the id + endpoint for later steps.
+
+The created user&#39;s endpoint is stored in ``context.created_user_endpoint``
+so that subsequent GET/DELETE steps can reference it." data-line="21" data-end-line="34" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">a user exists with email "{email}"</td>
+              <td><code>step_user_exists</code></td>
+              <td class="file-cell"><code>api_steps.py:21</code></td>
+              <td class="params-cell">
+<span class="param-tag">email</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the following users exist:" data-func="step_users_exist_table" data-file="api_steps.py"
+                data-source="def step_users_exist_table(context):
+    &#34;&#34;&#34;Creates multiple users from a horizontal data table.
+
+    The table must have columns: ``name``, ``email``, ``role``.
+    Each row represents one user to create via POST.
+    &#34;&#34;&#34;
+    for row in context.table:
+        resp = requests.post(
+            f&#34;{context.api_url}/api/users&#34;,
+            json={&#34;name&#34;: row[&#34;name&#34;], &#34;email&#34;: row[&#34;email&#34;], &#34;role&#34;: row[&#34;role&#34;]},
+            timeout=2,
+        )
+        assert resp.status_code == 201, f&#34;Could not create user {row}: {resp.text}&#34;" data-docstring="Creates multiple users from a horizontal data table.
+
+The table must have columns: ``name``, ``email``, ``role``.
+Each row represents one user to create via POST." data-line="38" data-end-line="50" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the following users exist:</td>
+              <td><code>step_users_exist_table</code></td>
+              <td class="file-cell"><code>api_steps.py:38</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="a user named "{name}" with email "{email}"" data-func="step_user_named" data-file="api_steps.py"
+                data-source="def step_user_named(context, name, email):
+    &#34;&#34;&#34;Stores pending user data for use in a subsequent POST step.
+
+    Used by the CSV examples feature where the user data comes from
+    an external CSV file.
+    &#34;&#34;&#34;
+    context.pending_user = {&#34;name&#34;: name, &#34;email&#34;: email}" data-docstring="Stores pending user data for use in a subsequent POST step.
+
+Used by the CSV examples feature where the user data comes from
+an external CSV file." data-line="54" data-end-line="60" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">a user named "{name}" with email "{email}"</td>
+              <td><code>step_user_named</code></td>
+              <td class="file-cell"><code>api_steps.py:54</code></td>
+              <td class="params-cell">
+<span class="param-tag">name</span><span class="param-tag">email</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I send a {method} request to "{url}"" data-func="step_send_request" data-file="api_steps.py"
+                data-source="def step_send_request(context, method, url):
+    &#34;&#34;&#34;Sends an HTTP request with no body and stores the response.
+
+    ``method`` is injected from the step text (GET, POST, DELETE, etc.).
+    The response is stored in ``context.response``.
+    &#34;&#34;&#34;
+    context.response = requests.request(
+        method,
+        f&#34;{context.api_url}{url}&#34;,
+        timeout=2,
+    )" data-docstring="Sends an HTTP request with no body and stores the response.
+
+``method`` is injected from the step text (GET, POST, DELETE, etc.).
+The response is stored in ``context.response``." data-line="64" data-end-line="74" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I send a {method} request to "{url}"</td>
+              <td><code>step_send_request</code></td>
+              <td class="file-cell"><code>api_steps.py:64</code></td>
+              <td class="params-cell">
+<span class="param-tag">method</span><span class="param-tag">url</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I send a {method} request to "{url}" with:" data-func="step_send_request_with_table" data-file="api_steps.py"
+                data-source="def step_send_request_with_table(context, method, url):
+    &#34;&#34;&#34;Sends an HTTP request with a JSON body built from a vertical data table.
+
+    The table must have columns: ``field``, ``value``.
+    Each row becomes a key-value pair in the JSON payload.
+    &#34;&#34;&#34;
+    data = {row[&#34;field&#34;]: row[&#34;value&#34;] for row in context.table.rows}
+    context.response = requests.request(
+        method,
+        f&#34;{context.api_url}{url}&#34;,
+        json=data,
+        timeout=2,
+    )" data-docstring="Sends an HTTP request with a JSON body built from a vertical data table.
+
+The table must have columns: ``field``, ``value``.
+Each row becomes a key-value pair in the JSON payload." data-line="78" data-end-line="90" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I send a {method} request to "{url}" with:</td>
+              <td><code>step_send_request_with_table</code></td>
+              <td class="file-cell"><code>api_steps.py:78</code></td>
+              <td class="params-cell">
+<span class="param-tag">method</span><span class="param-tag">url</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I send a GET request to the created user endpoint" data-func="step_get_created_user" data-file="api_steps.py"
+                data-source="def step_get_created_user(context):
+    &#34;&#34;&#34;GETs the user created by a preceding ``Given a user exists`` step.&#34;&#34;&#34;
+    context.response = requests.get(
+        f&#34;{context.api_url}{context.created_user_endpoint}&#34;,
+        timeout=2,
+    )" data-docstring="GETs the user created by a preceding ``Given a user exists`` step." data-line="94" data-end-line="99" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I send a GET request to the created user endpoint</td>
+              <td><code>step_get_created_user</code></td>
+              <td class="file-cell"><code>api_steps.py:94</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I send a DELETE request to the created user endpoint" data-func="step_delete_created_user" data-file="api_steps.py"
+                data-source="def step_delete_created_user(context):
+    &#34;&#34;&#34;DELETEs the user created by a preceding ``Given a user exists`` step.&#34;&#34;&#34;
+    context.response = requests.delete(
+        f&#34;{context.api_url}{context.created_user_endpoint}&#34;,
+        timeout=2,
+    )" data-docstring="DELETEs the user created by a preceding ``Given a user exists`` step." data-line="103" data-end-line="108" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I send a DELETE request to the created user endpoint</td>
+              <td><code>step_delete_created_user</code></td>
+              <td class="file-cell"><code>api_steps.py:103</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the async result should be "{expected}"" data-func="step_async_result_str" data-file="async_steps.py"
+                data-source="def step_async_result_str(context, expected):
+    &#34;&#34;&#34;Asserts that the last async result (as a string) equals ``expected``.
+
+    This step is synchronous — it reads from ``context.async_results``
+    which was populated by a preceding async ``When`` step.
+    &#34;&#34;&#34;
+    last_key = list(context.async_results.keys())[-1]
+    actual = str(context.async_results[last_key])
+    assert actual == expected, f&#34;Expected &#39;{expected}&#39;, got &#39;{actual}&#39;&#34;" data-docstring="Asserts that the last async result (as a string) equals ``expected``.
+
+This step is synchronous — it reads from ``context.async_results``
+which was populated by a preceding async ``When`` step." data-line="40" data-end-line="48" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the async result should be "{expected}"</td>
+              <td><code>step_async_result_str</code></td>
+              <td class="file-cell"><code>async_steps.py:40</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the async result should be {expected:d}" data-func="step_async_result_int" data-file="async_steps.py"
+                data-source="def step_async_result_int(context, expected):
+    &#34;&#34;&#34;Asserts that the last async result (as an integer) equals ``expected``.
+
+    Uses the ``{expected:d}`` type converter so behave parses the integer
+    automatically from the step text.
+    &#34;&#34;&#34;
+    last_key = list(context.async_results.keys())[-1]
+    actual = context.async_results[last_key]
+    assert actual == expected, f&#34;Expected {expected}, got {actual}&#34;" data-docstring="Asserts that the last async result (as an integer) equals ``expected``.
+
+Uses the ``{expected:d}`` type converter so behave parses the integer
+automatically from the step text." data-line="52" data-end-line="60" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the async result should be {expected:d}</td>
+              <td><code>step_async_result_int</code></td>
+              <td class="file-cell"><code>async_steps.py:52</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="I have a calculator" data-func="step_have_calculator" data-file="calculator_steps.py"
+                data-source="def step_have_calculator(context):
+    &#34;&#34;&#34;Verifies that a Calculator instance was injected by the environment.&#34;&#34;&#34;
+    assert context.calculator is not None" data-docstring="Verifies that a Calculator instance was injected by the environment." data-line="18" data-end-line="20" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">I have a calculator</td>
+              <td><code>step_have_calculator</code></td>
+              <td class="file-cell"><code>calculator_steps.py:18</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the calculator is reset" data-func="step_reset" data-file="calculator_steps.py"
+                data-source="def step_reset(context):
+    &#34;&#34;&#34;Resets the calculator accumulator to 0 and clears the last operation.&#34;&#34;&#34;
+    context.calculator.reset()" data-docstring="Resets the calculator accumulator to 0 and clears the last operation." data-line="24" data-end-line="26" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the calculator is reset</td>
+              <td><code>step_reset</code></td>
+              <td class="file-cell"><code>calculator_steps.py:24</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the calculator accumulator is {value:d}" data-func="step_set_accumulator" data-file="calculator_steps.py"
+                data-source="def step_set_accumulator(context, value):
+    &#34;&#34;&#34;Sets the accumulator to an explicit value (used by Scenario Outlines).&#34;&#34;&#34;
+    context.calculator.accumulator = float(value)" data-docstring="Sets the accumulator to an explicit value (used by Scenario Outlines)." data-line="30" data-end-line="32" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the calculator accumulator is {value:d}</td>
+              <td><code>step_set_accumulator</code></td>
+              <td class="file-cell"><code>calculator_steps.py:30</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I add {value:d} to the calculator" data-func="step_add" data-file="calculator_steps.py"
+                data-source="def step_add(context, value):
+    &#34;&#34;&#34;Adds ``value`` to the accumulator.&#34;&#34;&#34;
+    context.calculator.add(float(value))" data-docstring="Adds ``value`` to the accumulator." data-line="36" data-end-line="38" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I add {value:d} to the calculator</td>
+              <td><code>step_add</code></td>
+              <td class="file-cell"><code>calculator_steps.py:36</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I subtract {value:d} to the calculator" data-func="step_subtract" data-file="calculator_steps.py"
+                data-source="def step_subtract(context, value):
+    &#34;&#34;&#34;Subtracts ``value`` from the accumulator.&#34;&#34;&#34;
+    context.calculator.subtract(float(value))" data-docstring="Subtracts ``value`` from the accumulator." data-line="42" data-end-line="44" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I subtract {value:d} to the calculator</td>
+              <td><code>step_subtract</code></td>
+              <td class="file-cell"><code>calculator_steps.py:42</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I multiply {value:d} to the calculator" data-func="step_multiply" data-file="calculator_steps.py"
+                data-source="def step_multiply(context, value):
+    &#34;&#34;&#34;Multiplies the accumulator by ``value``.&#34;&#34;&#34;
+    context.calculator.multiply(float(value))" data-docstring="Multiplies the accumulator by ``value``." data-line="48" data-end-line="50" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I multiply {value:d} to the calculator</td>
+              <td><code>step_multiply</code></td>
+              <td class="file-cell"><code>calculator_steps.py:48</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I divide the calculator by {value:d}" data-func="step_divide" data-file="calculator_steps.py"
+                data-source="def step_divide(context, value):
+    &#34;&#34;&#34;Divides the accumulator by ``value``.
+
+    Catches ``ZeroDivisionError`` and stores it in ``context.exc``
+    so a subsequent ``Then a ZeroDivisionError should be raised`` step
+    can assert on it.
+    &#34;&#34;&#34;
+    try:
+        context.calculator.divide(float(value))
+        context.exc = None
+    except Exception as e:
+        context.exc = e" data-docstring="Divides the accumulator by ``value``.
+
+Catches ``ZeroDivisionError`` and stores it in ``context.exc``
+so a subsequent ``Then a ZeroDivisionError should be raised`` step
+can assert on it." data-line="54" data-end-line="65" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I divide the calculator by {value:d}</td>
+              <td><code>step_divide</code></td>
+              <td class="file-cell"><code>calculator_steps.py:54</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I divide {value:d} to the calculator" data-func="step_divide_to" data-file="calculator_steps.py"
+                data-source="def step_divide_to(context, value):
+    &#34;&#34;&#34;Alternative phrasing for division (used by Scenario Outline rows).
+
+    Behave matches the literal step text, so both
+    &#34;I divide the calculator by 4&#34; and &#34;I divide 4 to the calculator&#34;
+    need their own step definition.
+    &#34;&#34;&#34;
+    try:
+        context.calculator.divide(float(value))
+        context.exc = None
+    except Exception as e:
+        context.exc = e" data-docstring="Alternative phrasing for division (used by Scenario Outline rows).
+
+Behave matches the literal step text, so both
+&#34;I divide the calculator by 4&#34; and &#34;I divide 4 to the calculator&#34;
+need their own step definition." data-line="69" data-end-line="80" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I divide {value:d} to the calculator</td>
+              <td><code>step_divide_to</code></td>
+              <td class="file-cell"><code>calculator_steps.py:69</code></td>
+              <td class="params-cell">
+<span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I take the square root" data-func="step_sqrt" data-file="calculator_steps.py"
+                data-source="def step_sqrt(context):
+    &#34;&#34;&#34;Takes the square root of the current accumulator value.
+
+    Catches ``ValueError`` (negative input) and stores it in
+    ``context.exc`` for later assertion.
+    &#34;&#34;&#34;
+    try:
+        context.calculator.sqrt()
+        context.exc = None
+    except Exception as e:
+        context.exc = e" data-docstring="Takes the square root of the current accumulator value.
+
+Catches ``ValueError`` (negative input) and stores it in
+``context.exc`` for later assertion." data-line="84" data-end-line="94" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I take the square root</td>
+              <td><code>step_sqrt</code></td>
+              <td class="file-cell"><code>calculator_steps.py:84</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the result should be {expected:d}" data-func="step_result" data-file="calculator_steps.py"
+                data-source="def step_result(context, expected):
+    &#34;&#34;&#34;Asserts that the accumulator equals ``expected``.&#34;&#34;&#34;
+    assert context.calculator.result() == float(expected), (
+        f&#34;Expected {expected}, got {context.calculator.result()}&#34;
+    )" data-docstring="Asserts that the accumulator equals ``expected``." data-line="98" data-end-line="102" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the result should be {expected:d}</td>
+              <td><code>step_result</code></td>
+              <td class="file-cell"><code>calculator_steps.py:98</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the last operation should be "{op_name}"" data-func="step_last_op" data-file="calculator_steps.py"
+                data-source="def step_last_op(context, op_name):
+    &#34;&#34;&#34;Asserts that ``last_operation`` matches the expected operation name.&#34;&#34;&#34;
+    assert context.calculator.last_operation == op_name, (
+        f&#34;Expected &#39;{op_name}&#39;, got &#39;{context.calculator.last_operation}&#39;&#34;
+    )" data-docstring="Asserts that ``last_operation`` matches the expected operation name." data-line="106" data-end-line="110" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the last operation should be "{op_name}"</td>
+              <td><code>step_last_op</code></td>
+              <td class="file-cell"><code>calculator_steps.py:106</code></td>
+              <td class="params-cell">
+<span class="param-tag">op_name</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="a ZeroDivisionError should be raised" data-func="step_zero_division" data-file="calculator_steps.py"
+                data-source="def step_zero_division(context):
+    &#34;&#34;&#34;Asserts that a ``ZeroDivisionError`` was caught during a previous step.&#34;&#34;&#34;
+    assert isinstance(context.exc, ZeroDivisionError), (
+        f&#34;Expected ZeroDivisionError, got {context.exc!r}&#34;
+    )" data-docstring="Asserts that a ``ZeroDivisionError`` was caught during a previous step." data-line="114" data-end-line="118" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">a ZeroDivisionError should be raised</td>
+              <td><code>step_zero_division</code></td>
+              <td class="file-cell"><code>calculator_steps.py:114</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="a ValueError should be raised" data-func="step_value_error" data-file="calculator_steps.py"
+                data-source="def step_value_error(context):
+    &#34;&#34;&#34;Asserts that a ``ValueError`` was caught during a previous step.&#34;&#34;&#34;
+    assert isinstance(context.exc, ValueError), (
+        f&#34;Expected ValueError, got {context.exc!r}&#34;
+    )" data-docstring="Asserts that a ``ValueError`` was caught during a previous step." data-line="122" data-end-line="126" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">a ValueError should be raised</td>
+              <td><code>step_value_error</code></td>
+              <td class="file-cell"><code>calculator_steps.py:122</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the API server is running" data-func="step_api_running" data-file="common_steps.py"
+                data-source="def step_api_running(context):
+    &#34;&#34;&#34;Verifies that the Flask SUT is reachable by hitting ``/api/health``.
+
+    The server is started in ``before_all`` (environment.py) in a
+    background thread. This step acts as a smoke check before
+    running API scenarios.
+    &#34;&#34;&#34;
+    import requests
+
+    resp = requests.get(f&#34;{context.api_url}/api/health&#34;, timeout=2)
+    assert resp.ok, f&#34;API server not reachable: {resp.status_code}&#34;" data-docstring="Verifies that the Flask SUT is reachable by hitting ``/api/health``.
+
+The server is started in ``before_all`` (environment.py) in a
+background thread. This step acts as a smoke check before
+running API scenarios." data-line="42" data-end-line="52" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the API server is running</td>
+              <td><code>step_api_running</code></td>
+              <td class="file-cell"><code>common_steps.py:42</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the users database is empty" data-func="step_db_empty" data-file="common_steps.py"
+                data-source="def step_db_empty(context):
+    &#34;&#34;&#34;Deletes all users from the SUT to ensure a clean state.
+
+    Fetches all users via GET, then DELETEs each one individually.
+    This guarantees test isolation between scenarios that share
+    the same SUT instance.
+    &#34;&#34;&#34;
+    import requests
+
+    resp = requests.get(f&#34;{context.api_url}/api/users&#34;, timeout=2)
+    assert resp.ok
+    body = resp.json()
+    for user in body.get(&#34;data&#34;, []):
+        requests.delete(f&#34;{context.api_url}/api/users/{user[&#39;id&#39;]}&#34;, timeout=2)" data-docstring="Deletes all users from the SUT to ensure a clean state.
+
+Fetches all users via GET, then DELETEs each one individually.
+This guarantees test isolation between scenarios that share
+the same SUT instance." data-line="56" data-end-line="69" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the users database is empty</td>
+              <td><code>step_db_empty</code></td>
+              <td class="file-cell"><code>common_steps.py:56</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the response status should be {status:d}" data-func="step_response_status" data-file="common_steps.py"
+                data-source="def step_response_status(context, status):
+    &#34;&#34;&#34;Asserts that the last HTTP response status code equals ``status``.
+
+    Uses ``{status:d}`` type converter to parse the integer from the step text.
+    The response is stored in ``context.response`` by a preceding ``When`` step.
+    &#34;&#34;&#34;
+    assert context.response.status_code == status, (
+        f&#34;Expected status {status}, got {context.response.status_code}: &#34;
+        f&#34;{context.response.text}&#34;
+    )" data-docstring="Asserts that the last HTTP response status code equals ``status``.
+
+Uses ``{status:d}`` type converter to parse the integer from the step text.
+The response is stored in ``context.response`` by a preceding ``When`` step." data-line="73" data-end-line="82" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the response status should be {status:d}</td>
+              <td><code>step_response_status</code></td>
+              <td class="file-cell"><code>common_steps.py:73</code></td>
+              <td class="params-cell">
+<span class="param-tag">status:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the response should contain "{field}"" data-func="step_response_contains" data-file="common_steps.py"
+                data-source="def step_response_contains(context, field):
+    &#34;&#34;&#34;Asserts that the JSON response body contains a top-level ``field`` key.&#34;&#34;&#34;
+    body = context.response.json()
+    assert field in body, f&#34;Response missing field &#39;{field}&#39;: {body}&#34;" data-docstring="Asserts that the JSON response body contains a top-level ``field`` key." data-line="86" data-end-line="89" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the response should contain "{field}"</td>
+              <td><code>step_response_contains</code></td>
+              <td class="file-cell"><code>common_steps.py:86</code></td>
+              <td class="params-cell">
+<span class="param-tag">field</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the response field "{field}" should be "{value}"" data-func="step_response_field" data-file="common_steps.py"
+                data-source="def step_response_field(context, field, value):
+    &#34;&#34;&#34;Asserts that a string field in the JSON response equals ``value``.
+
+    Both ``field`` and ``value`` are captured as quoted strings.
+    The actual value is converted to ``str`` before comparison.
+    &#34;&#34;&#34;
+    body = context.response.json()
+    actual = str(body.get(field))
+    assert actual == value, f&#34;Field &#39;{field}&#39;: expected &#39;{value}&#39;, got &#39;{actual}&#39;&#34;" data-docstring="Asserts that a string field in the JSON response equals ``value``.
+
+Both ``field`` and ``value`` are captured as quoted strings.
+The actual value is converted to ``str`` before comparison." data-line="93" data-end-line="101" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the response field "{field}" should be "{value}"</td>
+              <td><code>step_response_field</code></td>
+              <td class="file-cell"><code>common_steps.py:93</code></td>
+              <td class="params-cell">
+<span class="param-tag">field</span><span class="param-tag">value</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the response field "{field}" should be {value:d}" data-func="step_response_field_int" data-file="common_steps.py"
+                data-source="def step_response_field_int(context, field, value):
+    &#34;&#34;&#34;Asserts that an integer field in the JSON response equals ``value``.
+
+    Uses ``{value:d}`` type converter so behave parses the integer
+    automatically. This avoids quoting issues with numeric fields
+    like ``total`` or ``count``.
+    &#34;&#34;&#34;
+    body = context.response.json()
+    actual = body.get(field)
+    assert actual == value, f&#34;Field &#39;{field}&#39;: expected {value}, got {actual}&#34;" data-docstring="Asserts that an integer field in the JSON response equals ``value``.
+
+Uses ``{value:d}`` type converter so behave parses the integer
+automatically. This avoids quoting issues with numeric fields
+like ``total`` or ``count``." data-line="105" data-end-line="114" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the response field "{field}" should be {value:d}</td>
+              <td><code>step_response_field_int</code></td>
+              <td class="file-cell"><code>common_steps.py:105</code></td>
+              <td class="params-cell">
+<span class="param-tag">field</span><span class="param-tag">value:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the response should contain at most {count:d} items" data-func="step_response_at_most" data-file="common_steps.py"
+                data-source="def step_response_at_most(context, count):
+    &#34;&#34;&#34;Asserts that the ``data`` array in the response has at most ``count`` items.
+
+    Used for pagination testing — the API returns a ``data`` key with
+    a slice of results and a ``total`` key with the full count.
+    &#34;&#34;&#34;
+    body = context.response.json()
+    data = body.get(&#34;data&#34;, body)
+    assert len(data) &lt;= count, f&#34;Expected at most {count} items, got {len(data)}&#34;" data-docstring="Asserts that the ``data`` array in the response has at most ``count`` items.
+
+Used for pagination testing — the API returns a ``data`` key with
+a slice of results and a ``total`` key with the full count." data-line="118" data-end-line="126" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the response should contain at most {count:d} items</td>
+              <td><code>step_response_at_most</code></td>
+              <td class="file-cell"><code>common_steps.py:118</code></td>
+              <td class="params-cell">
+<span class="param-tag">count:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="I have an empty shopping cart" data-func="step_empty_cart" data-file="shopping_cart_steps.py"
+                data-source="def step_empty_cart(context):
+    &#34;&#34;&#34;Clears all items, discount, and tax from the cart.&#34;&#34;&#34;
+    context.cart.items.clear()
+    context.cart.discount_percent = 0.0
+    context.cart.tax_percent = 0.0" data-docstring="Clears all items, discount, and tax from the cart." data-line="20" data-end-line="24" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">I have an empty shopping cart</td>
+              <td><code>step_empty_cart</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:20</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I add the following items to the cart:" data-func="step_add_items_table" data-file="shopping_cart_steps.py"
+                data-source="def step_add_items_table(context):
+    &#34;&#34;&#34;Adds items from a data table to the cart.
+
+    The table must have columns: ``name``, ``price``, ``quantity``.
+    The first row is the header (column names).
+    &#34;&#34;&#34;
+    for row in context.table:
+        context.cart.add_item(
+            name=row[&#34;name&#34;],
+            price=float(row[&#34;price&#34;]),
+            quantity=int(row[&#34;quantity&#34;]),
+        )" data-docstring="Adds items from a data table to the cart.
+
+The table must have columns: ``name``, ``price``, ``quantity``.
+The first row is the header (column names)." data-line="28" data-end-line="39" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I add the following items to the cart:</td>
+              <td><code>step_add_items_table</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:28</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I remove "{name}" from the cart" data-func="step_remove_item" data-file="shopping_cart_steps.py"
+                data-source="def step_remove_item(context, name):
+    &#34;&#34;&#34;Removes the item with the given ``name`` from the cart.
+
+    If the item does not exist, the cart remains unchanged (idempotent).
+    &#34;&#34;&#34;
+    context.cart.remove_item(name)" data-docstring="Removes the item with the given ``name`` from the cart.
+
+If the item does not exist, the cart remains unchanged (idempotent)." data-line="43" data-end-line="48" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I remove "{name}" from the cart</td>
+              <td><code>step_remove_item</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:43</code></td>
+              <td class="params-cell">
+<span class="param-tag">name</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="the cart has a discount of {discount:d}% and a tax of {tax:d}%" data-func="step_set_discount_tax" data-file="shopping_cart_steps.py"
+                data-source="def step_set_discount_tax(context, discount, tax):
+    &#34;&#34;&#34;Sets the discount and tax percentages on the cart.&#34;&#34;&#34;
+    context.cart.discount_percent = float(discount)
+    context.cart.tax_percent = float(tax)" data-docstring="Sets the discount and tax percentages on the cart." data-line="52" data-end-line="55" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">the cart has a discount of {discount:d}% and a tax of {tax:d}%</td>
+              <td><code>step_set_discount_tax</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:52</code></td>
+              <td class="params-cell">
+<span class="param-tag">discount:d</span><span class="param-tag">tax:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the cart should contain {count:d} items" data-func="step_cart_count" data-file="shopping_cart_steps.py"
+                data-source="def step_cart_count(context, count):
+    &#34;&#34;&#34;Asserts that the total number of items (including quantities) equals ``count``.&#34;&#34;&#34;
+    assert context.cart.item_count() == count, (
+        f&#34;Expected {count} items, got {context.cart.item_count()}&#34;
+    )" data-docstring="Asserts that the total number of items (including quantities) equals ``count``." data-line="59" data-end-line="63" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the cart should contain {count:d} items</td>
+              <td><code>step_cart_count</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:59</code></td>
+              <td class="params-cell">
+<span class="param-tag">count:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the subtotal should be {expected:f}" data-func="step_subtotal" data-file="shopping_cart_steps.py"
+                data-source="def step_subtotal(context, expected):
+    &#34;&#34;&#34;Asserts that the cart subtotal (sum of item subtotals) equals ``expected``.&#34;&#34;&#34;
+    assert context.cart.subtotal() == expected, (
+        f&#34;Expected subtotal {expected}, got {context.cart.subtotal()}&#34;
+    )" data-docstring="Asserts that the cart subtotal (sum of item subtotals) equals ``expected``." data-line="67" data-end-line="71" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the subtotal should be {expected:f}</td>
+              <td><code>step_subtotal</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:67</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:f</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the discount amount should be {expected:f}" data-func="step_discount_amount" data-file="shopping_cart_steps.py"
+                data-source="def step_discount_amount(context, expected):
+    &#34;&#34;&#34;Asserts that the discount amount equals ``expected``.&#34;&#34;&#34;
+    assert context.cart.discount_amount() == expected, (
+        f&#34;Expected discount {expected}, got {context.cart.discount_amount()}&#34;
+    )" data-docstring="Asserts that the discount amount equals ``expected``." data-line="75" data-end-line="79" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the discount amount should be {expected:f}</td>
+              <td><code>step_discount_amount</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:75</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:f</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the tax amount should be {expected:f}" data-func="step_tax_amount" data-file="shopping_cart_steps.py"
+                data-source="def step_tax_amount(context, expected):
+    &#34;&#34;&#34;Asserts that the tax amount equals ``expected``.&#34;&#34;&#34;
+    assert context.cart.tax_amount() == expected, (
+        f&#34;Expected tax {expected}, got {context.cart.tax_amount()}&#34;
+    )" data-docstring="Asserts that the tax amount equals ``expected``." data-line="83" data-end-line="87" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the tax amount should be {expected:f}</td>
+              <td><code>step_tax_amount</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:83</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:f</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the total should be {expected:f}" data-func="step_total" data-file="shopping_cart_steps.py"
+                data-source="def step_total(context, expected):
+    &#34;&#34;&#34;Asserts that the final total (subtotal - discount + tax) equals ``expected``.&#34;&#34;&#34;
+    assert context.cart.total() == expected, (
+        f&#34;Expected total {expected}, got {context.cart.total()}&#34;
+    )" data-docstring="Asserts that the final total (subtotal - discount + tax) equals ``expected``." data-line="91" data-end-line="95" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the total should be {expected:f}</td>
+              <td><code>step_total</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:91</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected:f</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the receipt should be:" data-func="step_receipt_docstring" data-file="shopping_cart_steps.py"
+                data-source="def step_receipt_docstring(context):
+    &#34;&#34;&#34;Compares a DocString (``context.text``) against a generated receipt.
+
+    The DocString content (triple-quoted block in the feature file) is
+    available as ``context.text``. The step generates a receipt from the
+    current cart state and compares it line-by-line.
+    &#34;&#34;&#34;
+    expected = context.text.strip()
+    lines = [&#34;=== RECEIPT ===&#34;]
+    for item in context.cart.items:
+        lines.append(f&#34;{item.name:&lt;5} x{item.quantity} = {item.subtotal:.2f}&#34;)
+    lines.append(&#34;-&#34; * 16)
+    lines.append(f&#34;TOTAL: {context.cart.total():.2f}&#34;)
+    actual = &#34;\n&#34;.join(lines)
+    assert actual == expected, f&#34;\n--- expected ---\n{expected}\n--- actual ---\n{actual}&#34;" data-docstring="Compares a DocString (``context.text``) against a generated receipt.
+
+The DocString content (triple-quoted block in the feature file) is
+available as ``context.text``. The step generates a receipt from the
+current cart state and compares it line-by-line." data-line="99" data-end-line="113" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the receipt should be:</td>
+              <td><code>step_receipt_docstring</code></td>
+              <td class="file-cell"><code>shopping_cart_steps.py:99</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="given" data-pattern="I have the string utilities" data-func="step_have_string_utils" data-file="string_utils_steps.py"
+                data-source="def step_have_string_utils(context):
+    &#34;&#34;&#34;Verifies that a ``StringUtils`` instance was injected by the environment.&#34;&#34;&#34;
+    assert context.string_utils is not None" data-docstring="Verifies that a ``StringUtils`` instance was injected by the environment." data-line="17" data-end-line="19" data-is-regex="False">
+              <td><span class="kw-badge kw-given">given</span></td>
+              <td class="pattern-cell">I have the string utilities</td>
+              <td><code>step_have_string_utils</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:17</code></td>
+              <td class="params-cell">
+              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I reverse the string "{text}"" data-func="step_reverse" data-file="string_utils_steps.py"
+                data-source="def step_reverse(context, text):
+    &#34;&#34;&#34;Reverses ``text`` and stores the result in ``context.last_result``.&#34;&#34;&#34;
+    context.last_input = text
+    context.last_result = context.string_utils.reverse(text)" data-docstring="Reverses ``text`` and stores the result in ``context.last_result``." data-line="23" data-end-line="26" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I reverse the string "{text}"</td>
+              <td><code>step_reverse</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:23</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the reversed string should be "{expected}"" data-func="step_reversed_should_be" data-file="string_utils_steps.py"
+                data-source="def step_reversed_should_be(context, expected):
+    &#34;&#34;&#34;Asserts that the last reversal result equals ``expected``.&#34;&#34;&#34;
+    assert context.last_result == expected, (
+        f&#34;Expected &#39;{expected}&#39;, got &#39;{context.last_result}&#39;&#34;
+    )" data-docstring="Asserts that the last reversal result equals ``expected``." data-line="30" data-end-line="34" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the reversed string should be "{expected}"</td>
+              <td><code>step_reversed_should_be</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:30</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the string "{text}" should be a palindrome" data-func="step_is_palindrome" data-file="string_utils_steps.py"
+                data-source="def step_is_palindrome(context, text):
+    &#34;&#34;&#34;Asserts that ``text`` is a palindrome (ignoring case and punctuation).&#34;&#34;&#34;
+    assert context.string_utils.is_palindrome(text), (
+        f&#34;&#39;{text}&#39; is not a palindrome&#34;
+    )" data-docstring="Asserts that ``text`` is a palindrome (ignoring case and punctuation)." data-line="38" data-end-line="42" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the string "{text}" should be a palindrome</td>
+              <td><code>step_is_palindrome</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:38</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the string "{text}" should not be a palindrome" data-func="step_not_palindrome" data-file="string_utils_steps.py"
+                data-source="def step_not_palindrome(context, text):
+    &#34;&#34;&#34;Asserts that ``text`` is NOT a palindrome.&#34;&#34;&#34;
+    assert not context.string_utils.is_palindrome(text), (
+        f&#34;&#39;{text}&#39; was unexpectedly a palindrome&#34;
+    )" data-docstring="Asserts that ``text`` is NOT a palindrome." data-line="46" data-end-line="50" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the string "{text}" should not be a palindrome</td>
+              <td><code>step_not_palindrome</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:46</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I count the vowels in "{text}"" data-func="step_count_vowels" data-file="string_utils_steps.py"
+                data-source="def step_count_vowels(context, text):
+    &#34;&#34;&#34;Counts vowels (a, e, i, o, u) in ``text`` case-insensitively.&#34;&#34;&#34;
+    context.last_input = text
+    context.last_result = context.string_utils.count_vowels(text)" data-docstring="Counts vowels (a, e, i, o, u) in ``text`` case-insensitively." data-line="54" data-end-line="57" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I count the vowels in "{text}"</td>
+              <td><code>step_count_vowels</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:54</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the vowel count should be {count:d}" data-func="step_vowel_count" data-file="string_utils_steps.py"
+                data-source="def step_vowel_count(context, count):
+    &#34;&#34;&#34;Asserts that the last vowel count equals ``count``.&#34;&#34;&#34;
+    assert context.last_result == count, (
+        f&#34;Expected {count} vowels, got {context.last_result}&#34;
+    )" data-docstring="Asserts that the last vowel count equals ``count``." data-line="61" data-end-line="65" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the vowel count should be {count:d}</td>
+              <td><code>step_vowel_count</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:61</code></td>
+              <td class="params-cell">
+<span class="param-tag">count:d</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I convert "{text}" to title case" data-func="step_title_case" data-file="string_utils_steps.py"
+                data-source="def step_title_case(context, text):
+    &#34;&#34;&#34;Converts ``text`` to title case and stores the result.&#34;&#34;&#34;
+    context.last_input = text
+    context.last_result = context.string_utils.to_title_case(text)" data-docstring="Converts ``text`` to title case and stores the result." data-line="69" data-end-line="72" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I convert "{text}" to title case</td>
+              <td><code>step_title_case</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:69</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="then" data-pattern="the result should be "{expected}"" data-func="step_result_should_be" data-file="string_utils_steps.py"
+                data-source="def step_result_should_be(context, expected):
+    &#34;&#34;&#34;Generic assertion: the last transformation result equals ``expected``.
+
+    This step is shared by title-case and slugify scenarios.
+    &#34;&#34;&#34;
+    assert context.last_result == expected, (
+        f&#34;Expected &#39;{expected}&#39;, got &#39;{context.last_result}&#39;&#34;
+    )" data-docstring="Generic assertion: the last transformation result equals ``expected``.
+
+This step is shared by title-case and slugify scenarios." data-line="76" data-end-line="83" data-is-regex="False">
+              <td><span class="kw-badge kw-then">then</span></td>
+              <td class="pattern-cell">the result should be "{expected}"</td>
+              <td><code>step_result_should_be</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:76</code></td>
+              <td class="params-cell">
+<span class="param-tag">expected</span>              </td>
+            </tr>
+            <tr class="step-row" data-keyword="when" data-pattern="I slugify "{text}"" data-func="step_slugify" data-file="string_utils_steps.py"
+                data-source="def step_slugify(context, text):
+    &#34;&#34;&#34;Converts ``text`` to a URL-friendly slug and stores the result.&#34;&#34;&#34;
+    context.last_input = text
+    context.last_result = context.string_utils.slugify(text)" data-docstring="Converts ``text`` to a URL-friendly slug and stores the result." data-line="87" data-end-line="90" data-is-regex="False">
+              <td><span class="kw-badge kw-when">when</span></td>
+              <td class="pattern-cell">I slugify "{text}"</td>
+              <td><code>step_slugify</code></td>
+              <td class="file-cell"><code>string_utils_steps.py:87</code></td>
+              <td class="params-cell">
+<span class="param-tag">text</span>              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="step-detail" id="step-detail">
+          <div class="step-detail-head">
+            <span class="kw-badge" id="detail-kw"></span>
+            <h3 id="detail-pattern"></h3>
+          </div>
+          <div class="step-detail-meta" id="detail-meta"></div>
+          <div class="docstring" id="detail-docstring" hidden></div>
+          <pre><code id="detail-source"></code></pre>
+        </div>
+      </section>
+
+      <section class="view" data-view="metrics" hidden>
+        <div class="catalog-header">
+          <h1>Metrics</h1>
+          <p>Distribution and coverage of step definitions.</p>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">49</div>
+            <div class="stat-lbl">Total steps</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">71.4%</div>
+            <div class="stat-lbl">Parameterised</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100.0%</div>
+            <div class="stat-lbl">Documented</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0.0%</div>
+            <div class="stat-lbl">Regex</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 20px;">
+          <h3 class="card-title">By keyword</h3>
+          <dl class="kv">
+            <dt>Given</dt>
+            <dd>11 (22.4%)</dd>
+            <dt>When</dt>
+            <dd>16 (32.7%)</dd>
+            <dt>Then</dt>
+            <dd>22 (44.9%)</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">By file</h3>
+          <table class="step-table">
+            <thead>
+              <tr><th>File</th><th>Steps</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="file-cell"><code>calculator_steps.py</code></td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td class="file-cell"><code>shopping_cart_steps.py</code></td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td class="file-cell"><code>string_utils_steps.py</code></td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td class="file-cell"><code>api_steps.py</code></td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td class="file-cell"><code>common_steps.py</code></td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td class="file-cell"><code>async_steps.py</code></td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Generated by <strong>behave-modern-html-report</strong> · 2026-07-01 15:25:41
+      </footer>
+    </main>
+
+  <script id="bmr-data" type="application/json">{"steps": [{"keyword": "given", "pattern": "a user exists with email \"{email}\"", "is_regex": false, "func_name": "step_user_exists", "file_path": "api_steps.py", "line": 21, "end_line": 34, "docstring": "Creates a user via POST and stores the id + endpoint for later steps.\n\nThe created user's endpoint is stored in ``context.created_user_endpoint``\nso that subsequent GET/DELETE steps can reference it.", "params": ["email"], "source": "def step_user_exists(context, email):\n    \"\"\"Creates a user via POST and stores the id + endpoint for later steps.\n\n    The created user's endpoint is stored in ``context.created_user_endpoint``\n    so that subsequent GET/DELETE steps can reference it.\n    \"\"\"\n    resp = requests.post(\n        f\"{context.api_url}/api/users\",\n        json={\"name\": \"Temp User\", \"email\": email, \"role\": \"viewer\"},\n        timeout=2,\n    )\n    assert resp.status_code == 201, f\"Could not create user: {resp.text}\"\n    context.created_user_id = resp.json()[\"id\"]\n    context.created_user_endpoint = f\"/api/users/{context.created_user_id}\""}, {"keyword": "given", "pattern": "the following users exist:", "is_regex": false, "func_name": "step_users_exist_table", "file_path": "api_steps.py", "line": 38, "end_line": 50, "docstring": "Creates multiple users from a horizontal data table.\n\nThe table must have columns: ``name``, ``email``, ``role``.\nEach row represents one user to create via POST.", "params": [], "source": "def step_users_exist_table(context):\n    \"\"\"Creates multiple users from a horizontal data table.\n\n    The table must have columns: ``name``, ``email``, ``role``.\n    Each row represents one user to create via POST.\n    \"\"\"\n    for row in context.table:\n        resp = requests.post(\n            f\"{context.api_url}/api/users\",\n            json={\"name\": row[\"name\"], \"email\": row[\"email\"], \"role\": row[\"role\"]},\n            timeout=2,\n        )\n        assert resp.status_code == 201, f\"Could not create user {row}: {resp.text}\""}, {"keyword": "given", "pattern": "a user named \"{name}\" with email \"{email}\"", "is_regex": false, "func_name": "step_user_named", "file_path": "api_steps.py", "line": 54, "end_line": 60, "docstring": "Stores pending user data for use in a subsequent POST step.\n\nUsed by the CSV examples feature where the user data comes from\nan external CSV file.", "params": ["name", "email"], "source": "def step_user_named(context, name, email):\n    \"\"\"Stores pending user data for use in a subsequent POST step.\n\n    Used by the CSV examples feature where the user data comes from\n    an external CSV file.\n    \"\"\"\n    context.pending_user = {\"name\": name, \"email\": email}"}, {"keyword": "when", "pattern": "I send a {method} request to \"{url}\"", "is_regex": false, "func_name": "step_send_request", "file_path": "api_steps.py", "line": 64, "end_line": 74, "docstring": "Sends an HTTP request with no body and stores the response.\n\n``method`` is injected from the step text (GET, POST, DELETE, etc.).\nThe response is stored in ``context.response``.", "params": ["method", "url"], "source": "def step_send_request(context, method, url):\n    \"\"\"Sends an HTTP request with no body and stores the response.\n\n    ``method`` is injected from the step text (GET, POST, DELETE, etc.).\n    The response is stored in ``context.response``.\n    \"\"\"\n    context.response = requests.request(\n        method,\n        f\"{context.api_url}{url}\",\n        timeout=2,\n    )"}, {"keyword": "when", "pattern": "I send a {method} request to \"{url}\" with:", "is_regex": false, "func_name": "step_send_request_with_table", "file_path": "api_steps.py", "line": 78, "end_line": 90, "docstring": "Sends an HTTP request with a JSON body built from a vertical data table.\n\nThe table must have columns: ``field``, ``value``.\nEach row becomes a key-value pair in the JSON payload.", "params": ["method", "url"], "source": "def step_send_request_with_table(context, method, url):\n    \"\"\"Sends an HTTP request with a JSON body built from a vertical data table.\n\n    The table must have columns: ``field``, ``value``.\n    Each row becomes a key-value pair in the JSON payload.\n    \"\"\"\n    data = {row[\"field\"]: row[\"value\"] for row in context.table.rows}\n    context.response = requests.request(\n        method,\n        f\"{context.api_url}{url}\",\n        json=data,\n        timeout=2,\n    )"}, {"keyword": "when", "pattern": "I send a GET request to the created user endpoint", "is_regex": false, "func_name": "step_get_created_user", "file_path": "api_steps.py", "line": 94, "end_line": 99, "docstring": "GETs the user created by a preceding ``Given a user exists`` step.", "params": [], "source": "def step_get_created_user(context):\n    \"\"\"GETs the user created by a preceding ``Given a user exists`` step.\"\"\"\n    context.response = requests.get(\n        f\"{context.api_url}{context.created_user_endpoint}\",\n        timeout=2,\n    )"}, {"keyword": "when", "pattern": "I send a DELETE request to the created user endpoint", "is_regex": false, "func_name": "step_delete_created_user", "file_path": "api_steps.py", "line": 103, "end_line": 108, "docstring": "DELETEs the user created by a preceding ``Given a user exists`` step.", "params": [], "source": "def step_delete_created_user(context):\n    \"\"\"DELETEs the user created by a preceding ``Given a user exists`` step.\"\"\"\n    context.response = requests.delete(\n        f\"{context.api_url}{context.created_user_endpoint}\",\n        timeout=2,\n    )"}, {"keyword": "then", "pattern": "the async result should be \"{expected}\"", "is_regex": false, "func_name": "step_async_result_str", "file_path": "async_steps.py", "line": 40, "end_line": 48, "docstring": "Asserts that the last async result (as a string) equals ``expected``.\n\nThis step is synchronous \u2014 it reads from ``context.async_results``\nwhich was populated by a preceding async ``When`` step.", "params": ["expected"], "source": "def step_async_result_str(context, expected):\n    \"\"\"Asserts that the last async result (as a string) equals ``expected``.\n\n    This step is synchronous \u2014 it reads from ``context.async_results``\n    which was populated by a preceding async ``When`` step.\n    \"\"\"\n    last_key = list(context.async_results.keys())[-1]\n    actual = str(context.async_results[last_key])\n    assert actual == expected, f\"Expected '{expected}', got '{actual}'\""}, {"keyword": "then", "pattern": "the async result should be {expected:d}", "is_regex": false, "func_name": "step_async_result_int", "file_path": "async_steps.py", "line": 52, "end_line": 60, "docstring": "Asserts that the last async result (as an integer) equals ``expected``.\n\nUses the ``{expected:d}`` type converter so behave parses the integer\nautomatically from the step text.", "params": ["expected:d"], "source": "def step_async_result_int(context, expected):\n    \"\"\"Asserts that the last async result (as an integer) equals ``expected``.\n\n    Uses the ``{expected:d}`` type converter so behave parses the integer\n    automatically from the step text.\n    \"\"\"\n    last_key = list(context.async_results.keys())[-1]\n    actual = context.async_results[last_key]\n    assert actual == expected, f\"Expected {expected}, got {actual}\""}, {"keyword": "given", "pattern": "I have a calculator", "is_regex": false, "func_name": "step_have_calculator", "file_path": "calculator_steps.py", "line": 18, "end_line": 20, "docstring": "Verifies that a Calculator instance was injected by the environment.", "params": [], "source": "def step_have_calculator(context):\n    \"\"\"Verifies that a Calculator instance was injected by the environment.\"\"\"\n    assert context.calculator is not None"}, {"keyword": "given", "pattern": "the calculator is reset", "is_regex": false, "func_name": "step_reset", "file_path": "calculator_steps.py", "line": 24, "end_line": 26, "docstring": "Resets the calculator accumulator to 0 and clears the last operation.", "params": [], "source": "def step_reset(context):\n    \"\"\"Resets the calculator accumulator to 0 and clears the last operation.\"\"\"\n    context.calculator.reset()"}, {"keyword": "given", "pattern": "the calculator accumulator is {value:d}", "is_regex": false, "func_name": "step_set_accumulator", "file_path": "calculator_steps.py", "line": 30, "end_line": 32, "docstring": "Sets the accumulator to an explicit value (used by Scenario Outlines).", "params": ["value:d"], "source": "def step_set_accumulator(context, value):\n    \"\"\"Sets the accumulator to an explicit value (used by Scenario Outlines).\"\"\"\n    context.calculator.accumulator = float(value)"}, {"keyword": "when", "pattern": "I add {value:d} to the calculator", "is_regex": false, "func_name": "step_add", "file_path": "calculator_steps.py", "line": 36, "end_line": 38, "docstring": "Adds ``value`` to the accumulator.", "params": ["value:d"], "source": "def step_add(context, value):\n    \"\"\"Adds ``value`` to the accumulator.\"\"\"\n    context.calculator.add(float(value))"}, {"keyword": "when", "pattern": "I subtract {value:d} to the calculator", "is_regex": false, "func_name": "step_subtract", "file_path": "calculator_steps.py", "line": 42, "end_line": 44, "docstring": "Subtracts ``value`` from the accumulator.", "params": ["value:d"], "source": "def step_subtract(context, value):\n    \"\"\"Subtracts ``value`` from the accumulator.\"\"\"\n    context.calculator.subtract(float(value))"}, {"keyword": "when", "pattern": "I multiply {value:d} to the calculator", "is_regex": false, "func_name": "step_multiply", "file_path": "calculator_steps.py", "line": 48, "end_line": 50, "docstring": "Multiplies the accumulator by ``value``.", "params": ["value:d"], "source": "def step_multiply(context, value):\n    \"\"\"Multiplies the accumulator by ``value``.\"\"\"\n    context.calculator.multiply(float(value))"}, {"keyword": "when", "pattern": "I divide the calculator by {value:d}", "is_regex": false, "func_name": "step_divide", "file_path": "calculator_steps.py", "line": 54, "end_line": 65, "docstring": "Divides the accumulator by ``value``.\n\nCatches ``ZeroDivisionError`` and stores it in ``context.exc``\nso a subsequent ``Then a ZeroDivisionError should be raised`` step\ncan assert on it.", "params": ["value:d"], "source": "def step_divide(context, value):\n    \"\"\"Divides the accumulator by ``value``.\n\n    Catches ``ZeroDivisionError`` and stores it in ``context.exc``\n    so a subsequent ``Then a ZeroDivisionError should be raised`` step\n    can assert on it.\n    \"\"\"\n    try:\n        context.calculator.divide(float(value))\n        context.exc = None\n    except Exception as e:\n        context.exc = e"}, {"keyword": "when", "pattern": "I divide {value:d} to the calculator", "is_regex": false, "func_name": "step_divide_to", "file_path": "calculator_steps.py", "line": 69, "end_line": 80, "docstring": "Alternative phrasing for division (used by Scenario Outline rows).\n\nBehave matches the literal step text, so both\n\"I divide the calculator by 4\" and \"I divide 4 to the calculator\"\nneed their own step definition.", "params": ["value:d"], "source": "def step_divide_to(context, value):\n    \"\"\"Alternative phrasing for division (used by Scenario Outline rows).\n\n    Behave matches the literal step text, so both\n    \"I divide the calculator by 4\" and \"I divide 4 to the calculator\"\n    need their own step definition.\n    \"\"\"\n    try:\n        context.calculator.divide(float(value))\n        context.exc = None\n    except Exception as e:\n        context.exc = e"}, {"keyword": "when", "pattern": "I take the square root", "is_regex": false, "func_name": "step_sqrt", "file_path": "calculator_steps.py", "line": 84, "end_line": 94, "docstring": "Takes the square root of the current accumulator value.\n\nCatches ``ValueError`` (negative input) and stores it in\n``context.exc`` for later assertion.", "params": [], "source": "def step_sqrt(context):\n    \"\"\"Takes the square root of the current accumulator value.\n\n    Catches ``ValueError`` (negative input) and stores it in\n    ``context.exc`` for later assertion.\n    \"\"\"\n    try:\n        context.calculator.sqrt()\n        context.exc = None\n    except Exception as e:\n        context.exc = e"}, {"keyword": "then", "pattern": "the result should be {expected:d}", "is_regex": false, "func_name": "step_result", "file_path": "calculator_steps.py", "line": 98, "end_line": 102, "docstring": "Asserts that the accumulator equals ``expected``.", "params": ["expected:d"], "source": "def step_result(context, expected):\n    \"\"\"Asserts that the accumulator equals ``expected``.\"\"\"\n    assert context.calculator.result() == float(expected), (\n        f\"Expected {expected}, got {context.calculator.result()}\"\n    )"}, {"keyword": "then", "pattern": "the last operation should be \"{op_name}\"", "is_regex": false, "func_name": "step_last_op", "file_path": "calculator_steps.py", "line": 106, "end_line": 110, "docstring": "Asserts that ``last_operation`` matches the expected operation name.", "params": ["op_name"], "source": "def step_last_op(context, op_name):\n    \"\"\"Asserts that ``last_operation`` matches the expected operation name.\"\"\"\n    assert context.calculator.last_operation == op_name, (\n        f\"Expected '{op_name}', got '{context.calculator.last_operation}'\"\n    )"}, {"keyword": "then", "pattern": "a ZeroDivisionError should be raised", "is_regex": false, "func_name": "step_zero_division", "file_path": "calculator_steps.py", "line": 114, "end_line": 118, "docstring": "Asserts that a ``ZeroDivisionError`` was caught during a previous step.", "params": [], "source": "def step_zero_division(context):\n    \"\"\"Asserts that a ``ZeroDivisionError`` was caught during a previous step.\"\"\"\n    assert isinstance(context.exc, ZeroDivisionError), (\n        f\"Expected ZeroDivisionError, got {context.exc!r}\"\n    )"}, {"keyword": "then", "pattern": "a ValueError should be raised", "is_regex": false, "func_name": "step_value_error", "file_path": "calculator_steps.py", "line": 122, "end_line": 126, "docstring": "Asserts that a ``ValueError`` was caught during a previous step.", "params": [], "source": "def step_value_error(context):\n    \"\"\"Asserts that a ``ValueError`` was caught during a previous step.\"\"\"\n    assert isinstance(context.exc, ValueError), (\n        f\"Expected ValueError, got {context.exc!r}\"\n    )"}, {"keyword": "given", "pattern": "the API server is running", "is_regex": false, "func_name": "step_api_running", "file_path": "common_steps.py", "line": 42, "end_line": 52, "docstring": "Verifies that the Flask SUT is reachable by hitting ``/api/health``.\n\nThe server is started in ``before_all`` (environment.py) in a\nbackground thread. This step acts as a smoke check before\nrunning API scenarios.", "params": [], "source": "def step_api_running(context):\n    \"\"\"Verifies that the Flask SUT is reachable by hitting ``/api/health``.\n\n    The server is started in ``before_all`` (environment.py) in a\n    background thread. This step acts as a smoke check before\n    running API scenarios.\n    \"\"\"\n    import requests\n\n    resp = requests.get(f\"{context.api_url}/api/health\", timeout=2)\n    assert resp.ok, f\"API server not reachable: {resp.status_code}\""}, {"keyword": "given", "pattern": "the users database is empty", "is_regex": false, "func_name": "step_db_empty", "file_path": "common_steps.py", "line": 56, "end_line": 69, "docstring": "Deletes all users from the SUT to ensure a clean state.\n\nFetches all users via GET, then DELETEs each one individually.\nThis guarantees test isolation between scenarios that share\nthe same SUT instance.", "params": [], "source": "def step_db_empty(context):\n    \"\"\"Deletes all users from the SUT to ensure a clean state.\n\n    Fetches all users via GET, then DELETEs each one individually.\n    This guarantees test isolation between scenarios that share\n    the same SUT instance.\n    \"\"\"\n    import requests\n\n    resp = requests.get(f\"{context.api_url}/api/users\", timeout=2)\n    assert resp.ok\n    body = resp.json()\n    for user in body.get(\"data\", []):\n        requests.delete(f\"{context.api_url}/api/users/{user['id']}\", timeout=2)"}, {"keyword": "then", "pattern": "the response status should be {status:d}", "is_regex": false, "func_name": "step_response_status", "file_path": "common_steps.py", "line": 73, "end_line": 82, "docstring": "Asserts that the last HTTP response status code equals ``status``.\n\nUses ``{status:d}`` type converter to parse the integer from the step text.\nThe response is stored in ``context.response`` by a preceding ``When`` step.", "params": ["status:d"], "source": "def step_response_status(context, status):\n    \"\"\"Asserts that the last HTTP response status code equals ``status``.\n\n    Uses ``{status:d}`` type converter to parse the integer from the step text.\n    The response is stored in ``context.response`` by a preceding ``When`` step.\n    \"\"\"\n    assert context.response.status_code == status, (\n        f\"Expected status {status}, got {context.response.status_code}: \"\n        f\"{context.response.text}\"\n    )"}, {"keyword": "then", "pattern": "the response should contain \"{field}\"", "is_regex": false, "func_name": "step_response_contains", "file_path": "common_steps.py", "line": 86, "end_line": 89, "docstring": "Asserts that the JSON response body contains a top-level ``field`` key.", "params": ["field"], "source": "def step_response_contains(context, field):\n    \"\"\"Asserts that the JSON response body contains a top-level ``field`` key.\"\"\"\n    body = context.response.json()\n    assert field in body, f\"Response missing field '{field}': {body}\""}, {"keyword": "then", "pattern": "the response field \"{field}\" should be \"{value}\"", "is_regex": false, "func_name": "step_response_field", "file_path": "common_steps.py", "line": 93, "end_line": 101, "docstring": "Asserts that a string field in the JSON response equals ``value``.\n\nBoth ``field`` and ``value`` are captured as quoted strings.\nThe actual value is converted to ``str`` before comparison.", "params": ["field", "value"], "source": "def step_response_field(context, field, value):\n    \"\"\"Asserts that a string field in the JSON response equals ``value``.\n\n    Both ``field`` and ``value`` are captured as quoted strings.\n    The actual value is converted to ``str`` before comparison.\n    \"\"\"\n    body = context.response.json()\n    actual = str(body.get(field))\n    assert actual == value, f\"Field '{field}': expected '{value}', got '{actual}'\""}, {"keyword": "then", "pattern": "the response field \"{field}\" should be {value:d}", "is_regex": false, "func_name": "step_response_field_int", "file_path": "common_steps.py", "line": 105, "end_line": 114, "docstring": "Asserts that an integer field in the JSON response equals ``value``.\n\nUses ``{value:d}`` type converter so behave parses the integer\nautomatically. This avoids quoting issues with numeric fields\nlike ``total`` or ``count``.", "params": ["field", "value:d"], "source": "def step_response_field_int(context, field, value):\n    \"\"\"Asserts that an integer field in the JSON response equals ``value``.\n\n    Uses ``{value:d}`` type converter so behave parses the integer\n    automatically. This avoids quoting issues with numeric fields\n    like ``total`` or ``count``.\n    \"\"\"\n    body = context.response.json()\n    actual = body.get(field)\n    assert actual == value, f\"Field '{field}': expected {value}, got {actual}\""}, {"keyword": "then", "pattern": "the response should contain at most {count:d} items", "is_regex": false, "func_name": "step_response_at_most", "file_path": "common_steps.py", "line": 118, "end_line": 126, "docstring": "Asserts that the ``data`` array in the response has at most ``count`` items.\n\nUsed for pagination testing \u2014 the API returns a ``data`` key with\na slice of results and a ``total`` key with the full count.", "params": ["count:d"], "source": "def step_response_at_most(context, count):\n    \"\"\"Asserts that the ``data`` array in the response has at most ``count`` items.\n\n    Used for pagination testing \u2014 the API returns a ``data`` key with\n    a slice of results and a ``total`` key with the full count.\n    \"\"\"\n    body = context.response.json()\n    data = body.get(\"data\", body)\n    assert len(data) <= count, f\"Expected at most {count} items, got {len(data)}\""}, {"keyword": "given", "pattern": "I have an empty shopping cart", "is_regex": false, "func_name": "step_empty_cart", "file_path": "shopping_cart_steps.py", "line": 20, "end_line": 24, "docstring": "Clears all items, discount, and tax from the cart.", "params": [], "source": "def step_empty_cart(context):\n    \"\"\"Clears all items, discount, and tax from the cart.\"\"\"\n    context.cart.items.clear()\n    context.cart.discount_percent = 0.0\n    context.cart.tax_percent = 0.0"}, {"keyword": "when", "pattern": "I add the following items to the cart:", "is_regex": false, "func_name": "step_add_items_table", "file_path": "shopping_cart_steps.py", "line": 28, "end_line": 39, "docstring": "Adds items from a data table to the cart.\n\nThe table must have columns: ``name``, ``price``, ``quantity``.\nThe first row is the header (column names).", "params": [], "source": "def step_add_items_table(context):\n    \"\"\"Adds items from a data table to the cart.\n\n    The table must have columns: ``name``, ``price``, ``quantity``.\n    The first row is the header (column names).\n    \"\"\"\n    for row in context.table:\n        context.cart.add_item(\n            name=row[\"name\"],\n            price=float(row[\"price\"]),\n            quantity=int(row[\"quantity\"]),\n        )"}, {"keyword": "when", "pattern": "I remove \"{name}\" from the cart", "is_regex": false, "func_name": "step_remove_item", "file_path": "shopping_cart_steps.py", "line": 43, "end_line": 48, "docstring": "Removes the item with the given ``name`` from the cart.\n\nIf the item does not exist, the cart remains unchanged (idempotent).", "params": ["name"], "source": "def step_remove_item(context, name):\n    \"\"\"Removes the item with the given ``name`` from the cart.\n\n    If the item does not exist, the cart remains unchanged (idempotent).\n    \"\"\"\n    context.cart.remove_item(name)"}, {"keyword": "given", "pattern": "the cart has a discount of {discount:d}% and a tax of {tax:d}%", "is_regex": false, "func_name": "step_set_discount_tax", "file_path": "shopping_cart_steps.py", "line": 52, "end_line": 55, "docstring": "Sets the discount and tax percentages on the cart.", "params": ["discount:d", "tax:d"], "source": "def step_set_discount_tax(context, discount, tax):\n    \"\"\"Sets the discount and tax percentages on the cart.\"\"\"\n    context.cart.discount_percent = float(discount)\n    context.cart.tax_percent = float(tax)"}, {"keyword": "then", "pattern": "the cart should contain {count:d} items", "is_regex": false, "func_name": "step_cart_count", "file_path": "shopping_cart_steps.py", "line": 59, "end_line": 63, "docstring": "Asserts that the total number of items (including quantities) equals ``count``.", "params": ["count:d"], "source": "def step_cart_count(context, count):\n    \"\"\"Asserts that the total number of items (including quantities) equals ``count``.\"\"\"\n    assert context.cart.item_count() == count, (\n        f\"Expected {count} items, got {context.cart.item_count()}\"\n    )"}, {"keyword": "then", "pattern": "the subtotal should be {expected:f}", "is_regex": false, "func_name": "step_subtotal", "file_path": "shopping_cart_steps.py", "line": 67, "end_line": 71, "docstring": "Asserts that the cart subtotal (sum of item subtotals) equals ``expected``.", "params": ["expected:f"], "source": "def step_subtotal(context, expected):\n    \"\"\"Asserts that the cart subtotal (sum of item subtotals) equals ``expected``.\"\"\"\n    assert context.cart.subtotal() == expected, (\n        f\"Expected subtotal {expected}, got {context.cart.subtotal()}\"\n    )"}, {"keyword": "then", "pattern": "the discount amount should be {expected:f}", "is_regex": false, "func_name": "step_discount_amount", "file_path": "shopping_cart_steps.py", "line": 75, "end_line": 79, "docstring": "Asserts that the discount amount equals ``expected``.", "params": ["expected:f"], "source": "def step_discount_amount(context, expected):\n    \"\"\"Asserts that the discount amount equals ``expected``.\"\"\"\n    assert context.cart.discount_amount() == expected, (\n        f\"Expected discount {expected}, got {context.cart.discount_amount()}\"\n    )"}, {"keyword": "then", "pattern": "the tax amount should be {expected:f}", "is_regex": false, "func_name": "step_tax_amount", "file_path": "shopping_cart_steps.py", "line": 83, "end_line": 87, "docstring": "Asserts that the tax amount equals ``expected``.", "params": ["expected:f"], "source": "def step_tax_amount(context, expected):\n    \"\"\"Asserts that the tax amount equals ``expected``.\"\"\"\n    assert context.cart.tax_amount() == expected, (\n        f\"Expected tax {expected}, got {context.cart.tax_amount()}\"\n    )"}, {"keyword": "then", "pattern": "the total should be {expected:f}", "is_regex": false, "func_name": "step_total", "file_path": "shopping_cart_steps.py", "line": 91, "end_line": 95, "docstring": "Asserts that the final total (subtotal - discount + tax) equals ``expected``.", "params": ["expected:f"], "source": "def step_total(context, expected):\n    \"\"\"Asserts that the final total (subtotal - discount + tax) equals ``expected``.\"\"\"\n    assert context.cart.total() == expected, (\n        f\"Expected total {expected}, got {context.cart.total()}\"\n    )"}, {"keyword": "then", "pattern": "the receipt should be:", "is_regex": false, "func_name": "step_receipt_docstring", "file_path": "shopping_cart_steps.py", "line": 99, "end_line": 113, "docstring": "Compares a DocString (``context.text``) against a generated receipt.\n\nThe DocString content (triple-quoted block in the feature file) is\navailable as ``context.text``. The step generates a receipt from the\ncurrent cart state and compares it line-by-line.", "params": [], "source": "def step_receipt_docstring(context):\n    \"\"\"Compares a DocString (``context.text``) against a generated receipt.\n\n    The DocString content (triple-quoted block in the feature file) is\n    available as ``context.text``. The step generates a receipt from the\n    current cart state and compares it line-by-line.\n    \"\"\"\n    expected = context.text.strip()\n    lines = [\"=== RECEIPT ===\"]\n    for item in context.cart.items:\n        lines.append(f\"{item.name:<5} x{item.quantity} = {item.subtotal:.2f}\")\n    lines.append(\"-\" * 16)\n    lines.append(f\"TOTAL: {context.cart.total():.2f}\")\n    actual = \"\\n\".join(lines)\n    assert actual == expected, f\"\\n--- expected ---\\n{expected}\\n--- actual ---\\n{actual}\""}, {"keyword": "given", "pattern": "I have the string utilities", "is_regex": false, "func_name": "step_have_string_utils", "file_path": "string_utils_steps.py", "line": 17, "end_line": 19, "docstring": "Verifies that a ``StringUtils`` instance was injected by the environment.", "params": [], "source": "def step_have_string_utils(context):\n    \"\"\"Verifies that a ``StringUtils`` instance was injected by the environment.\"\"\"\n    assert context.string_utils is not None"}, {"keyword": "when", "pattern": "I reverse the string \"{text}\"", "is_regex": false, "func_name": "step_reverse", "file_path": "string_utils_steps.py", "line": 23, "end_line": 26, "docstring": "Reverses ``text`` and stores the result in ``context.last_result``.", "params": ["text"], "source": "def step_reverse(context, text):\n    \"\"\"Reverses ``text`` and stores the result in ``context.last_result``.\"\"\"\n    context.last_input = text\n    context.last_result = context.string_utils.reverse(text)"}, {"keyword": "then", "pattern": "the reversed string should be \"{expected}\"", "is_regex": false, "func_name": "step_reversed_should_be", "file_path": "string_utils_steps.py", "line": 30, "end_line": 34, "docstring": "Asserts that the last reversal result equals ``expected``.", "params": ["expected"], "source": "def step_reversed_should_be(context, expected):\n    \"\"\"Asserts that the last reversal result equals ``expected``.\"\"\"\n    assert context.last_result == expected, (\n        f\"Expected '{expected}', got '{context.last_result}'\"\n    )"}, {"keyword": "then", "pattern": "the string \"{text}\" should be a palindrome", "is_regex": false, "func_name": "step_is_palindrome", "file_path": "string_utils_steps.py", "line": 38, "end_line": 42, "docstring": "Asserts that ``text`` is a palindrome (ignoring case and punctuation).", "params": ["text"], "source": "def step_is_palindrome(context, text):\n    \"\"\"Asserts that ``text`` is a palindrome (ignoring case and punctuation).\"\"\"\n    assert context.string_utils.is_palindrome(text), (\n        f\"'{text}' is not a palindrome\"\n    )"}, {"keyword": "then", "pattern": "the string \"{text}\" should not be a palindrome", "is_regex": false, "func_name": "step_not_palindrome", "file_path": "string_utils_steps.py", "line": 46, "end_line": 50, "docstring": "Asserts that ``text`` is NOT a palindrome.", "params": ["text"], "source": "def step_not_palindrome(context, text):\n    \"\"\"Asserts that ``text`` is NOT a palindrome.\"\"\"\n    assert not context.string_utils.is_palindrome(text), (\n        f\"'{text}' was unexpectedly a palindrome\"\n    )"}, {"keyword": "when", "pattern": "I count the vowels in \"{text}\"", "is_regex": false, "func_name": "step_count_vowels", "file_path": "string_utils_steps.py", "line": 54, "end_line": 57, "docstring": "Counts vowels (a, e, i, o, u) in ``text`` case-insensitively.", "params": ["text"], "source": "def step_count_vowels(context, text):\n    \"\"\"Counts vowels (a, e, i, o, u) in ``text`` case-insensitively.\"\"\"\n    context.last_input = text\n    context.last_result = context.string_utils.count_vowels(text)"}, {"keyword": "then", "pattern": "the vowel count should be {count:d}", "is_regex": false, "func_name": "step_vowel_count", "file_path": "string_utils_steps.py", "line": 61, "end_line": 65, "docstring": "Asserts that the last vowel count equals ``count``.", "params": ["count:d"], "source": "def step_vowel_count(context, count):\n    \"\"\"Asserts that the last vowel count equals ``count``.\"\"\"\n    assert context.last_result == count, (\n        f\"Expected {count} vowels, got {context.last_result}\"\n    )"}, {"keyword": "when", "pattern": "I convert \"{text}\" to title case", "is_regex": false, "func_name": "step_title_case", "file_path": "string_utils_steps.py", "line": 69, "end_line": 72, "docstring": "Converts ``text`` to title case and stores the result.", "params": ["text"], "source": "def step_title_case(context, text):\n    \"\"\"Converts ``text`` to title case and stores the result.\"\"\"\n    context.last_input = text\n    context.last_result = context.string_utils.to_title_case(text)"}, {"keyword": "then", "pattern": "the result should be \"{expected}\"", "is_regex": false, "func_name": "step_result_should_be", "file_path": "string_utils_steps.py", "line": 76, "end_line": 83, "docstring": "Generic assertion: the last transformation result equals ``expected``.\n\nThis step is shared by title-case and slugify scenarios.", "params": ["expected"], "source": "def step_result_should_be(context, expected):\n    \"\"\"Generic assertion: the last transformation result equals ``expected``.\n\n    This step is shared by title-case and slugify scenarios.\n    \"\"\"\n    assert context.last_result == expected, (\n        f\"Expected '{expected}', got '{context.last_result}'\"\n    )"}, {"keyword": "when", "pattern": "I slugify \"{text}\"", "is_regex": false, "func_name": "step_slugify", "file_path": "string_utils_steps.py", "line": 87, "end_line": 90, "docstring": "Converts ``text`` to a URL-friendly slug and stores the result.", "params": ["text"], "source": "def step_slugify(context, text):\n    \"\"\"Converts ``text`` to a URL-friendly slug and stores the result.\"\"\"\n    context.last_input = text\n    context.last_result = context.string_utils.slugify(text)"}], "total": 49, "by_keyword": {"given": 11, "when": 16, "then": 22}}</script>
+  <script>/* Step catalog client-side interactions.
+ * The bulk of the logic is inline in step_catalog.html.jinja;
+ * this file is a placeholder for future shared chart rendering.
+ */
+</script>
+  <script>
+    (function () {
+      var DATA = JSON.parse(document.getElementById('bmr-data').textContent);
+
+      // ---- Theme ----
+      var THEME_KEY = "bmr.theme";
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        try { localStorage.setItem(THEME_KEY, theme); } catch (_) {}
+      }
+      var savedTheme = "auto";
+      try { savedTheme = localStorage.getItem(THEME_KEY) || "auto"; } catch (_) {}
+      if (savedTheme === "auto") {
+        applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } else { applyTheme(savedTheme); }
+      var toggle = document.getElementById("theme-toggle");
+      if (toggle) toggle.addEventListener("click", function () {
+        var cur = document.documentElement.getAttribute("data-theme");
+        applyTheme(cur === "dark" ? "light" : "dark");
+      });
+
+      // ---- Navigation ----
+      function showView(route) {
+        document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.view !== route; });
+        document.querySelectorAll(".nav-item").forEach(function (n) {
+          n.classList.toggle("is-active", n.dataset.route === route);
+        });
+      }
+      document.querySelectorAll(".nav-item").forEach(function (btn) {
+        btn.addEventListener("click", function () { showView(btn.dataset.route); });
+      });
+
+      // ---- Keyword filters ----
+      var activeKeyword = "all";
+      document.querySelectorAll(".keyword-chip").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          activeKeyword = chip.dataset.keyword;
+          document.querySelectorAll(".keyword-chip").forEach(function (c) { c.classList.remove("is-active"); });
+          chip.classList.add("is-active");
+          filterAndRender();
+        });
+      });
+
+      // ---- Search ----
+      var searchInput = document.getElementById("step-search");
+      if (searchInput) searchInput.addEventListener("input", filterAndRender);
+
+      // ---- Sorting ----
+      var sortKey = null, sortAsc = true;
+      document.querySelectorAll("#step-table th[data-sort]").forEach(function (th) {
+        th.addEventListener("click", function () {
+          var key = th.dataset.sort;
+          if (sortKey === key) { sortAsc = !sortAsc; } else { sortKey = key; sortAsc = true; }
+          document.querySelectorAll("#step-table th").forEach(function (t) { t.classList.remove("sorted"); });
+          th.classList.add("sorted");
+          filterAndRender();
+        });
+      });
+
+      function filterAndRender() {
+        var query = (searchInput ? searchInput.value : "").toLowerCase();
+        var rows = document.querySelectorAll("#step-tbody .step-row");
+        rows.forEach(function (row) {
+          var kw = row.dataset.keyword;
+          var pattern = row.dataset.pattern.toLowerCase();
+          var func = row.dataset.func.toLowerCase();
+          var file = row.dataset.file.toLowerCase();
+          var kwOk = activeKeyword === "all" || kw === activeKeyword;
+          var searchOk = !query || pattern.indexOf(query) >= 0 || func.indexOf(query) >= 0 || file.indexOf(query) >= 0;
+          row.style.display = (kwOk && searchOk) ? "" : "none";
+        });
+        if (sortKey) sortRows();
+      }
+
+      function sortRows() {
+        var tbody = document.getElementById("step-tbody");
+        var rows = Array.from(tbody.querySelectorAll(".step-row"));
+        rows.sort(function (a, b) {
+          var va = a.dataset[sortKey] || "";
+          var vb = b.dataset[sortKey] || "";
+          if (va < vb) return sortAsc ? -1 : 1;
+          if (va > vb) return sortAsc ? 1 : -1;
+          return 0;
+        });
+        rows.forEach(function (r) { tbody.appendChild(r); });
+      }
+
+      // ---- Step detail ----
+      var detail = document.getElementById("step-detail");
+      document.querySelectorAll(".step-row").forEach(function (row) {
+        row.addEventListener("click", function () {
+          document.querySelectorAll(".step-row").forEach(function (r) { r.classList.remove("is-selected"); });
+          row.classList.add("is-selected");
+          var kw = row.dataset.keyword;
+          var pattern = row.dataset.pattern;
+          var file = row.dataset.file;
+          var line = row.dataset.line;
+          var endLine = row.dataset.endLine;
+          var isRegex = row.dataset.isRegex === "true";
+          var source = row.dataset.source;
+          var docstring = row.dataset.docstring;
+
+          document.getElementById("detail-kw").className = "kw-badge kw-" + kw;
+          document.getElementById("detail-kw").textContent = kw;
+          document.getElementById("detail-pattern").textContent = pattern + (isRegex ? " (regex)" : "");
+          document.getElementById("detail-meta").textContent = file + ":" + line + (endLine !== line ? "-" + endLine : "");
+          document.getElementById("detail-source").textContent = source;
+
+          var docEl = document.getElementById("detail-docstring");
+          if (docstring) { docEl.textContent = docstring; docEl.hidden = false; }
+          else { docEl.hidden = true; }
+
+          detail.classList.add("is-open");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

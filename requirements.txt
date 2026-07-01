@@ -1,0 +1,10 @@
+# Behave BDD framework — latest 1.3.x release
+behave==1.3.3
+# Assertion matchers
+PyHamcrest>=2.0,<3
+# API testing
+requests>=2.31,<3
+Flask>=3.0,<4
+# JSON schema validation
+jsonschema>=4.21,<5
+
