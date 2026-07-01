@@ -1,7 +1,7 @@
 [
   {
     "uri": "features/api/csv_examples.feature",
-    "id": "feature-35755d42e5eb45c4a613173d9073dcf8",
+    "id": "feature-e6048a53187945a1a4bf9368310ff3bf",
     "keyword": "Feature",
     "name": "External CSV examples",
     "description": "As a tester\nI want to load Examples table data from a CSV file\nSo that I can keep large data sets outside the feature file",
@@ -18,7 +18,7 @@
   },
   {
     "uri": "features/api/users_api.feature",
-    "id": "feature-80346641f8d047c8b6a0b4f128c60201",
+    "id": "feature-5d4bf92c910943619ef2bebd6ac114d0",
     "keyword": "Feature",
     "name": "Users REST API",
     "description": "As an API consumer\nI want to manage users via a REST API\nSo that I can demonstrate behave testing against a real HTTP server",
@@ -68,7 +68,7 @@
         ]
       },
       {
-        "id": "scenario-05898f49bbf04e96a8136da5300c48d0",
+        "id": "scenario-1e8f6e5afd6a4d05aec13df11a7863d8",
         "keyword": "Scenario",
         "name": "Health check",
         "description": "",
@@ -142,13 +142,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37370000
+              "duration": 28362000
             }
           }
         ]
       },
       {
-        "id": "scenario-fc76be4af225467e927606a20267e8f1",
+        "id": "scenario-c6b8378a94ff42dea5a1b4a3083eab0e",
         "keyword": "Scenario",
         "name": "Create a user with a data table",
         "description": "",
@@ -268,13 +268,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40985000
+              "duration": 2917000
             }
           }
         ]
       },
       {
-        "id": "scenario-80f9c68314404bb89b0d76e329bf5088",
+        "id": "scenario-d4e0f4adbe404d2ab5c8ed8788995e70",
         "keyword": "Scenario",
         "name": "Create a user without required fields",
         "description": "",
@@ -362,13 +362,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23058000
+              "duration": 3417000
             }
           }
         ]
       },
       {
-        "id": "scenario-f9bfc356ea874affa3394a595e0e9aac",
+        "id": "scenario-4f19d83d95e048c79d02e67b0f6358ac",
         "keyword": "Scenario",
         "name": "Duplicate email is rejected",
         "description": "",
@@ -469,13 +469,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4377000
+              "duration": 22115000
             }
           }
         ]
       },
       {
-        "id": "scenario-7b86c0f343304a3fb475e2cac5ba5947",
+        "id": "scenario-6427ca7c66574682b3044cb5200867cb",
         "keyword": "Scenario",
         "name": "List users with pagination",
         "description": "",
@@ -594,13 +594,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18648000
+              "duration": 3163000
             }
           }
         ]
       },
       {
-        "id": "scenario-23482bf56fbc4f858b904a0edcf008ea",
+        "id": "scenario-1e3e8239772c4763ba656f7ef5c94d30",
         "keyword": "Scenario",
         "name": "Get a user by id",
         "description": "",
@@ -683,13 +683,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3570000
+              "duration": 23687000
             }
           }
         ]
       },
       {
-        "id": "scenario-24ee9740a2494f25a964bf694520cc5d",
+        "id": "scenario-684bd08f637b4c01a3a44032fadbcd7e",
         "keyword": "Scenario",
         "name": "Delete a user returns 204",
         "description": "",
@@ -759,13 +759,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4545000
+              "duration": 2551000
             }
           }
         ]
       },
       {
-        "id": "scenario-a9f255ca121d417ebbb4c1ea4de480e9",
+        "id": "scenario-58f3a9c99d6841e9afaf8013e9b19363",
         "keyword": "Scenario",
         "name": "Get a non-existent user returns 404",
         "description": "",
@@ -839,13 +839,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6127000
+              "duration": 2749000
             }
           }
         ]
       },
       {
-        "id": "scenario-aca4604d6e7545db9ecc7ca54293c29a",
+        "id": "scenario-ea5164f34dba48819af7db53a4db4e9e",
         "keyword": "Scenario",
         "name": "Role-based user creation -- @1.1 ",
         "description": "",
@@ -935,13 +935,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5039000
+              "duration": 2965000
             }
           }
         ]
       },
       {
-        "id": "scenario-90ccd2cc71c24725a77d6a31716992a3",
+        "id": "scenario-7c7149eaf00d44cf8a66e07899e7c97b",
         "keyword": "Scenario",
         "name": "Role-based user creation -- @1.2 ",
         "description": "",
@@ -1031,13 +1031,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6353000
+              "duration": 3090000
             }
           }
         ]
       },
       {
-        "id": "scenario-549fc66e87d94d22b2645f7c3e9dc811",
+        "id": "scenario-9b5d802772354076a723b823b4d3a19e",
         "keyword": "Scenario",
         "name": "Role-based user creation -- @1.3 ",
         "description": "",
@@ -1127,7 +1127,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5266000
+              "duration": 3544000
             }
           }
         ]
@@ -1136,7 +1136,7 @@
   },
   {
     "uri": "features/async/async_steps.feature",
-    "id": "feature-334bb94b7af341a3a2339f419e17cff3",
+    "id": "feature-90c7f8f99b504917961d646a9bca7644",
     "keyword": "Feature",
     "name": "Async step support",
     "description": "As a developer\nI want to use async step definitions\nSo that I can test asynchronous code with behave 1.3.x",
@@ -1148,7 +1148,7 @@
     ],
     "elements": [
       {
-        "id": "scenario-a59b38f253914590acdd93a7124966a0",
+        "id": "scenario-adf6d50d64554d0daf836680eea89cfa",
         "keyword": "Scenario",
         "name": "Fetching a value asynchronously",
         "description": "",
@@ -1183,13 +1183,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58457000
+              "duration": 54151000
             }
           }
         ]
       },
       {
-        "id": "scenario-04fe0a6fe0784937bfe7f371e74b33ce",
+        "id": "scenario-b0ad00b525544d6f870fa4db3d9d2889",
         "keyword": "Scenario",
         "name": "Async fetch with multiple keys -- @1.1 ",
         "description": "",
@@ -1220,13 +1220,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61007000
+              "duration": 57641000
             }
           }
         ]
       },
       {
-        "id": "scenario-5075557cda264b1dac32dc04482ff78f",
+        "id": "scenario-8fa82ce3600e40b9abe140687b16dce4",
         "keyword": "Scenario",
         "name": "Async fetch with multiple keys -- @1.2 ",
         "description": "",
@@ -1257,13 +1257,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53444000
+              "duration": 58037000
             }
           }
         ]
       },
       {
-        "id": "scenario-2458bffb02494778a1ae11646091d1dd",
+        "id": "scenario-bf4aafef56734b7291cca8f26b0748f3",
         "keyword": "Scenario",
         "name": "Async fetch with multiple keys -- @1.3 ",
         "description": "",
@@ -1294,13 +1294,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58805000
+              "duration": 58189000
             }
           }
         ]
       },
       {
-        "id": "scenario-91b6e86736374a6ab0719b029e701d2f",
+        "id": "scenario-dbee4b35c44c47719e63744cb74a52fc",
         "keyword": "Scenario",
         "name": "Async fetch with multiple keys -- @1.4 ",
         "description": "",
@@ -1331,13 +1331,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 60611000
+              "duration": 57880000
             }
           }
         ]
       },
       {
-        "id": "scenario-91fbd7678b684f40b1f57f47725c71ac",
+        "id": "scenario-0bdd30456a6942089dfc1cc6d11c4b18",
         "keyword": "Scenario",
         "name": "Doubling a number asynchronously",
         "description": "",
@@ -1372,7 +1372,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21301000
+              "duration": 13679000
             }
           }
         ]
@@ -1381,7 +1381,7 @@
   },
   {
     "uri": "features/calculator/calculator.feature",
-    "id": "feature-653ac756813e4e439cfeaad8e545899e",
+    "id": "feature-44a5c6e4a0634866a9dbdec9574213b8",
     "keyword": "Feature",
     "name": "Calculator",
     "description": "As a user\nI want to perform arithmetic operations\nSo that I can verify behave's Background and Scenario Outline support",
@@ -1431,7 +1431,7 @@
         ]
       },
       {
-        "id": "scenario-737dcf3443c54b819a32db13f5d2113d",
+        "id": "scenario-75ecb1cbc4854af88eb1e434121738d1",
         "keyword": "Scenario",
         "name": "Adding two numbers",
         "description": "",
@@ -1518,13 +1518,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 971000
+              "duration": 720000
             }
           }
         ]
       },
       {
-        "id": "scenario-9b9ea073cc6945cdb1d9ac92d421e29a",
+        "id": "scenario-86e6852c2ff84c6e906af10f3ca903b9",
         "keyword": "Scenario",
         "name": "Division by zero raises an error",
         "description": "",
@@ -1598,13 +1598,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 654000
+              "duration": 635000
             }
           }
         ]
       },
       {
-        "id": "scenario-d4394ff398ae4581a6fbb642480d760e",
+        "id": "scenario-63d6e6c583fb40a998ee1654a3503949",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @1.1 Basic arithmetic",
         "description": "",
@@ -1691,13 +1691,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 765000
+              "duration": 512000
             }
           }
         ]
       },
       {
-        "id": "scenario-99ccae7cf1a44115ba3275b65d8ac81c",
+        "id": "scenario-70655a4493d545028186df185d8da6ea",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @1.2 Basic arithmetic",
         "description": "",
@@ -1784,13 +1784,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 674000
+              "duration": 485000
             }
           }
         ]
       },
       {
-        "id": "scenario-506f2cb767ae40988ccc910fb01cb035",
+        "id": "scenario-a4f18f1499424349a40c45940da031bc",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @1.3 Basic arithmetic",
         "description": "",
@@ -1877,13 +1877,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 698000
+              "duration": 447000
             }
           }
         ]
       },
       {
-        "id": "scenario-1d83dcb75a4e42f894bc662c4a838255",
+        "id": "scenario-6a5fe49e7f5240e28e5e19e191011fe3",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @1.4 Basic arithmetic",
         "description": "",
@@ -1970,13 +1970,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 669000
+              "duration": 501999
             }
           }
         ]
       },
       {
-        "id": "scenario-f08dfee928c6437da1b604d697e001a9",
+        "id": "scenario-0098fb79d4614dccaf0917a865a3e6ff",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @2.1 Edge cases",
         "description": "",
@@ -2063,13 +2063,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 635000
+              "duration": 461000
             }
           }
         ]
       },
       {
-        "id": "scenario-e99e945f3bb74e108f21460cd21376c8",
+        "id": "scenario-ece48e7b29a04692a76232396056006b",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @2.2 Edge cases",
         "description": "",
@@ -2156,13 +2156,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 663000
+              "duration": 540000
             }
           }
         ]
       },
       {
-        "id": "scenario-95340e81940a456cabca869d00c44e0d",
+        "id": "scenario-6227443215124a0e8a52999bfdf97342",
         "keyword": "Scenario",
         "name": "Arithmetic operations with two operands -- @2.3 Edge cases",
         "description": "",
@@ -2249,13 +2249,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1042000
+              "duration": 590000
             }
           }
         ]
       },
       {
-        "id": "scenario-677d6fc020bf4a32ada3c5434e1544af",
+        "id": "scenario-b9e73086b5f54fc48242ff2b68f7ca6b",
         "keyword": "Scenario",
         "name": "Square root of a positive number",
         "description": "",
@@ -2329,13 +2329,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 561000
+              "duration": 466000
             }
           }
         ]
       },
       {
-        "id": "scenario-694b483d03f240858f7457f5ce82d848",
+        "id": "scenario-b07e44ac05494cbda86cc317c7e3a9c3",
         "keyword": "Scenario",
         "name": "Square root of a negative number raises an error",
         "description": "",
@@ -2412,7 +2412,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1810000
+              "duration": 487000
             }
           }
         ]
@@ -2421,7 +2421,7 @@
   },
   {
     "uri": "features/shopping_cart/shopping_cart.feature",
-    "id": "feature-40b8fdb6666348bdbb69405ef67466df",
+    "id": "feature-60d560ec290a44f6b6f5a40c96f27efe",
     "keyword": "Feature",
     "name": "Shopping cart",
     "description": "As a shopper\nI want to manage a shopping cart\nSo that I can demonstrate data tables and DocStrings",
@@ -2458,7 +2458,7 @@
         ]
       },
       {
-        "id": "scenario-af124b9befcc45d2b31f65670aea50fb",
+        "id": "scenario-ed1128b08c0e41f891d5be9084019fe8",
         "keyword": "Scenario",
         "name": "Adding items from a data table",
         "description": "",
@@ -2542,13 +2542,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 616000
+              "duration": 501000
             }
           }
         ]
       },
       {
-        "id": "scenario-c7155de1030f42fc83552fcd06b2bcb9",
+        "id": "scenario-0b17d438bb184a679dc569b1584b55b2",
         "keyword": "Scenario",
         "name": "Discount and tax calculation -- @1.1 ",
         "description": "",
@@ -2657,13 +2657,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1055000
+              "duration": 479000
             }
           }
         ]
       },
       {
-        "id": "scenario-5af4d9eb5c4e41799dff7b24c13670ca",
+        "id": "scenario-ec8b6aaae0654498a4cf84629d7f867c",
         "keyword": "Scenario",
         "name": "Discount and tax calculation -- @1.2 ",
         "description": "",
@@ -2772,13 +2772,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 589000
+              "duration": 450000
             }
           }
         ]
       },
       {
-        "id": "scenario-9af2d387fbb2414db12e29aa51b9ef75",
+        "id": "scenario-3ac265af865d4fd795292a71965950f3",
         "keyword": "Scenario",
         "name": "Discount and tax calculation -- @1.3 ",
         "description": "",
@@ -2887,13 +2887,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 630000
+              "duration": 710000
             }
           }
         ]
       },
       {
-        "id": "scenario-16a60f9961d14c2e8996d1a08ce12119",
+        "id": "scenario-09c7bf102015476c91a824b33ae5472d",
         "keyword": "Scenario",
         "name": "Removing an item that does not exist",
         "description": "",
@@ -2976,13 +2976,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 573000
+              "duration": 526000
             }
           }
         ]
       },
       {
-        "id": "scenario-e243ecd0817d4d548ca1bda5b9cc32ae",
+        "id": "scenario-57280c5638d74922a487b0a41e0b087a",
         "keyword": "Scenario",
         "name": "Receipt preview via DocString",
         "description": "",
@@ -3046,7 +3046,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 612000
+              "duration": 474000
             }
           }
         ]
@@ -3055,7 +3055,7 @@
   },
   {
     "uri": "features/string_utils/string_utils.feature",
-    "id": "feature-c622efddac8e4354a69e983c88a24d4b",
+    "id": "feature-f4348aa068304f9caf575d25c66eaa1d",
     "keyword": "Feature",
     "name": "String utilities",
     "description": "As a developer\nI want to manipulate strings\nSo that I can demonstrate Gherkin v6 Rule blocks",
@@ -3070,7 +3070,7 @@
     ],
     "elements": [
       {
-        "id": "scenario-f3eee65c57334a4c94e1d9e1737f5730",
+        "id": "scenario-7d74ac25cbb6420e8e12bc0a800ae07e",
         "keyword": "Scenario",
         "name": "A simple palindrome",
         "description": "",
@@ -3127,13 +3127,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 601000
+              "duration": 514000
             }
           }
         ]
       },
       {
-        "id": "scenario-248045ce76d34b129deb2ec9b60cd30b",
+        "id": "scenario-0ca21470372e417faab5926072f76ab6",
         "keyword": "Scenario",
         "name": "A palindrome with mixed case and punctuation",
         "description": "",
@@ -3177,13 +3177,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 728000
+              "duration": 450000
             }
           }
         ]
       },
       {
-        "id": "scenario-659f29543ed148ea9695fa38711d3338",
+        "id": "scenario-eb3278ee27784a5d8519c2668d60ead3",
         "keyword": "Scenario",
         "name": "A non-palindrome",
         "description": "",
@@ -3240,13 +3240,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 624000
+              "duration": 647000
             }
           }
         ]
       },
       {
-        "id": "scenario-480572d97acd49f584ba8a6bd33609e2",
+        "id": "scenario-da3feb4d64ae47d4ac0b49d89abf7d79",
         "keyword": "Scenario",
         "name": "Counting vowels in a word",
         "description": "",
@@ -3277,13 +3277,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 840000
+              "duration": 756000
             }
           }
         ]
       },
       {
-        "id": "scenario-0c907338c92f4f13a5df61242d4aa3bc",
+        "id": "scenario-ae6ef6c49d4d47669b2165220046d9e2",
         "keyword": "Scenario",
         "name": "Vowel counting across inputs -- @1.1 ",
         "description": "",
@@ -3314,13 +3314,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1621000
+              "duration": 933000
             }
           }
         ]
       },
       {
-        "id": "scenario-0d1ba4073b544f7cbb0c9d1514af111d",
+        "id": "scenario-78200d0b5f924b0d8577af8bf2682bc4",
         "keyword": "Scenario",
         "name": "Vowel counting across inputs -- @1.2 ",
         "description": "",
@@ -3351,13 +3351,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 989000
+              "duration": 838000
             }
           }
         ]
       },
       {
-        "id": "scenario-49fef01513944e4e98ed9d1be780a535",
+        "id": "scenario-910da5a178d244b58177a907c12c8252",
         "keyword": "Scenario",
         "name": "Vowel counting across inputs -- @1.3 ",
         "description": "",
@@ -3388,13 +3388,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 881000
+              "duration": 689000
             }
           }
         ]
       },
       {
-        "id": "scenario-1d058436da62480188bc40a4638443b6",
+        "id": "scenario-a50476b9d4e2417b875a36136408abce",
         "keyword": "Scenario",
         "name": "Vowel counting across inputs -- @1.4 ",
         "description": "",
@@ -3425,13 +3425,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 876000
+              "duration": 729000
             }
           }
         ]
       },
       {
-        "id": "scenario-ba984b70719549df8567a40514d2f44a",
+        "id": "scenario-e759ecd871a7416ea9ad752e26bebd2d",
         "keyword": "Scenario",
         "name": "Title case conversion",
         "description": "",
@@ -3462,13 +3462,13 @@
             },
             "result": {
               "status": "passed",
-              "duration": 884000
+              "duration": 1051000
             }
           }
         ]
       },
       {
-        "id": "scenario-16faf5b3de64498594a9d727af4c220f",
+        "id": "scenario-14d4002fb23e44d6a4ecbef09b77053d",
         "keyword": "Scenario",
         "name": "Slugify conversion",
         "description": "",
@@ -3499,7 +3499,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1486000
+              "duration": 775000
             }
           }
         ]

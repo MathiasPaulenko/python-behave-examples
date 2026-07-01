@@ -7,4 +7,9 @@ requests>=2.31,<3
 Flask>=3.0,<4
 # JSON schema validation
 jsonschema>=4.21,<5
+# Report formatters
+behave-modern-html-report>=2.2,<3
+behave-modern-json-report>=1.1,<2
+behave-modern-md-report>=1.2,<2
+behave-modern-console-report>=1.0,<2
 

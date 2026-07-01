@@ -28,13 +28,16 @@ from features.support.app import start_server  # noqa: E402
 
 logger = logging.getLogger("behave.examples")
 
+# Silence Werkzeug/Flask request logging so it doesn't clutter console output.
+logging.getLogger("werkzeug").setLevel(logging.ERROR)
+
 
 # --------------------------------------------------------------------- #
 #  Run-level hooks
 # --------------------------------------------------------------------- #
 def before_all(context):
     """Runs once before any feature."""
-    context.config.setup_logging(logging.INFO)
+    context.config.setup_logging(logging.WARNING)
 
     host = context.config.userdata.get("host", "localhost")
     port = int(context.config.userdata.get("port", 5000))

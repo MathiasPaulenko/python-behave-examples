@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.1.0",
   "execution": {
-    "executionId": "exec-7f49ae2f27324a9e93699b1ad8d2b059",
+    "executionId": "exec-25da35856759482b8333c03896a551a7",
     "status": "passed",
-    "duration": 2.126906,
+    "duration": 1.235555,
     "projectName": "My Project",
-    "startTime": "2026-07-01T07:25:39.716Z",
-    "endTime": "2026-07-01T07:25:41.843Z",
+    "startTime": "2026-07-01T08:18:26.392Z",
+    "endTime": "2026-07-01T08:18:27.627Z",
     "workingDirectory": "D:\\Codigo\\python-behave-examples"
   },
   "statistics": {
@@ -19,31 +19,16 @@
     "undefined": 0,
     "pending": 0,
     "passRate": 1.0,
-    "duration": 1.186796,
+    "duration": 0.859256,
     "errorCount": 0,
     "totalAttachments": 0,
     "totalLogs": 0,
-    "slowestStepDuration": 0.060988,
-    "avgScenarioDuration": 0.026813,
+    "slowestStepDuration": 0.058184,
+    "avgScenarioDuration": 0.019424,
     "byTag": {
-      "api": {
-        "count": 11,
-        "duration": 0.6498769999999999,
-        "passed": 11,
-        "failed": 0,
-        "skipped": 0,
-        "undefined": 0,
-        "pending": 0,
-        "untested": 0,
-        "error": 0,
-        "hook_error": 0,
-        "cleanup_error": 0,
-        "xfailed": 0,
-        "xpassed": 0
-      },
       "integration": {
         "count": 11,
-        "duration": 0.6498769999999999,
+        "duration": 0.41276399999999996,
         "passed": 11,
         "failed": 0,
         "skipped": 0,
@@ -58,8 +43,23 @@
       },
       "smoke": {
         "count": 13,
-        "duration": 0.298671,
+        "duration": 0.202268,
         "passed": 13,
+        "failed": 0,
+        "skipped": 0,
+        "undefined": 0,
+        "pending": 0,
+        "untested": 0,
+        "error": 0,
+        "hook_error": 0,
+        "cleanup_error": 0,
+        "xfailed": 0,
+        "xpassed": 0
+      },
+      "api": {
+        "count": 11,
+        "duration": 0.41276399999999996,
+        "passed": 11,
         "failed": 0,
         "skipped": 0,
         "undefined": 0,
@@ -73,7 +73,7 @@
       },
       "negative": {
         "count": 6,
-        "duration": 0.22264199999999998,
+        "duration": 0.13163499999999997,
         "passed": 6,
         "failed": 0,
         "skipped": 0,
@@ -88,23 +88,8 @@
       },
       "async": {
         "count": 6,
-        "duration": 0.336129,
+        "duration": 0.314737,
         "passed": 6,
-        "failed": 0,
-        "skipped": 0,
-        "undefined": 0,
-        "pending": 0,
-        "untested": 0,
-        "error": 0,
-        "hook_error": 0,
-        "cleanup_error": 0,
-        "xfailed": 0,
-        "xpassed": 0
-      },
-      "calculator": {
-        "count": 11,
-        "duration": 0.08777700000000001,
-        "passed": 11,
         "failed": 0,
         "skipped": 0,
         "undefined": 0,
@@ -118,8 +103,23 @@
       },
       "unit": {
         "count": 27,
-        "duration": 0.19378400000000007,
+        "duration": 0.127148,
         "passed": 27,
+        "failed": 0,
+        "skipped": 0,
+        "undefined": 0,
+        "pending": 0,
+        "untested": 0,
+        "error": 0,
+        "hook_error": 0,
+        "cleanup_error": 0,
+        "xfailed": 0,
+        "xpassed": 0
+      },
+      "calculator": {
+        "count": 11,
+        "duration": 0.05804300000000001,
+        "passed": 11,
         "failed": 0,
         "skipped": 0,
         "undefined": 0,
@@ -133,7 +133,7 @@
       },
       "math": {
         "count": 5,
-        "duration": 0.04136,
+        "duration": 0.026978999999999996,
         "passed": 5,
         "failed": 0,
         "skipped": 0,
@@ -148,7 +148,7 @@
       },
       "shopping": {
         "count": 6,
-        "duration": 0.047409,
+        "duration": 0.031395000000000006,
         "passed": 6,
         "failed": 0,
         "skipped": 0,
@@ -163,7 +163,7 @@
       },
       "docstring": {
         "count": 1,
-        "duration": 0.004086,
+        "duration": 0.00351,
         "passed": 1,
         "failed": 0,
         "skipped": 0,
@@ -178,7 +178,7 @@
       },
       "string": {
         "count": 10,
-        "duration": 0.058598,
+        "duration": 0.03771000000000001,
         "passed": 10,
         "failed": 0,
         "skipped": 0,
@@ -201,11 +201,11 @@
     "osVersion": "10",
     "hostname": "MathiasLaptop",
     "cwd": "D:\\Codigo\\python-behave-examples",
-    "command": "D:\\Codigo\\python-behave-examples\\.venv\\Lib\\site-packages\\behave\\__main__.py --format=progress --no-capture --no-logcapture",
+    "command": "D:\\Codigo\\python-behave-examples\\.venv\\Scripts\\behave",
     "user": "mathi",
     "cpuCount": 12,
     "gitBranch": "main",
-    "gitCommit": "86913ab",
+    "gitCommit": "08806bb",
     "gitRemote": "git@github.com:MathiasPaulenko/python-behave-examples.git",
     "extra": {
       "python_implementation": "CPython",
@@ -215,10 +215,10 @@
   },
   "features": [
     {
-      "id": "feature-f0611fb716d64f318d0ec4ac40fa7fdc",
+      "id": "feature-1a0c4b63ccde4d5781037eee1807c163",
       "name": "External CSV examples",
       "status": "passed",
-      "duration": 0.000852,
+      "duration": 0.000402,
       "scenarios": [],
       "description": "As a tester\nI want to load Examples table data from a CSV file\nSo that I can keep large data sets outside the feature file",
       "tags": [
@@ -229,17 +229,17 @@
       "line": 6
     },
     {
-      "id": "feature-341e82658f3a4708ac9789384c85c72c",
+      "id": "feature-1e126111dace4c5abdcf282b69eb011e",
       "name": "Users REST API",
       "status": "passed",
-      "duration": 0.651204,
+      "duration": 0.413616,
       "scenarios": [
         {
-          "id": "scenario-e14829a3fcc44ea1a97385c31a3656bf",
+          "id": "scenario-1cfc6426d75e4357ba38f2c3e940d17d",
           "name": "Health check",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.075484,
+          "duration": 0.06584,
           "tags": [
             "smoke"
           ],
@@ -248,7 +248,7 @@
             "line": 20
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -257,7 +257,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -268,7 +268,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -282,7 +282,7 @@
           },
           "steps": [
             {
-              "id": "step-ca695bbcaf924f15bf44449689007f04",
+              "id": "step-d1101b07cb7b41a3bb05c0c9de6f9d36",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -293,7 +293,7 @@
               }
             },
             {
-              "id": "step-5a2c0863a8ed40f494658b69976a8130",
+              "id": "step-d21648a600f6481ea6132f1680e3ed24",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -304,7 +304,7 @@
               }
             },
             {
-              "id": "step-15d5ad3393db4df3a61e169779c37015",
+              "id": "step-51741f52e18340a9aaccfe4cb79bf5b4",
               "keyword": "When",
               "text": "I send a GET request to \"/api/health\"",
               "status": "passed",
@@ -315,7 +315,7 @@
               }
             },
             {
-              "id": "step-5e13fb8172994f52ac611ff229eab366",
+              "id": "step-ceab073d5b4143a98eeb02ed5e1d737d",
               "keyword": "Then",
               "text": "the response status should be 200",
               "status": "passed",
@@ -326,11 +326,11 @@
               }
             },
             {
-              "id": "step-3f5982899916423aa9a093a8fc4bcc9f",
+              "id": "step-978a96fc9b264c03985c051648476d9c",
               "keyword": "And",
               "text": "the response field \"status\" should be \"ok\"",
               "status": "passed",
-              "duration": 0.037363,
+              "duration": 0.028354,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 23
@@ -339,11 +339,11 @@
           ]
         },
         {
-          "id": "scenario-e0f24edab60148238e692bbd3b8f93a0",
+          "id": "scenario-04f107d924414ad5927038502ba1b63e",
           "name": "Create a user with a data table",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.063665,
+          "duration": 0.015237,
           "tags": [
             "smoke"
           ],
@@ -352,7 +352,7 @@
             "line": 28
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -361,7 +361,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -372,7 +372,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -386,7 +386,7 @@
           },
           "steps": [
             {
-              "id": "step-6ded6698fbad4ab0b86c45aa10872b5f",
+              "id": "step-14531b07648e433e9e0de843b01fe6f9",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -397,7 +397,7 @@
               }
             },
             {
-              "id": "step-c00edb4778744e66aacf50683ffa3ccb",
+              "id": "step-6019e18a1534467cb8a2f0ccb25eb312",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -408,7 +408,7 @@
               }
             },
             {
-              "id": "step-e7e6133937d0419e8af29bd051b99cb3",
+              "id": "step-49c3e4a1f8a84b188a35978554aa79e5",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -448,7 +448,7 @@
               }
             },
             {
-              "id": "step-92668783f8d0499c82da2e0f2c4489cf",
+              "id": "step-3c78a4f173ff418793857a21633ff6ca",
               "keyword": "Then",
               "text": "the response status should be 201",
               "status": "passed",
@@ -459,7 +459,7 @@
               }
             },
             {
-              "id": "step-ece11c3021a64d4e99a470f5f8e699e7",
+              "id": "step-03ab952d6dbd424fa2deb15beb30e8b9",
               "keyword": "And",
               "text": "the response should contain \"id\"",
               "status": "passed",
@@ -470,7 +470,7 @@
               }
             },
             {
-              "id": "step-817bebc98e1043f8898dbe4c707aeeba",
+              "id": "step-d3a6296d809b4f98b9e677f1eff042e8",
               "keyword": "And",
               "text": "the response field \"name\" should be \"Test User\"",
               "status": "passed",
@@ -481,11 +481,11 @@
               }
             },
             {
-              "id": "step-d60baf1955164b40879b6477db49422d",
+              "id": "step-d01bbd3b4f87492b89426d503049cadd",
               "keyword": "And",
               "text": "the response field \"email\" should be \"test@example.com\"",
               "status": "passed",
-              "duration": 0.040956,
+              "duration": 0.002913,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 37
@@ -494,11 +494,11 @@
           ]
         },
         {
-          "id": "scenario-3ece0752571b400d9cb676f7ccd9b92a",
+          "id": "scenario-92524429a2074753b7f7fa15e237403d",
           "name": "Create a user without required fields",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.109882,
+          "duration": 0.033017,
           "tags": [
             "negative"
           ],
@@ -507,7 +507,7 @@
             "line": 41
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -516,7 +516,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -527,7 +527,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -541,7 +541,7 @@
           },
           "steps": [
             {
-              "id": "step-e64460e8bbc14262a761205e6963a314",
+              "id": "step-e852efd39ac1438881e66b881b62bd6f",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -552,7 +552,7 @@
               }
             },
             {
-              "id": "step-d8a1cdd4528d4482a0ac963be66ac170",
+              "id": "step-7b723b3723dd4c248e609cc15c8bc5fb",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -563,7 +563,7 @@
               }
             },
             {
-              "id": "step-320b7261e69a4f94bbf58f5ab1304a64",
+              "id": "step-36d6eded39c049c0aa8e506ccedf2af9",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -596,7 +596,7 @@
               }
             },
             {
-              "id": "step-87d7c2e5991d47cea61d387dba7e2fc3",
+              "id": "step-6d626540c96649a49502ae58869bb62f",
               "keyword": "Then",
               "text": "the response status should be 400",
               "status": "passed",
@@ -607,11 +607,11 @@
               }
             },
             {
-              "id": "step-3450d51b6f5b4043b81fb70c74a25373",
+              "id": "step-07341a64ba8745aa8d6da476171f3ff5",
               "keyword": "And",
               "text": "the response field \"error\" should be \"name and email are required\"",
               "status": "passed",
-              "duration": 0.023055,
+              "duration": 0.003413,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 47
@@ -620,11 +620,11 @@
           ]
         },
         {
-          "id": "scenario-ca9d357de7b145fcb8f00781f7497aaa",
+          "id": "scenario-1cf7a167ec6e4ffb93b3439587aad1e0",
           "name": "Duplicate email is rejected",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.061434,
+          "duration": 0.048156,
           "tags": [
             "negative"
           ],
@@ -633,7 +633,7 @@
             "line": 51
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -642,7 +642,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -653,7 +653,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -667,7 +667,7 @@
           },
           "steps": [
             {
-              "id": "step-4dce4fdb005749a3b693b5a1cf8f4b0d",
+              "id": "step-ac589200eb5848fda5a731273e477571",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -678,7 +678,7 @@
               }
             },
             {
-              "id": "step-49c31f8f537c4a7daa00deef6003b15c",
+              "id": "step-d4071e0a2f6e4488815b6491db7fa61e",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -689,7 +689,7 @@
               }
             },
             {
-              "id": "step-3bdeb20c205749eca18b7fcdea79d540",
+              "id": "step-f6e7309c215e44e2a6d9df475fe462c8",
               "keyword": "Given",
               "text": "a user exists with email \"dup@example.com\"",
               "status": "passed",
@@ -700,7 +700,7 @@
               }
             },
             {
-              "id": "step-c67b2fcf9696470483e9de72b266a6ef",
+              "id": "step-1088532138704d24979b7febbcbe4bea",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -733,7 +733,7 @@
               }
             },
             {
-              "id": "step-41f8715395bd4f5aba90b2206aab869f",
+              "id": "step-71e95485ada34b2e8182e5b356a65fe8",
               "keyword": "Then",
               "text": "the response status should be 409",
               "status": "passed",
@@ -744,11 +744,11 @@
               }
             },
             {
-              "id": "step-bbc49120ef8642108892528624a7c4d4",
+              "id": "step-31b98023869846c6b07fd2414e7b9992",
               "keyword": "And",
               "text": "the response field \"error\" should be \"email already exists\"",
               "status": "passed",
-              "duration": 0.004372,
+              "duration": 0.02211,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 58
@@ -757,17 +757,17 @@
           ]
         },
         {
-          "id": "scenario-29775248e8a6418e9bf78d7bbaf7f446",
+          "id": "scenario-688c700aec614499a01f0825647c5264",
           "name": "List users with pagination",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.088918,
+          "duration": 0.041835,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 62
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -776,7 +776,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -787,7 +787,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -801,7 +801,7 @@
           },
           "steps": [
             {
-              "id": "step-9b88b5fb45554604820918cdff484000",
+              "id": "step-06b51c0bb35e42d2a29742d6e3216084",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -812,7 +812,7 @@
               }
             },
             {
-              "id": "step-5bf1a772eebc4e9a85edc1e1e4eece0e",
+              "id": "step-e888d6e9779d43268595c9a6ba4d2988",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -823,7 +823,7 @@
               }
             },
             {
-              "id": "step-84c1df5ad2b948d08963f153317e1a0e",
+              "id": "step-973043db1ad44e1098936381bc0826dc",
               "keyword": "Given",
               "text": "the following users exist:",
               "status": "passed",
@@ -867,7 +867,7 @@
               }
             },
             {
-              "id": "step-a3acefe8c3f24ee0a8e4c00c2cd970ce",
+              "id": "step-1d681ae95f844cc1aff3399fc6301451",
               "keyword": "When",
               "text": "I send a GET request to \"/api/users?page=1&limit=2\"",
               "status": "passed",
@@ -878,7 +878,7 @@
               }
             },
             {
-              "id": "step-b124cc1f371b47f79444977447f651e8",
+              "id": "step-a0a76ef9222f485ebc29ed65d4b04d48",
               "keyword": "Then",
               "text": "the response status should be 200",
               "status": "passed",
@@ -889,7 +889,7 @@
               }
             },
             {
-              "id": "step-6fa924695b2b4db1849566bbcec361b3",
+              "id": "step-f3193acbaaf749e7b7062f38ba47130d",
               "keyword": "And",
               "text": "the response should contain at most 2 items",
               "status": "passed",
@@ -900,11 +900,11 @@
               }
             },
             {
-              "id": "step-8999c804713140e6b198dc52a620dc57",
+              "id": "step-5ac1354560114275a1b9d74f7d7ae64c",
               "keyword": "And",
               "text": "the response field \"total\" should be 3",
               "status": "passed",
-              "duration": 0.018648,
+              "duration": 0.003159,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 71
@@ -913,17 +913,17 @@
           ]
         },
         {
-          "id": "scenario-f3c3cbdf9ad143338e7e8c3bc20d6b65",
+          "id": "scenario-c68dafdffda24764b2884107e370e7b5",
           "name": "Get a user by id",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.066999,
+          "duration": 0.04794,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 74
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -932,7 +932,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -943,7 +943,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -957,7 +957,7 @@
           },
           "steps": [
             {
-              "id": "step-32a721c471d24024a55575ecd39861f8",
+              "id": "step-5f2bd9a1d8954dc1b7d202b11b744a8b",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -968,7 +968,7 @@
               }
             },
             {
-              "id": "step-a227612689884d0796b53069e7da659a",
+              "id": "step-35157a7ae67a49ce9459c493dc4dae7d",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -979,7 +979,7 @@
               }
             },
             {
-              "id": "step-8493879080e04702b03cb7e823e6019d",
+              "id": "step-049e3bb1248847d1a33df3f17b620eac",
               "keyword": "Given",
               "text": "a user exists with email \"getme@example.com\"",
               "status": "passed",
@@ -990,7 +990,7 @@
               }
             },
             {
-              "id": "step-0f6e95320c134a36a1d1afd050af45b4",
+              "id": "step-80aba40bd9534145a74a919fd98743e2",
               "keyword": "When",
               "text": "I send a GET request to the created user endpoint",
               "status": "passed",
@@ -1001,7 +1001,7 @@
               }
             },
             {
-              "id": "step-e6cde3d7a06e40a6ba682b5a96e4aa41",
+              "id": "step-49b8a5fd02064a0f8feb0ab0e7028bd1",
               "keyword": "Then",
               "text": "the response status should be 200",
               "status": "passed",
@@ -1012,11 +1012,11 @@
               }
             },
             {
-              "id": "step-b016f0df038a4925985b7136fe6b1e2b",
+              "id": "step-cffb06e5ba794e1bb4badd9f2fe0a6cf",
               "keyword": "And",
               "text": "the response field \"email\" should be \"getme@example.com\"",
               "status": "passed",
-              "duration": 0.003566,
+              "duration": 0.023683,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 78
@@ -1025,17 +1025,17 @@
           ]
         },
         {
-          "id": "scenario-c22de2ec2921490c8d7937cc9d2d3f32",
+          "id": "scenario-8626d9a99055471aa76508ed95fb5a71",
           "name": "Delete a user returns 204",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.053744,
+          "duration": 0.040128,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 81
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1044,7 +1044,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -1055,7 +1055,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -1069,7 +1069,7 @@
           },
           "steps": [
             {
-              "id": "step-f31954c50522484dadf9c959858b44da",
+              "id": "step-ce37b358cb7d411881c6550bb3d6be2f",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -1080,7 +1080,7 @@
               }
             },
             {
-              "id": "step-7a8e482841794a8d8d17524ec03d4712",
+              "id": "step-41f0f15bd1a54bdfb6ac738b8d3d6c17",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -1091,7 +1091,7 @@
               }
             },
             {
-              "id": "step-58d2a741253c46f08ea1e64302edd41c",
+              "id": "step-eaf2b309eb4e4635b7b4212e4553b981",
               "keyword": "Given",
               "text": "a user exists with email \"deleteme@example.com\"",
               "status": "passed",
@@ -1102,7 +1102,7 @@
               }
             },
             {
-              "id": "step-ab312c56bfe84017bcff30fccfe20820",
+              "id": "step-3ab5a6bbf07f4439ae44dbf415f35fbd",
               "keyword": "When",
               "text": "I send a DELETE request to the created user endpoint",
               "status": "passed",
@@ -1113,11 +1113,11 @@
               }
             },
             {
-              "id": "step-fe4c8ab6a17545d79343925190f8acbe",
+              "id": "step-f012877164fe435c817e509682ca1fbe",
               "keyword": "Then",
               "text": "the response status should be 204",
               "status": "passed",
-              "duration": 0.004543,
+              "duration": 0.002549,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 84
@@ -1126,11 +1126,11 @@
           ]
         },
         {
-          "id": "scenario-702f6db9ea7a4161984ece351c7b7648",
+          "id": "scenario-4812998459a14740a86897bd8065d9ec",
           "name": "Get a non-existent user returns 404",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.02458,
+          "duration": 0.034239,
           "tags": [
             "negative"
           ],
@@ -1139,7 +1139,7 @@
             "line": 88
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1148,7 +1148,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -1159,7 +1159,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -1173,7 +1173,7 @@
           },
           "steps": [
             {
-              "id": "step-869ffe8aed3b44d1805f0494b4051b39",
+              "id": "step-bd38e15df0f24531a06d28b9a789c375",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -1184,7 +1184,7 @@
               }
             },
             {
-              "id": "step-71751b123c684573b29d69b3db6075cb",
+              "id": "step-ba9048d61d594f11a10fd346864a6219",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -1195,7 +1195,7 @@
               }
             },
             {
-              "id": "step-c29f4fb51caf4daabad9ff9f623db49f",
+              "id": "step-045adf7608724a208fc9e581cd634c33",
               "keyword": "When",
               "text": "I send a GET request to \"/api/users/9999\"",
               "status": "passed",
@@ -1206,7 +1206,7 @@
               }
             },
             {
-              "id": "step-f951a6a5e77c42a2aa54defce0078f41",
+              "id": "step-52404bbd28144b42aa78436298055bef",
               "keyword": "Then",
               "text": "the response status should be 404",
               "status": "passed",
@@ -1217,11 +1217,11 @@
               }
             },
             {
-              "id": "step-bd76060ad7564f959b9e1463401ddca1",
+              "id": "step-49c6b353b9a748f6b2f92841a773383c",
               "keyword": "And",
               "text": "the response field \"error\" should be \"not found\"",
               "status": "passed",
-              "duration": 0.006119,
+              "duration": 0.002747,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 91
@@ -1230,17 +1230,17 @@
           ]
         },
         {
-          "id": "scenario-34aa7f2e40f547308c762b44261a10ca",
+          "id": "scenario-9d403439f60d4657ada774025c043456",
           "name": "Role-based user creation -- @1.1 ",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.024847,
+          "duration": 0.013368,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 107
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1249,7 +1249,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -1260,7 +1260,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -1274,7 +1274,7 @@
           },
           "steps": [
             {
-              "id": "step-8bbf37b4776c40d38e1c5283fad7fbc8",
+              "id": "step-3a81584d346d41ad80581d88f84a954f",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -1285,7 +1285,7 @@
               }
             },
             {
-              "id": "step-c4b61a28c3274b2e8602b52f3a5e48f4",
+              "id": "step-c78e1942340e4d91b77ef32e1d8844d0",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -1296,7 +1296,7 @@
               }
             },
             {
-              "id": "step-0269e00838554b0ab18a1dbf112fd9e8",
+              "id": "step-17ec0302e5484d0ba03b3d5fcb62e592",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -1336,7 +1336,7 @@
               }
             },
             {
-              "id": "step-4391482755154d2db6185c15cd5f5c04",
+              "id": "step-0f0fb3b4b5524c78ba687f37c13e86c0",
               "keyword": "Then",
               "text": "the response status should be 201",
               "status": "passed",
@@ -1347,11 +1347,11 @@
               }
             },
             {
-              "id": "step-05be4cbdac754891bafae4e2a56897cc",
+              "id": "step-dde893a9860549f19b629aeab787fb64",
               "keyword": "And",
               "text": "the response field \"role\" should be \"admin\"",
               "status": "passed",
-              "duration": 0.005038,
+              "duration": 0.002963,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 103
@@ -1360,17 +1360,17 @@
           ]
         },
         {
-          "id": "scenario-b80b8b8c6d994d6fbe9c3cc2675562dc",
+          "id": "scenario-fba9d64e99c84c16b4956517c5ca6e09",
           "name": "Role-based user creation -- @1.2 ",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.049198,
+          "duration": 0.017242,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 108
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1379,7 +1379,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -1390,7 +1390,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -1404,7 +1404,7 @@
           },
           "steps": [
             {
-              "id": "step-52c75de616954d3db9d7dd12afeceac6",
+              "id": "step-d56d652e8a5a4df39f2205bf4ca49946",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -1415,7 +1415,7 @@
               }
             },
             {
-              "id": "step-72a6a1051c014ec28fc6d28cf7e80747",
+              "id": "step-87f98558f9a643c594e6fdd4c4eee685",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -1426,7 +1426,7 @@
               }
             },
             {
-              "id": "step-510ea8636b1043be91cb0431cb13c061",
+              "id": "step-52e1ed3fb89a49b6b088d2a71e85acfa",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -1466,7 +1466,7 @@
               }
             },
             {
-              "id": "step-251c8d06aae04650b28f0be93e212aae",
+              "id": "step-b7700a340327443cbd088d09637e11a7",
               "keyword": "Then",
               "text": "the response status should be 201",
               "status": "passed",
@@ -1477,11 +1477,11 @@
               }
             },
             {
-              "id": "step-beffe0ea428e4e06b06237d5dea96ea8",
+              "id": "step-fd6f4db7de0f449fa9dac6276b20329c",
               "keyword": "And",
               "text": "the response field \"role\" should be \"editor\"",
               "status": "passed",
-              "duration": 0.006334,
+              "duration": 0.003092,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 103
@@ -1490,17 +1490,17 @@
           ]
         },
         {
-          "id": "scenario-1dd7e69b931845bb8886caa544347799",
+          "id": "scenario-800ac4960d09464d8701b80c7d6042db",
           "name": "Role-based user creation -- @1.3 ",
-          "featureId": "feature-341e82658f3a4708ac9789384c85c72c",
+          "featureId": "feature-1e126111dace4c5abdcf282b69eb011e",
           "status": "passed",
-          "duration": 0.031126,
+          "duration": 0.055762,
           "location": {
             "filename": "features/api/users_api.feature",
             "line": 109
           },
           "background": {
-            "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+            "id": "bg-71dbfe070c5f4f698eda63731b013268",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1509,7 +1509,7 @@
             },
             "steps": [
               {
-                "id": "step-813e92e302124eae9d6504031c4f4872",
+                "id": "step-53f33f2019f3425586d4ec517b07fa39",
                 "keyword": "Given",
                 "text": "the API server is running",
                 "status": "untested",
@@ -1520,7 +1520,7 @@
                 }
               },
               {
-                "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+                "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
                 "keyword": "And",
                 "text": "the users database is empty",
                 "status": "untested",
@@ -1534,7 +1534,7 @@
           },
           "steps": [
             {
-              "id": "step-bc301bf08ad54df9aacc85af9abb476f",
+              "id": "step-901daafd538b4db38b209d0468212fcd",
               "keyword": "Given",
               "text": "the API server is running",
               "status": "passed",
@@ -1545,7 +1545,7 @@
               }
             },
             {
-              "id": "step-88e5c11003f546139104cd4807a3e397",
+              "id": "step-afc68137e824452c800150d5e349b42a",
               "keyword": "And",
               "text": "the users database is empty",
               "status": "passed",
@@ -1556,7 +1556,7 @@
               }
             },
             {
-              "id": "step-d8035c923e9b4ed9bf66ef0e2669004b",
+              "id": "step-73ac34e46f954536b8640dcf2924c80c",
               "keyword": "When",
               "text": "I send a POST request to \"/api/users\" with:",
               "status": "passed",
@@ -1596,7 +1596,7 @@
               }
             },
             {
-              "id": "step-ab0f4d5014d34a598de0928ad1a5437e",
+              "id": "step-f64103658f5243fb847b240446dc1246",
               "keyword": "Then",
               "text": "the response status should be 201",
               "status": "passed",
@@ -1607,11 +1607,11 @@
               }
             },
             {
-              "id": "step-6dffe2471e0f46a891dc986c3eacd909",
+              "id": "step-100cdac275a447f6a0f36211f7742b6f",
               "keyword": "And",
               "text": "the response field \"role\" should be \"viewer\"",
               "status": "passed",
-              "duration": 0.005253,
+              "duration": 0.00353,
               "location": {
                 "filename": "features/api/users_api.feature",
                 "line": 103
@@ -1628,7 +1628,7 @@
       "filename": "features/api/users_api.feature",
       "line": 7,
       "background": {
-        "id": "bg-6defb078c2ca48a3821fa3b7e8652f62",
+        "id": "bg-71dbfe070c5f4f698eda63731b013268",
         "name": "",
         "keyword": "Background",
         "location": {
@@ -1637,7 +1637,7 @@
         },
         "steps": [
           {
-            "id": "step-813e92e302124eae9d6504031c4f4872",
+            "id": "step-53f33f2019f3425586d4ec517b07fa39",
             "keyword": "Given",
             "text": "the API server is running",
             "status": "untested",
@@ -1648,7 +1648,7 @@
             }
           },
           {
-            "id": "step-40f954c5245b46efa5efe5605ab6f9a4",
+            "id": "step-46c258feff4d4d3b9c8e78b5f3061c09",
             "keyword": "And",
             "text": "the users database is empty",
             "status": "untested",
@@ -1662,17 +1662,17 @@
       }
     },
     {
-      "id": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+      "id": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
       "name": "Async step support",
       "status": "passed",
-      "duration": 0.337136,
+      "duration": 0.315251,
       "scenarios": [
         {
-          "id": "scenario-ebc7cc2cd89f4188ab91a3668ab41a7c",
+          "id": "scenario-d28e6894e95e49c8a7555f12fbd5434d",
           "name": "Fetching a value asynchronously",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.062444,
+          "duration": 0.057061,
           "tags": [
             "smoke"
           ],
@@ -1682,7 +1682,7 @@
           },
           "steps": [
             {
-              "id": "step-b43520b7d8574ce9b1c0440c08c87be1",
+              "id": "step-efd4502650524363848caab613d71ed3",
               "keyword": "When",
               "text": "I asynchronously fetch the value for \"hello\"",
               "status": "passed",
@@ -1693,11 +1693,11 @@
               }
             },
             {
-              "id": "step-a41b99f4468847da832dabb0062c0538",
+              "id": "step-4a08dc45b82445168f695fb463481b9f",
               "keyword": "Then",
               "text": "the async result should be \"world\"",
               "status": "passed",
-              "duration": 0.058449,
+              "duration": 0.054146,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 15
@@ -1706,18 +1706,18 @@
           ]
         },
         {
-          "id": "scenario-9f630c7db352414283f61e8cfe146d4a",
+          "id": "scenario-442266d70d51490da172f91528bf0098",
           "name": "Async fetch with multiple keys -- @1.1 ",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.064868,
+          "duration": 0.05992,
           "location": {
             "filename": "features/async/async_steps.feature",
             "line": 27
           },
           "steps": [
             {
-              "id": "step-37062cda8c7b4b398e892ac2a82894fd",
+              "id": "step-4458bf516b284c4f9e76873947017bf0",
               "keyword": "When",
               "text": "I asynchronously fetch the value for \"hello\"",
               "status": "passed",
@@ -1728,11 +1728,11 @@
               }
             },
             {
-              "id": "step-875ba49dc65141959e8c37dca0b3e41f",
+              "id": "step-1c4817adcae845319e8c5fc4561446eb",
               "keyword": "Then",
               "text": "the async result should be \"world\"",
               "status": "passed",
-              "duration": 0.060988,
+              "duration": 0.057637,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 23
@@ -1741,18 +1741,18 @@
           ]
         },
         {
-          "id": "scenario-8c05b36b9f7a4d68bfd96b8c490b1ce0",
+          "id": "scenario-97b2b594135d48c7b8ddff724aa7587b",
           "name": "Async fetch with multiple keys -- @1.2 ",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.056654,
+          "duration": 0.060471,
           "location": {
             "filename": "features/async/async_steps.feature",
             "line": 28
           },
           "steps": [
             {
-              "id": "step-9f5111ba1bf54f07baae22cb3b267c6e",
+              "id": "step-fc71e2aeca0742c78e368194182b6bf4",
               "keyword": "When",
               "text": "I asynchronously fetch the value for \"behave\"",
               "status": "passed",
@@ -1763,11 +1763,11 @@
               }
             },
             {
-              "id": "step-997d9d625d304833a0ec685ddb7dfd05",
+              "id": "step-27da4d358730442889dbe4964a137f29",
               "keyword": "Then",
               "text": "the async result should be \"rocks\"",
               "status": "passed",
-              "duration": 0.053425,
+              "duration": 0.058033,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 23
@@ -1776,18 +1776,18 @@
           ]
         },
         {
-          "id": "scenario-5830442dc2b8422c8d866647b3124707",
+          "id": "scenario-201d55d88ca0451fa79dd9570651a3ec",
           "name": "Async fetch with multiple keys -- @1.3 ",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.063224,
+          "duration": 0.060651,
           "location": {
             "filename": "features/async/async_steps.feature",
             "line": 29
           },
           "steps": [
             {
-              "id": "step-39a305b63bb54a38830fa684bbf6b1c2",
+              "id": "step-72b43fe145414c04a19152bbbc4acac2",
               "keyword": "When",
               "text": "I asynchronously fetch the value for \"python\"",
               "status": "passed",
@@ -1798,11 +1798,11 @@
               }
             },
             {
-              "id": "step-e6672295a97e4dac9ea2e06b6cbf1a0b",
+              "id": "step-0b83f530e6b946a7aeac5802eff9a8ae",
               "keyword": "Then",
               "text": "the async result should be \"3.12\"",
               "status": "passed",
-              "duration": 0.058751,
+              "duration": 0.058184,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 23
@@ -1811,18 +1811,18 @@
           ]
         },
         {
-          "id": "scenario-4ef2434c21e04d1183d5a42046c2292c",
+          "id": "scenario-4c637e45cbd9482c810f2d0d2727e852",
           "name": "Async fetch with multiple keys -- @1.4 ",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.064503,
+          "duration": 0.06009,
           "location": {
             "filename": "features/async/async_steps.feature",
             "line": 30
           },
           "steps": [
             {
-              "id": "step-e34f7acde0384ed3aca1d22a82139df7",
+              "id": "step-a1942b6a638d433c93d9aba9b7be5ebf",
               "keyword": "When",
               "text": "I asynchronously fetch the value for \"unknown\"",
               "status": "passed",
@@ -1833,11 +1833,11 @@
               }
             },
             {
-              "id": "step-97b8fc1f61904706968b0ecfb0b1b3ea",
+              "id": "step-f22c338fc4b9459e96f297c31723d4a5",
               "keyword": "Then",
               "text": "the async result should be \"<unknown>\"",
               "status": "passed",
-              "duration": 0.060604,
+              "duration": 0.057875,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 23
@@ -1846,11 +1846,11 @@
           ]
         },
         {
-          "id": "scenario-7e84060c8b124629956b553fb8fc2014",
+          "id": "scenario-943d0308c8244f10b9b8a860d199493c",
           "name": "Doubling a number asynchronously",
-          "featureId": "feature-1a19e92cb2a043b7a029fcd6879b8b23",
+          "featureId": "feature-7c63799b6bcb4fe980e32941a1fb26e7",
           "status": "passed",
-          "duration": 0.024436,
+          "duration": 0.016544,
           "tags": [
             "smoke"
           ],
@@ -1860,7 +1860,7 @@
           },
           "steps": [
             {
-              "id": "step-ac290840c5534da0ace88bdd7860f010",
+              "id": "step-f9639935d79a4fa1ab61c2c634450317",
               "keyword": "When",
               "text": "I asynchronously double the number 21",
               "status": "passed",
@@ -1871,11 +1871,11 @@
               }
             },
             {
-              "id": "step-00d2abd69d5846b5931b6f35836bdbbb",
+              "id": "step-387a993c80f649dc8f254825df6122d9",
               "keyword": "Then",
               "text": "the async result should be 42",
               "status": "passed",
-              "duration": 0.021293,
+              "duration": 0.01367,
               "location": {
                 "filename": "features/async/async_steps.feature",
                 "line": 37
@@ -1892,17 +1892,17 @@
       "line": 5
     },
     {
-      "id": "feature-3431bba78de249da83bac3dbee6a229c",
+      "id": "feature-9377fc89bc584a3f90959f847226bc52",
       "name": "Calculator",
       "status": "passed",
-      "duration": 0.089293,
+      "duration": 0.058851,
       "scenarios": [
         {
-          "id": "scenario-882cc7fb61ee4c5389a6c2df734d3820",
+          "id": "scenario-81c7ace2d8064f0cb3919f3d587cb5c7",
           "name": "Adding two numbers",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.007487,
+          "duration": 0.005738,
           "tags": [
             "smoke"
           ],
@@ -1911,7 +1911,7 @@
             "line": 18
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -1920,7 +1920,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -1931,7 +1931,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -1945,7 +1945,7 @@
           },
           "steps": [
             {
-              "id": "step-a514ab54e76a40658f1d871d1f8ea75c",
+              "id": "step-bd43c8719e164cddbc4eff4a6b16694e",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -1956,7 +1956,7 @@
               }
             },
             {
-              "id": "step-6ac19cffd61d4c6b841d5a4f0798650e",
+              "id": "step-536ecd6d19e348caacb8a0b2785b3179",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -1967,7 +1967,7 @@
               }
             },
             {
-              "id": "step-20cad05a33494170b9d45d5e33460dce",
+              "id": "step-c3942f610e284204b57947637951fefd",
               "keyword": "When",
               "text": "I add 5 to the calculator",
               "status": "passed",
@@ -1978,7 +1978,7 @@
               }
             },
             {
-              "id": "step-e2684bfa748446caaa1e06af7c878ff4",
+              "id": "step-542674b0a33b4d4ba33a577dcb5aa83e",
               "keyword": "And",
               "text": "I add 3 to the calculator",
               "status": "passed",
@@ -1989,7 +1989,7 @@
               }
             },
             {
-              "id": "step-ae50ae5ce6ce435ab974ffa53d64aa8b",
+              "id": "step-279c8fe0df10402ea445d00fd3c6e45b",
               "keyword": "Then",
               "text": "the result should be 8",
               "status": "passed",
@@ -2000,11 +2000,11 @@
               }
             },
             {
-              "id": "step-98bcbd7dfa8f40c4bfe46b90d875c552",
+              "id": "step-55e37983bb974e28a6cdcaa2f9ffd314",
               "keyword": "And",
               "text": "the last operation should be \"add\"",
               "status": "passed",
-              "duration": 0.000966,
+              "duration": 0.000715,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 22
@@ -2013,11 +2013,11 @@
           ]
         },
         {
-          "id": "scenario-facab3fea8084ed6a9ad4cf14d6c3021",
+          "id": "scenario-c07897d957d240fdba2f0c661cf9eae7",
           "name": "Division by zero raises an error",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.009677,
+          "duration": 0.006724,
           "tags": [
             "negative"
           ],
@@ -2026,7 +2026,7 @@
             "line": 27
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2035,7 +2035,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2046,7 +2046,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2060,7 +2060,7 @@
           },
           "steps": [
             {
-              "id": "step-8d38e8e36ce6412a8e2024aa87f5a9fa",
+              "id": "step-1cb2b56aa2e84597b74adedfc38f0f2c",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2071,7 +2071,7 @@
               }
             },
             {
-              "id": "step-87c771d075a449b499c6fb493931e549",
+              "id": "step-c113185255384685accf0293a53aefab",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2082,7 +2082,7 @@
               }
             },
             {
-              "id": "step-2acdbd7b3ed0486aa2e58c7a19c72f5d",
+              "id": "step-65bf22fb199c415e923b96577622159e",
               "keyword": "When",
               "text": "I add 10 to the calculator",
               "status": "passed",
@@ -2093,7 +2093,7 @@
               }
             },
             {
-              "id": "step-72cf81e2f9f54ba291087f6740db08b5",
+              "id": "step-ae300bb5a3044114aa4ea26e41c7b651",
               "keyword": "And",
               "text": "I divide the calculator by 0",
               "status": "passed",
@@ -2104,11 +2104,11 @@
               }
             },
             {
-              "id": "step-2e27ef6f77e4485d8aaca0682ec4bde8",
+              "id": "step-34558bbd0758433187e693ca2d4f6b8c",
               "keyword": "Then",
               "text": "a ZeroDivisionError should be raised",
               "status": "passed",
-              "duration": 0.000655,
+              "duration": 0.000633,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 30
@@ -2117,11 +2117,11 @@
           ]
         },
         {
-          "id": "scenario-8cf1a25c56364a5484424110b9ee6b58",
+          "id": "scenario-3b48117698e749f78661b2b9aaf1f235",
           "name": "Arithmetic operations with two operands -- @1.1 Basic arithmetic",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.007134,
+          "duration": 0.005249,
           "tags": [
             "smoke"
           ],
@@ -2130,7 +2130,7 @@
             "line": 45
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2139,7 +2139,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2150,7 +2150,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2164,7 +2164,7 @@
           },
           "steps": [
             {
-              "id": "step-ddd9b6f60e934b78a3a92d1174359756",
+              "id": "step-9a71fe95b52748c2b02780af46fc622e",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2175,7 +2175,7 @@
               }
             },
             {
-              "id": "step-f5c7b0d118d24fad86b9af867535106d",
+              "id": "step-9fd9e09d1da448b29ac9b4b8e573c78d",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2186,7 +2186,7 @@
               }
             },
             {
-              "id": "step-d67adad6df4d442c914f893a14bfd6f1",
+              "id": "step-928f1e192edb4a118a16ac04576adf6b",
               "keyword": "Given",
               "text": "the calculator accumulator is 0",
               "status": "passed",
@@ -2197,7 +2197,7 @@
               }
             },
             {
-              "id": "step-e92e8c38420646149cfc5495dd1faf41",
+              "id": "step-79ea00285db8499894ce707bb7197898",
               "keyword": "When",
               "text": "I add 5 to the calculator",
               "status": "passed",
@@ -2208,7 +2208,7 @@
               }
             },
             {
-              "id": "step-e9de901863e84fd29a6b6168d224423f",
+              "id": "step-30cb39b4e4484ba5bcf2b50cf4aa6676",
               "keyword": "Then",
               "text": "the result should be 5",
               "status": "passed",
@@ -2219,11 +2219,11 @@
               }
             },
             {
-              "id": "step-6a04c63bd0994e9f86a9cc055095f3cf",
+              "id": "step-b6a835b7506c491684b58ac803344eee",
               "keyword": "And",
               "text": "the last operation should be \"add\"",
               "status": "passed",
-              "duration": 0.000759,
+              "duration": 0.000511,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2232,11 +2232,11 @@
           ]
         },
         {
-          "id": "scenario-ec6306d13ad34102882426504ff8357d",
+          "id": "scenario-ac1d214b913f4d0cb8a95add4cc5c5c6",
           "name": "Arithmetic operations with two operands -- @1.2 Basic arithmetic",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.008999,
+          "duration": 0.004884,
           "tags": [
             "smoke"
           ],
@@ -2245,7 +2245,7 @@
             "line": 46
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2254,7 +2254,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2265,7 +2265,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2279,7 +2279,7 @@
           },
           "steps": [
             {
-              "id": "step-101c72f704904ba5b7a9b9001e58035e",
+              "id": "step-f2a04c13468a4e629d77629fc4897023",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2290,7 +2290,7 @@
               }
             },
             {
-              "id": "step-9e241cbfe48141c8a72322a0ea039d19",
+              "id": "step-250483e9d34448b38fb2fa3210211387",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2301,7 +2301,7 @@
               }
             },
             {
-              "id": "step-a140d8f38e8145c0a4c260e21f793b41",
+              "id": "step-a8d7f7fceaa74284948fdca25238a380",
               "keyword": "Given",
               "text": "the calculator accumulator is 10",
               "status": "passed",
@@ -2312,7 +2312,7 @@
               }
             },
             {
-              "id": "step-61e0ddebef30463f95b3dcda905446b9",
+              "id": "step-3c61b130704a49da9f3920e8df86547c",
               "keyword": "When",
               "text": "I subtract 4 to the calculator",
               "status": "passed",
@@ -2323,7 +2323,7 @@
               }
             },
             {
-              "id": "step-bea39da9ee7e44eba4428221878cd398",
+              "id": "step-5793392c51224d68a02d0d8261f25b4d",
               "keyword": "Then",
               "text": "the result should be 6",
               "status": "passed",
@@ -2334,11 +2334,11 @@
               }
             },
             {
-              "id": "step-114cac8a30fd46d7a6be754f64674b9b",
+              "id": "step-0deb84d73d89450aa3a38e3793972fd6",
               "keyword": "And",
               "text": "the last operation should be \"subtract\"",
               "status": "passed",
-              "duration": 0.000669,
+              "duration": 0.000485,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2347,11 +2347,11 @@
           ]
         },
         {
-          "id": "scenario-a95f914476ba4a79b10b4aa4df95654e",
+          "id": "scenario-6cee4ec8c80548c0ab05543858bbe793",
           "name": "Arithmetic operations with two operands -- @1.3 Basic arithmetic",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.008446,
+          "duration": 0.005222,
           "tags": [
             "smoke"
           ],
@@ -2360,7 +2360,7 @@
             "line": 47
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2369,7 +2369,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2380,7 +2380,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2394,7 +2394,7 @@
           },
           "steps": [
             {
-              "id": "step-7239f5ab4da5426dadd02ae8b15b0098",
+              "id": "step-02b879b77d3540d5904a32f6537d2523",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2405,7 +2405,7 @@
               }
             },
             {
-              "id": "step-d236d9c854554d3ea34fb93f49c1521b",
+              "id": "step-210399b6c5164bce93308bf05e06ee93",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2416,7 +2416,7 @@
               }
             },
             {
-              "id": "step-52517063e929433b93f37cbc114011c9",
+              "id": "step-996cf675298049aea896afc46143cd9e",
               "keyword": "Given",
               "text": "the calculator accumulator is 3",
               "status": "passed",
@@ -2427,7 +2427,7 @@
               }
             },
             {
-              "id": "step-3720fb82404840de823227bcf1b58e6f",
+              "id": "step-91edf072bf4546debffcda51e67983c6",
               "keyword": "When",
               "text": "I multiply 4 to the calculator",
               "status": "passed",
@@ -2438,7 +2438,7 @@
               }
             },
             {
-              "id": "step-7337deeb6f554f39be3c9c09b49de451",
+              "id": "step-d097003fa7ae459380ffd5dbdbb4d119",
               "keyword": "Then",
               "text": "the result should be 12",
               "status": "passed",
@@ -2449,11 +2449,11 @@
               }
             },
             {
-              "id": "step-52f9e95e0ec849fb931219cae3499505",
+              "id": "step-a8dfc02c6b704a4388c4cb454e67245b",
               "keyword": "And",
               "text": "the last operation should be \"multiply\"",
               "status": "passed",
-              "duration": 0.00069,
+              "duration": 0.000445,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2462,11 +2462,11 @@
           ]
         },
         {
-          "id": "scenario-26d0968eff02453baa45b82bc6bbbacc",
+          "id": "scenario-f531064246f14b3bb3809c330840f91a",
           "name": "Arithmetic operations with two operands -- @1.4 Basic arithmetic",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.011389,
+          "duration": 0.004935,
           "tags": [
             "smoke"
           ],
@@ -2475,7 +2475,7 @@
             "line": 48
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2484,7 +2484,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2495,7 +2495,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2509,7 +2509,7 @@
           },
           "steps": [
             {
-              "id": "step-70fdda1d36254344876d4a1e83568d8b",
+              "id": "step-03e64692481a4f50af50df31b1743533",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2520,7 +2520,7 @@
               }
             },
             {
-              "id": "step-96da0b4caedc4b52bdd9d16928b8da3d",
+              "id": "step-7f1543159f144a2ba9b707fc51f29433",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2531,7 +2531,7 @@
               }
             },
             {
-              "id": "step-c1d17b0f12f34812b853fb620bcc04da",
+              "id": "step-cd4577ac880f4a0093d3be40b767c902",
               "keyword": "Given",
               "text": "the calculator accumulator is 20",
               "status": "passed",
@@ -2542,7 +2542,7 @@
               }
             },
             {
-              "id": "step-53624fac155e400da3bbe44b3063d3bc",
+              "id": "step-8fb4e52b47a741b393ed3abca3ecb808",
               "keyword": "When",
               "text": "I divide 4 to the calculator",
               "status": "passed",
@@ -2553,7 +2553,7 @@
               }
             },
             {
-              "id": "step-8983352302744551b2b6bcec9790a903",
+              "id": "step-f756a0bffcf34411a52fc54c20788399",
               "keyword": "Then",
               "text": "the result should be 5",
               "status": "passed",
@@ -2564,11 +2564,11 @@
               }
             },
             {
-              "id": "step-47e835cf4240478da1290524bc1c680f",
+              "id": "step-f9ef6e47ae1a497dbb53447252e2058f",
               "keyword": "And",
               "text": "the last operation should be \"divide\"",
               "status": "passed",
-              "duration": 0.000715,
+              "duration": 0.0005,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2577,11 +2577,11 @@
           ]
         },
         {
-          "id": "scenario-d391a7150d5f4de19a23c4703aeb11f3",
+          "id": "scenario-a8a1b4fa890f46e7b3431c3dafcc6503",
           "name": "Arithmetic operations with two operands -- @2.1 Edge cases",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.00602,
+          "duration": 0.005151,
           "tags": [
             "smoke"
           ],
@@ -2590,7 +2590,7 @@
             "line": 52
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2599,7 +2599,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2610,7 +2610,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2624,7 +2624,7 @@
           },
           "steps": [
             {
-              "id": "step-5e77ca7a3a874887bbb6e1841781df25",
+              "id": "step-b94c4f75356f45f7a7709e1c33f008ee",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2635,7 +2635,7 @@
               }
             },
             {
-              "id": "step-4428cab1de96463089ef07f9c4382f18",
+              "id": "step-c9c18a453cb04fb68db2afb50a9012a7",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2646,7 +2646,7 @@
               }
             },
             {
-              "id": "step-3d9dcf08852e4afc90f31fb891bac516",
+              "id": "step-bab8a0c176f5481394a995136af9e19d",
               "keyword": "Given",
               "text": "the calculator accumulator is 0",
               "status": "passed",
@@ -2657,7 +2657,7 @@
               }
             },
             {
-              "id": "step-b102fef11a42440f83ef440ef8dddf08",
+              "id": "step-b2d96e23abcb40ff8f9f36ac34e357e3",
               "keyword": "When",
               "text": "I add 0 to the calculator",
               "status": "passed",
@@ -2668,7 +2668,7 @@
               }
             },
             {
-              "id": "step-c4f91c5b4c7d4680b229650a20ccd365",
+              "id": "step-4c2edcc9832745dea73bcdd8d1833b31",
               "keyword": "Then",
               "text": "the result should be 0",
               "status": "passed",
@@ -2679,11 +2679,11 @@
               }
             },
             {
-              "id": "step-b1ff06a72390441b957e9d3acd14589d",
+              "id": "step-11adb45162c546f182978dc9063155d8",
               "keyword": "And",
               "text": "the last operation should be \"add\"",
               "status": "passed",
-              "duration": 0.000632,
+              "duration": 0.000459,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2692,11 +2692,11 @@
           ]
         },
         {
-          "id": "scenario-40668b5766294b42865a7528dd70f0d4",
+          "id": "scenario-b2dbdf69ed48486db67b97d799b979c3",
           "name": "Arithmetic operations with two operands -- @2.2 Edge cases",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.007678,
+          "duration": 0.005451,
           "tags": [
             "smoke"
           ],
@@ -2705,7 +2705,7 @@
             "line": 53
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2714,7 +2714,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2725,7 +2725,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2739,7 +2739,7 @@
           },
           "steps": [
             {
-              "id": "step-bb75c024d0ad463885b374b45fc6f86b",
+              "id": "step-55eefa2f925240378da03ac96ba00917",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2750,7 +2750,7 @@
               }
             },
             {
-              "id": "step-25ba1bf7db5048e0992aa75ba3ce1163",
+              "id": "step-928675447a7349958814730866e2ce62",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2761,7 +2761,7 @@
               }
             },
             {
-              "id": "step-af43f587a74a4dba81ce6a173b50acf6",
+              "id": "step-491d7c5710f24555b9776ae229b08eba",
               "keyword": "Given",
               "text": "the calculator accumulator is 100",
               "status": "passed",
@@ -2772,7 +2772,7 @@
               }
             },
             {
-              "id": "step-11ca5b1af4ba4a9297bccd74bee2284a",
+              "id": "step-6ab0600bdcf141b5a28e1be917e9a9b7",
               "keyword": "When",
               "text": "I divide 100 to the calculator",
               "status": "passed",
@@ -2783,7 +2783,7 @@
               }
             },
             {
-              "id": "step-5f88c12e92184e4886fa5aa446eb3d70",
+              "id": "step-5aa8b41db2e6481eb2cf6584a5bc5a31",
               "keyword": "Then",
               "text": "the result should be 1",
               "status": "passed",
@@ -2794,11 +2794,11 @@
               }
             },
             {
-              "id": "step-9e89bdd0b03b41cb89c8f8719f2bb429",
+              "id": "step-074d24509ba141b6a5c6ccd2ad8dff42",
               "keyword": "And",
               "text": "the last operation should be \"divide\"",
               "status": "passed",
-              "duration": 0.00066,
+              "duration": 0.000539,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2807,11 +2807,11 @@
           ]
         },
         {
-          "id": "scenario-aeee8978eb2d4d81aa16b7836d69c820",
+          "id": "scenario-59a71641431543d08cbf271002e6fab3",
           "name": "Arithmetic operations with two operands -- @2.3 Edge cases",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.006394,
+          "duration": 0.005559,
           "tags": [
             "smoke"
           ],
@@ -2820,7 +2820,7 @@
             "line": 54
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2829,7 +2829,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2840,7 +2840,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2854,7 +2854,7 @@
           },
           "steps": [
             {
-              "id": "step-c2f080c26ad14771b0f61f31b4e3551e",
+              "id": "step-33920d90b8b446da8aea0e35b9c6befc",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2865,7 +2865,7 @@
               }
             },
             {
-              "id": "step-e3a79f14dbad4dc39eefb82ae21abfa1",
+              "id": "step-bf0e9fa4bffe4f42a5d9de0478628cc7",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2876,7 +2876,7 @@
               }
             },
             {
-              "id": "step-10afe094270a4ac3bbafba269e0a8a4d",
+              "id": "step-ea08c0876d2e4b5695d1cae99c762a5d",
               "keyword": "Given",
               "text": "the calculator accumulator is -5",
               "status": "passed",
@@ -2887,7 +2887,7 @@
               }
             },
             {
-              "id": "step-9b374049485f4c19b7a5f20432577f89",
+              "id": "step-7cd750a77e4f49fb82963d5a8821944e",
               "keyword": "When",
               "text": "I multiply -2 to the calculator",
               "status": "passed",
@@ -2898,7 +2898,7 @@
               }
             },
             {
-              "id": "step-bf34419f806c410494dfca8794df1ae4",
+              "id": "step-8c0ffc1715e44dd9bf8c03993407c8c5",
               "keyword": "Then",
               "text": "the result should be 10",
               "status": "passed",
@@ -2909,11 +2909,11 @@
               }
             },
             {
-              "id": "step-1702ea005f4549cba5cfd9e2e23c10ac",
+              "id": "step-53784fd107134424b2bb7f37d65053d3",
               "keyword": "And",
               "text": "the last operation should be \"multiply\"",
               "status": "passed",
-              "duration": 0.000992,
+              "duration": 0.000587,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 41
@@ -2922,11 +2922,11 @@
           ]
         },
         {
-          "id": "scenario-8389ad9f8c4248d18b6eb96eea8ff870",
+          "id": "scenario-e5d92095f3aa4f1dbb23a01c0c73b4e0",
           "name": "Square root of a positive number",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.004905,
+          "duration": 0.00427,
           "tags": [
             "math"
           ],
@@ -2935,7 +2935,7 @@
             "line": 58
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -2944,7 +2944,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -2955,7 +2955,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -2969,7 +2969,7 @@
           },
           "steps": [
             {
-              "id": "step-5fb849de4bdc4a8fbdce0a9756a03b63",
+              "id": "step-192ee6bf10884bdf976c7b5783910991",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -2980,7 +2980,7 @@
               }
             },
             {
-              "id": "step-6873d2dc7e8d4480a43b5e22e27f0a7f",
+              "id": "step-47b70572dc2441b590d9a39d60ef0d93",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -2991,7 +2991,7 @@
               }
             },
             {
-              "id": "step-13a7a098d295407bb8b5cd19acd574be",
+              "id": "step-ea7d0cd2e446480ebfb3820a475dc4e8",
               "keyword": "When",
               "text": "I add 16 to the calculator",
               "status": "passed",
@@ -3002,7 +3002,7 @@
               }
             },
             {
-              "id": "step-324290bd5b614275a466b8f36b7b64ae",
+              "id": "step-7dcb87a4f3c34d708b7057ef9326bb55",
               "keyword": "And",
               "text": "I take the square root",
               "status": "passed",
@@ -3013,11 +3013,11 @@
               }
             },
             {
-              "id": "step-8fbbf420ac4c4debb8aa808d3ee5bfe1",
+              "id": "step-854b51b41166493da17fcec9bafea5a6",
               "keyword": "Then",
               "text": "the result should be 4",
               "status": "passed",
-              "duration": 0.00056,
+              "duration": 0.000464,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 61
@@ -3026,11 +3026,11 @@
           ]
         },
         {
-          "id": "scenario-622cf6d22c9f465c83309cc2e09784f3",
+          "id": "scenario-f8f63f7807cf4919b839993aee829c68",
           "name": "Square root of a negative number raises an error",
-          "featureId": "feature-3431bba78de249da83bac3dbee6a229c",
+          "featureId": "feature-9377fc89bc584a3f90959f847226bc52",
           "status": "passed",
-          "duration": 0.009648,
+          "duration": 0.00486,
           "tags": [
             "math",
             "negative"
@@ -3040,7 +3040,7 @@
             "line": 66
           },
           "background": {
-            "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+            "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3049,7 +3049,7 @@
             },
             "steps": [
               {
-                "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+                "id": "step-25043d6a180f4bdca468c768db920b53",
                 "keyword": "Given",
                 "text": "I have a calculator",
                 "status": "untested",
@@ -3060,7 +3060,7 @@
                 }
               },
               {
-                "id": "step-7810431261e14e6aa5e52c829b819abe",
+                "id": "step-1e1941c52c0b404d967382a0d2485706",
                 "keyword": "And",
                 "text": "the calculator is reset",
                 "status": "untested",
@@ -3074,7 +3074,7 @@
           },
           "steps": [
             {
-              "id": "step-470245b47908451d8ab3e5c9699eb448",
+              "id": "step-03d5770aa2ad4629b97487b890800f0f",
               "keyword": "Given",
               "text": "I have a calculator",
               "status": "passed",
@@ -3085,7 +3085,7 @@
               }
             },
             {
-              "id": "step-e0217b0ccc4243a1b852523e305fa7b5",
+              "id": "step-b1d84b818d5a483bbc5ba818d66583c2",
               "keyword": "And",
               "text": "the calculator is reset",
               "status": "passed",
@@ -3096,7 +3096,7 @@
               }
             },
             {
-              "id": "step-07f35369f8224cdc9cae29765e5f0b96",
+              "id": "step-3c4385061bb74651b9ddd2ba152a4f2a",
               "keyword": "When",
               "text": "I add -9 to the calculator",
               "status": "passed",
@@ -3107,7 +3107,7 @@
               }
             },
             {
-              "id": "step-2b2c09eaa74e440685d194d4612d87c3",
+              "id": "step-8e89e146c2b04bd3b2a0ec1950ba0a51",
               "keyword": "And",
               "text": "I take the square root",
               "status": "passed",
@@ -3118,11 +3118,11 @@
               }
             },
             {
-              "id": "step-cd9dd69eabe6406fa4438c44d9696056",
+              "id": "step-62f6acaa902043eeb22c35eee25091e0",
               "keyword": "Then",
               "text": "a ValueError should be raised",
               "status": "passed",
-              "duration": 0.001812,
+              "duration": 0.000486,
               "location": {
                 "filename": "features/calculator/calculator.feature",
                 "line": 69
@@ -3139,7 +3139,7 @@
       "filename": "features/calculator/calculator.feature",
       "line": 5,
       "background": {
-        "id": "bg-8da0199581c94352926d2d7b5895b6cb",
+        "id": "bg-da75c4aa7d974e3eb73e840af2c9cad6",
         "name": "",
         "keyword": "Background",
         "location": {
@@ -3148,7 +3148,7 @@
         },
         "steps": [
           {
-            "id": "step-5f36f26bb7604e7aade2ea2e442bc54f",
+            "id": "step-25043d6a180f4bdca468c768db920b53",
             "keyword": "Given",
             "text": "I have a calculator",
             "status": "untested",
@@ -3159,7 +3159,7 @@
             }
           },
           {
-            "id": "step-7810431261e14e6aa5e52c829b819abe",
+            "id": "step-1e1941c52c0b404d967382a0d2485706",
             "keyword": "And",
             "text": "the calculator is reset",
             "status": "untested",
@@ -3173,17 +3173,17 @@
       }
     },
     {
-      "id": "feature-d057d50340a34ad7ba367c44142abba1",
+      "id": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
       "name": "Shopping cart",
       "status": "passed",
-      "duration": 0.048243,
+      "duration": 0.032008,
       "scenarios": [
         {
-          "id": "scenario-ddb02c4d7808489c87503827498a4389",
+          "id": "scenario-d28fb6993abb4424bbce7b3d0b8cabd9",
           "name": "Adding items from a data table",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.009095,
+          "duration": 0.005397,
           "tags": [
             "smoke"
           ],
@@ -3192,7 +3192,7 @@
             "line": 17
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3201,7 +3201,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3215,7 +3215,7 @@
           },
           "steps": [
             {
-              "id": "step-e20dbe1170d848349935887f65caa3f7",
+              "id": "step-8202ffe11bfd4bb1a7743219240e79ac",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3226,7 +3226,7 @@
               }
             },
             {
-              "id": "step-6d2f6cd2d27e44ef951c4b25631046bf",
+              "id": "step-27c95ea5b16d4bae8af4414aee6e64d8",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3270,7 +3270,7 @@
               }
             },
             {
-              "id": "step-3682a3adb33c4fca823255bcf2b3c29b",
+              "id": "step-328bd416664246a38182b08e6544d7b9",
               "keyword": "Then",
               "text": "the cart should contain 6 items",
               "status": "passed",
@@ -3281,11 +3281,11 @@
               }
             },
             {
-              "id": "step-6a15c1f6a0af47678ffde9bb741050cb",
+              "id": "step-6a202b9f2f0d4533b4edb2232fddf53f",
               "keyword": "And",
               "text": "the subtotal should be 3.30",
               "status": "passed",
-              "duration": 0.000612,
+              "duration": 0.000498,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 24
@@ -3294,11 +3294,11 @@
           ]
         },
         {
-          "id": "scenario-c40e9e463c544d0faa06a05e7fc830e7",
+          "id": "scenario-0a9b311ba2104b1ea471c5b422547f85",
           "name": "Discount and tax calculation -- @1.1 ",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.01055,
+          "duration": 0.00531,
           "tags": [
             "math"
           ],
@@ -3307,7 +3307,7 @@
             "line": 42
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3316,7 +3316,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3330,7 +3330,7 @@
           },
           "steps": [
             {
-              "id": "step-f94e3911b01442faae0f94cf95835490",
+              "id": "step-cb3302856af64e6aa5d579ffdaf9f345",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3341,7 +3341,7 @@
               }
             },
             {
-              "id": "step-52b6795c44ad491eb68627ada8da5331",
+              "id": "step-c97996dcd05c4f9688a44fe2df982366",
               "keyword": "Given",
               "text": "the cart has a discount of 0% and a tax of 0%",
               "status": "passed",
@@ -3352,7 +3352,7 @@
               }
             },
             {
-              "id": "step-3c73e3410a16494aabb1d9b2115d76dc",
+              "id": "step-b9c69697a34a428780f5b06713936e96",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3380,7 +3380,7 @@
               }
             },
             {
-              "id": "step-f47e3e37585a4ceb907fff363dbbad9c",
+              "id": "step-c25597226558485d9cc10585927bd356",
               "keyword": "Then",
               "text": "the subtotal should be 40.00",
               "status": "passed",
@@ -3391,7 +3391,7 @@
               }
             },
             {
-              "id": "step-cb99c65975a346b5a3a1cf761d9a6aa4",
+              "id": "step-43f9ada75eed491f9272dda25020b6d2",
               "keyword": "And",
               "text": "the discount amount should be 0.00",
               "status": "passed",
@@ -3402,7 +3402,7 @@
               }
             },
             {
-              "id": "step-140d2509134e4f97bf0508e9394fe91d",
+              "id": "step-b1732c1239e246bf98ff8b4653153a21",
               "keyword": "And",
               "text": "the tax amount should be 0.00",
               "status": "passed",
@@ -3413,11 +3413,11 @@
               }
             },
             {
-              "id": "step-a2018c944e874df2b41015580e76823e",
+              "id": "step-8ae6f654641b4b7eb6c82fa9fe952094",
               "keyword": "And",
               "text": "the total should be 40.00",
               "status": "passed",
-              "duration": 0.001049,
+              "duration": 0.000478,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 38
@@ -3426,11 +3426,11 @@
           ]
         },
         {
-          "id": "scenario-a788b7ef4b4949aea59387b6407cdfdd",
+          "id": "scenario-5418f91c21384b9e8258f79f3cc4de20",
           "name": "Discount and tax calculation -- @1.2 ",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.010003,
+          "duration": 0.005946,
           "tags": [
             "math"
           ],
@@ -3439,7 +3439,7 @@
             "line": 43
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3448,7 +3448,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3462,7 +3462,7 @@
           },
           "steps": [
             {
-              "id": "step-b8aa350dd4d444a1986d21e049b6ffbe",
+              "id": "step-6d62b2d9ecd44888907043c89808215e",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3473,7 +3473,7 @@
               }
             },
             {
-              "id": "step-449750a9eb164125870d411808ab55df",
+              "id": "step-11e421e5cb0f4f37b685292751e356dc",
               "keyword": "Given",
               "text": "the cart has a discount of 10% and a tax of 10%",
               "status": "passed",
@@ -3484,7 +3484,7 @@
               }
             },
             {
-              "id": "step-c3086a23d05a4af7900cf4fa27842450",
+              "id": "step-41ee255bf8b247669d4c8394703aec49",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3512,7 +3512,7 @@
               }
             },
             {
-              "id": "step-413d4ff057df4023874fbdd1566dc270",
+              "id": "step-60ab5aee128645bfa3bf36a2c76a9c7f",
               "keyword": "Then",
               "text": "the subtotal should be 40.00",
               "status": "passed",
@@ -3523,7 +3523,7 @@
               }
             },
             {
-              "id": "step-7bf587e5a0014f4ab663e50685bc4ade",
+              "id": "step-47f7453380554a53bda5a9c0d83c0039",
               "keyword": "And",
               "text": "the discount amount should be 4.00",
               "status": "passed",
@@ -3534,7 +3534,7 @@
               }
             },
             {
-              "id": "step-5a24f5fe80c64f88b358c1d603f81281",
+              "id": "step-7acf037cfb124a939c7b582cbf75af55",
               "keyword": "And",
               "text": "the tax amount should be 3.60",
               "status": "passed",
@@ -3545,11 +3545,11 @@
               }
             },
             {
-              "id": "step-1a75c3c87bd24e17b8d0c8a19f445e32",
+              "id": "step-e155ff4517ce49b48abfa4babb671920",
               "keyword": "And",
               "text": "the total should be 39.60",
               "status": "passed",
-              "duration": 0.000586,
+              "duration": 0.000449,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 38
@@ -3558,11 +3558,11 @@
           ]
         },
         {
-          "id": "scenario-c514355cf40142f88286856d7c800eea",
+          "id": "scenario-57b2597b4c754eb2a9b62b00d1a4c430",
           "name": "Discount and tax calculation -- @1.3 ",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.006254,
+          "duration": 0.006593,
           "tags": [
             "math"
           ],
@@ -3571,7 +3571,7 @@
             "line": 44
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3580,7 +3580,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3594,7 +3594,7 @@
           },
           "steps": [
             {
-              "id": "step-f01eb7e9cd7b4f1fab37ea1fc488dfd6",
+              "id": "step-54c48e17c3ef494c9802bda8bb283124",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3605,7 +3605,7 @@
               }
             },
             {
-              "id": "step-48de64be431a44cd87d48bbf14b113b3",
+              "id": "step-69b1a83cf5bb4707bc5f7a9da6a108f2",
               "keyword": "Given",
               "text": "the cart has a discount of 25% and a tax of 5%",
               "status": "passed",
@@ -3616,7 +3616,7 @@
               }
             },
             {
-              "id": "step-017cb3a5b58046839d5e76960e238318",
+              "id": "step-ab7638af427a4d8ea876eeb5a9c168ca",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3644,7 +3644,7 @@
               }
             },
             {
-              "id": "step-03b1cd469ab34d00949f384d32702c0e",
+              "id": "step-6ba971f0e32e4abba3dceabdc0d029c6",
               "keyword": "Then",
               "text": "the subtotal should be 40.00",
               "status": "passed",
@@ -3655,7 +3655,7 @@
               }
             },
             {
-              "id": "step-7dbe813499564602bce689712dbd484a",
+              "id": "step-5dfc7e657c3341728df6c31a34e09eb8",
               "keyword": "And",
               "text": "the discount amount should be 10.00",
               "status": "passed",
@@ -3666,7 +3666,7 @@
               }
             },
             {
-              "id": "step-7359409470a2427fac9988e3a3a826fe",
+              "id": "step-4558b28d9d924772a736c2244317f0cd",
               "keyword": "And",
               "text": "the tax amount should be 1.50",
               "status": "passed",
@@ -3677,11 +3677,11 @@
               }
             },
             {
-              "id": "step-d7450a83146d44f1979e71ca53085778",
+              "id": "step-84398d4bf34e4030be0d8dc2220fd882",
               "keyword": "And",
               "text": "the total should be 31.50",
               "status": "passed",
-              "duration": 0.000625,
+              "duration": 0.000707,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 38
@@ -3690,11 +3690,11 @@
           ]
         },
         {
-          "id": "scenario-b64d23ee33294089aaac3a4cd972f084",
+          "id": "scenario-33d964df8e404155a0744a49d4b41199",
           "name": "Removing an item that does not exist",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.007421,
+          "duration": 0.004639,
           "tags": [
             "negative"
           ],
@@ -3703,7 +3703,7 @@
             "line": 48
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3712,7 +3712,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3726,7 +3726,7 @@
           },
           "steps": [
             {
-              "id": "step-4648e931da6b471ba3238d678b8b0b38",
+              "id": "step-091ea3b166b0472e97cf21f084e793a1",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3737,7 +3737,7 @@
               }
             },
             {
-              "id": "step-e9a00372680440e0a2e4ecbc9da77e1c",
+              "id": "step-dc9f87581f004e4f97ebc66b485af1a2",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3765,7 +3765,7 @@
               }
             },
             {
-              "id": "step-7509671d152b48fba69c39ca04ca1c80",
+              "id": "step-f542a542dbfb4edb949a03c1fc9d7349",
               "keyword": "And",
               "text": "I remove \"Notebook\" from the cart",
               "status": "passed",
@@ -3776,7 +3776,7 @@
               }
             },
             {
-              "id": "step-0d01130e966543feb3b7e4dafce1c846",
+              "id": "step-fadef1ab1d7b4b73a78c0930230fbc00",
               "keyword": "Then",
               "text": "the cart should contain 2 items",
               "status": "passed",
@@ -3787,11 +3787,11 @@
               }
             },
             {
-              "id": "step-bf2a51e6ba4342ee9059f109a0fa4520",
+              "id": "step-1cdfba2f491249c18ebeeed0a774d88a",
               "keyword": "And",
               "text": "the subtotal should be 3.00",
               "status": "passed",
-              "duration": 0.000575,
+              "duration": 0.000524,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 54
@@ -3800,11 +3800,11 @@
           ]
         },
         {
-          "id": "scenario-70a3dd0c0a6c42d49d67c98cf987e64e",
+          "id": "scenario-a3c1806f82a04810a4fe245874ab85d8",
           "name": "Receipt preview via DocString",
-          "featureId": "feature-d057d50340a34ad7ba367c44142abba1",
+          "featureId": "feature-0a81cb675fb64590b7bc9aa610b7e1a5",
           "status": "passed",
-          "duration": 0.004086,
+          "duration": 0.00351,
           "tags": [
             "docstring"
           ],
@@ -3813,7 +3813,7 @@
             "line": 59
           },
           "background": {
-            "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+            "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
             "name": "",
             "keyword": "Background",
             "location": {
@@ -3822,7 +3822,7 @@
             },
             "steps": [
               {
-                "id": "step-683946372ff84683a8f16a38a1f82872",
+                "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
                 "keyword": "Given",
                 "text": "I have an empty shopping cart",
                 "status": "untested",
@@ -3836,7 +3836,7 @@
           },
           "steps": [
             {
-              "id": "step-aa58dc4993f840228c83e37f0153ea8b",
+              "id": "step-76dd0bf4d2f84cebb3e2ce96f2c193cc",
               "keyword": "Given",
               "text": "I have an empty shopping cart",
               "status": "passed",
@@ -3847,7 +3847,7 @@
               }
             },
             {
-              "id": "step-85e5aa0067194e6ca8f708f10285eaa9",
+              "id": "step-9b6248dbc4314cb7beea6af3999849cc",
               "keyword": "When",
               "text": "I add the following items to the cart:",
               "status": "passed",
@@ -3883,11 +3883,11 @@
               }
             },
             {
-              "id": "step-ae2efbbedd4f479882e4befc5e12413c",
+              "id": "step-33c4b2b194fc4aaea1f76bb651c7f828",
               "keyword": "Then",
               "text": "the receipt should be:",
               "status": "passed",
-              "duration": 0.000609,
+              "duration": 0.000474,
               "location": {
                 "filename": "features/shopping_cart/shopping_cart.feature",
                 "line": 64
@@ -3904,7 +3904,7 @@
       "filename": "features/shopping_cart/shopping_cart.feature",
       "line": 5,
       "background": {
-        "id": "bg-04c8bee2f9bb45d09e0afd04b5f05022",
+        "id": "bg-c1f5b2c6954c453297a5518d4a60ce7c",
         "name": "",
         "keyword": "Background",
         "location": {
@@ -3913,7 +3913,7 @@
         },
         "steps": [
           {
-            "id": "step-683946372ff84683a8f16a38a1f82872",
+            "id": "step-4f5e5c34bd704c04b6c5bdf9f12f235a",
             "keyword": "Given",
             "text": "I have an empty shopping cart",
             "status": "untested",
@@ -3927,17 +3927,17 @@
       }
     },
     {
-      "id": "feature-f686c914029340b79127d1c6819a33e3",
+      "id": "feature-b72b996d23cf47fcae21a4837a550e9f",
       "name": "String utilities",
       "status": "passed",
-      "duration": 0.060068,
+      "duration": 0.039128,
       "scenarios": [
         {
-          "id": "scenario-bc43f3b7b5e94e6ea23a6df8cabcac54",
+          "id": "scenario-2dc756916d8d4bae9afe1b52d3df8974",
           "name": "A simple palindrome",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.007735,
+          "duration": 0.00459,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 17
@@ -3945,7 +3945,7 @@
           "rule": "Palindromes are detected ignoring case and punctuation",
           "steps": [
             {
-              "id": "step-06b6697885334a70a9271d1c6aca7cbb",
+              "id": "step-f88cc1a1419c4f158461670f5f321972",
               "keyword": "Given",
               "text": "I have the string utilities",
               "status": "passed",
@@ -3956,7 +3956,7 @@
               }
             },
             {
-              "id": "step-48963d19640e49ebb06793769e194ac3",
+              "id": "step-8eb34de97d594c6497a971db8c18d6e4",
               "keyword": "When",
               "text": "I reverse the string \"racecar\"",
               "status": "passed",
@@ -3967,7 +3967,7 @@
               }
             },
             {
-              "id": "step-2d57dd77f14440e7a9c447b8840e5f3a",
+              "id": "step-0395e7fb8550428fa07a4bf249a76c50",
               "keyword": "Then",
               "text": "the reversed string should be \"racecar\"",
               "status": "passed",
@@ -3978,11 +3978,11 @@
               }
             },
             {
-              "id": "step-28f50c6021ea42d5a317ea7d6d0f6b03",
+              "id": "step-9dc0f911301f47b99d7976e94c598735",
               "keyword": "And",
               "text": "the string \"racecar\" should be a palindrome",
               "status": "passed",
-              "duration": 0.000598,
+              "duration": 0.000511,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 20
@@ -3991,11 +3991,11 @@
           ]
         },
         {
-          "id": "scenario-3748e20541f6416883e371babf4c2333",
+          "id": "scenario-1bab9c4710474f03a77b6256513f78d0",
           "name": "A palindrome with mixed case and punctuation",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.005007,
+          "duration": 0.003238,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 23
@@ -4003,7 +4003,7 @@
           "rule": "Palindromes are detected ignoring case and punctuation",
           "steps": [
             {
-              "id": "step-41119ed655494b3aa7d57df1b2bf8b8d",
+              "id": "step-9a4d0baea52e4e4299afc261fbb391cf",
               "keyword": "Given",
               "text": "I have the string utilities",
               "status": "passed",
@@ -4014,7 +4014,7 @@
               }
             },
             {
-              "id": "step-df0c1877c898406f8e126b5a602f9026",
+              "id": "step-883323aaa2334f948584c019d4227fe3",
               "keyword": "When",
               "text": "I reverse the string \"A man, a plan, a canal: Panama\"",
               "status": "passed",
@@ -4025,11 +4025,11 @@
               }
             },
             {
-              "id": "step-585bcbd8ad034cea82c8faa0f37597f5",
+              "id": "step-b389387db6dc4bf3be3c01f4c9aeb7a2",
               "keyword": "Then",
               "text": "the string \"A man, a plan, a canal: Panama\" should be a palindrome",
               "status": "passed",
-              "duration": 0.000723,
+              "duration": 0.000449,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 25
@@ -4038,11 +4038,11 @@
           ]
         },
         {
-          "id": "scenario-d8bc12fda92244109439c543f6ef43b1",
+          "id": "scenario-375e0e4f57fc45aab236d77e2199cc06",
           "name": "A non-palindrome",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.005279,
+          "duration": 0.005252,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 28
@@ -4050,7 +4050,7 @@
           "rule": "Palindromes are detected ignoring case and punctuation",
           "steps": [
             {
-              "id": "step-572aca0091d84647a13c7228bb3bce2e",
+              "id": "step-970c94c738e54e919c0c7a2312b52e81",
               "keyword": "Given",
               "text": "I have the string utilities",
               "status": "passed",
@@ -4061,7 +4061,7 @@
               }
             },
             {
-              "id": "step-e51af42046854d63ac2f38a5b41c8324",
+              "id": "step-4ba364cfffe646f49c32ee4dfde7adf7",
               "keyword": "When",
               "text": "I reverse the string \"behave\"",
               "status": "passed",
@@ -4072,7 +4072,7 @@
               }
             },
             {
-              "id": "step-55f533bdcd5945b580f987d98acac614",
+              "id": "step-5039ca3eb21b4bc1ba4f4e37d4740ce2",
               "keyword": "Then",
               "text": "the reversed string should be \"evaheb\"",
               "status": "passed",
@@ -4083,11 +4083,11 @@
               }
             },
             {
-              "id": "step-8a980236049c47afb244f76064a1a15f",
+              "id": "step-0faa08bb87684e3983516a387a1215f6",
               "keyword": "But",
               "text": "the string \"behave\" should not be a palindrome",
               "status": "passed",
-              "duration": 0.000621,
+              "duration": 0.000642,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 31
@@ -4096,11 +4096,11 @@
           ]
         },
         {
-          "id": "scenario-ce155919b77043aabcfa8e04c72254cd",
+          "id": "scenario-10fa8e988c8f46ff938486aa5321c6b0",
           "name": "Counting vowels in a word",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.006214,
+          "duration": 0.004235,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 35
@@ -4108,7 +4108,7 @@
           "rule": "Vowels are counted case-insensitively",
           "steps": [
             {
-              "id": "step-8420351300a441d99b99bb484a08f1a2",
+              "id": "step-11072cbb2bea437387c85cf8f3246a1f",
               "keyword": "When",
               "text": "I count the vowels in \"Education\"",
               "status": "passed",
@@ -4119,11 +4119,11 @@
               }
             },
             {
-              "id": "step-592514c57bcb4f11a46e42b40f99ea4f",
+              "id": "step-0c3b5e15da194cb0a9feaa74f38f8f94",
               "keyword": "Then",
               "text": "the vowel count should be 5",
               "status": "passed",
-              "duration": 0.000838,
+              "duration": 0.000752,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 37
@@ -4132,11 +4132,11 @@
           ]
         },
         {
-          "id": "scenario-e88e0c96e54d49efad715e2d8c29f016",
+          "id": "scenario-078b5efb4e04446c8cb836161aa3936d",
           "name": "Vowel counting across inputs -- @1.1 ",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.006032,
+          "duration": 0.003735,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 47
@@ -4144,7 +4144,7 @@
           "rule": "Vowels are counted case-insensitively",
           "steps": [
             {
-              "id": "step-f9bd21e0ea63494fbafb00b5e7d9029e",
+              "id": "step-6b7aa67c88fa496a857eb283e04e6052",
               "keyword": "When",
               "text": "I count the vowels in \"sky\"",
               "status": "passed",
@@ -4155,11 +4155,11 @@
               }
             },
             {
-              "id": "step-21118ca35bda45ffbd6ac975c9cdf10a",
+              "id": "step-532ce55f7a3242f5ab9de30115fe34c5",
               "keyword": "Then",
               "text": "the vowel count should be 0",
               "status": "passed",
-              "duration": 0.001618,
+              "duration": 0.00093,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 43
@@ -4168,11 +4168,11 @@
           ]
         },
         {
-          "id": "scenario-7eed4cb6536a4d6c86d5e7dd11b6ea97",
+          "id": "scenario-7ff53bcd47554efaa88733401677cdab",
           "name": "Vowel counting across inputs -- @1.2 ",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.003894,
+          "duration": 0.00329,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 48
@@ -4180,7 +4180,7 @@
           "rule": "Vowels are counted case-insensitively",
           "steps": [
             {
-              "id": "step-b4b7a6d06b774a06bc8a913a82e0e42f",
+              "id": "step-7198425e80f24a1c8597287dede3bfa8",
               "keyword": "When",
               "text": "I count the vowels in \"AEIOU\"",
               "status": "passed",
@@ -4191,11 +4191,11 @@
               }
             },
             {
-              "id": "step-766c7f0a4b504f55b6afa0476e1982f7",
+              "id": "step-c8556b6ef2aa46d69c0ca5bd36c86bb4",
               "keyword": "Then",
               "text": "the vowel count should be 5",
               "status": "passed",
-              "duration": 0.000983,
+              "duration": 0.000836,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 43
@@ -4204,11 +4204,11 @@
           ]
         },
         {
-          "id": "scenario-3df943a2dcdb49d2b38df4d9ae1ced38",
+          "id": "scenario-718bc230948642ccb6f5fe52f569b3f8",
           "name": "Vowel counting across inputs -- @1.3 ",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.010501,
+          "duration": 0.002895,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 49
@@ -4216,7 +4216,7 @@
           "rule": "Vowels are counted case-insensitively",
           "steps": [
             {
-              "id": "step-d71ca53d85ba4ea3967f3b860a538ffe",
+              "id": "step-984d8bd5adbe45b48727dcbc6468d4e6",
               "keyword": "When",
               "text": "I count the vowels in \"Python\"",
               "status": "passed",
@@ -4227,11 +4227,11 @@
               }
             },
             {
-              "id": "step-fa560f20a02b4876a2c5efabbd7652eb",
+              "id": "step-92cdee9713384c9cbd087eeac38b9e80",
               "keyword": "Then",
               "text": "the vowel count should be 1",
               "status": "passed",
-              "duration": 0.00088,
+              "duration": 0.000688,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 43
@@ -4240,11 +4240,11 @@
           ]
         },
         {
-          "id": "scenario-80307a7a80484a8fbd5db27675651429",
+          "id": "scenario-6e801a4e049c4a209641332bb544a5af",
           "name": "Vowel counting across inputs -- @1.4 ",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.004463,
+          "duration": 0.003853,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 50
@@ -4252,7 +4252,7 @@
           "rule": "Vowels are counted case-insensitively",
           "steps": [
             {
-              "id": "step-c49d5a9f83e4436c943f21388225eb58",
+              "id": "step-5acb51bb17de41cebe396bb8110d0e23",
               "keyword": "When",
               "text": "I count the vowels in \"queueing\"",
               "status": "passed",
@@ -4263,11 +4263,11 @@
               }
             },
             {
-              "id": "step-7c8dc3b79d034ac38e383004dac2c5d6",
+              "id": "step-52b39a8251034f89bc894c82e159cc5c",
               "keyword": "Then",
               "text": "the vowel count should be 5",
               "status": "passed",
-              "duration": 0.000871,
+              "duration": 0.000726,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 43
@@ -4276,11 +4276,11 @@
           ]
         },
         {
-          "id": "scenario-64a9fd0a1e4349aabbf303f69d8ccfec",
+          "id": "scenario-7277a8850b534dff88288d0235266867",
           "name": "Title case conversion",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.00359,
+          "duration": 0.003524,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 54
@@ -4288,7 +4288,7 @@
           "rule": "Text is transformed into title-case and slug form",
           "steps": [
             {
-              "id": "step-ac0e73b8ea56421fad9ba5b0e003b205",
+              "id": "step-0fef1f1502b9446485efb2379a0850b1",
               "keyword": "When",
               "text": "I convert \"the quick brown fox\" to title case",
               "status": "passed",
@@ -4299,11 +4299,11 @@
               }
             },
             {
-              "id": "step-4a0473ff39a54b3fbed7fc38b880fdfa",
+              "id": "step-0d3e704d4fbc4331b0801460849c5506",
               "keyword": "Then",
               "text": "the result should be \"The Quick Brown Fox\"",
               "status": "passed",
-              "duration": 0.000881,
+              "duration": 0.001051,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 56
@@ -4312,11 +4312,11 @@
           ]
         },
         {
-          "id": "scenario-7005be27dc69471d9b327fb2ca44adb4",
+          "id": "scenario-41445de7b6464b5fbe660ca2edf5a0b3",
           "name": "Slugify conversion",
-          "featureId": "feature-f686c914029340b79127d1c6819a33e3",
+          "featureId": "feature-b72b996d23cf47fcae21a4837a550e9f",
           "status": "passed",
-          "duration": 0.005883,
+          "duration": 0.003098,
           "location": {
             "filename": "features/string_utils/string_utils.feature",
             "line": 58
@@ -4324,7 +4324,7 @@
           "rule": "Text is transformed into title-case and slug form",
           "steps": [
             {
-              "id": "step-8b7f30adc67c4fd99d14ef9cd5927cc4",
+              "id": "step-efb8b125388743d9983b877a92eea835",
               "keyword": "When",
               "text": "I slugify \"Hello World! This is Behave 101\"",
               "status": "passed",
@@ -4335,11 +4335,11 @@
               }
             },
             {
-              "id": "step-45da278ce8784b1dbc7520cafc1ff0ec",
+              "id": "step-ae43575ba4f44f4ba86c0cc902cc4f5a",
               "keyword": "Then",
               "text": "the result should be \"hello-world-this-is-behave-101\"",
               "status": "passed",
-              "duration": 0.001458,
+              "duration": 0.000773,
               "location": {
                 "filename": "features/string_utils/string_utils.feature",
                 "line": 60

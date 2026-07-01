@@ -31,7 +31,8 @@ demonstrates every major Gherkin / Behave feature using **behave 1.3.x**
 - **`context.add_cleanup`** for stack-based teardown
 - **External CSV** Examples tables
 - **In-memory Flask SUT** started in a background thread (no external services needed)
-- **JUnit** and **JSON** report output
+- **Multiple report formats**: pretty, JSON, JUnit XML, HTML, Markdown, Cucumber JSON,
+  step catalogs — all via configurable formatters in `behave.ini`
 
 ## Project structure
 
@@ -41,8 +42,14 @@ python-behave-examples/
 ├── requirements.txt                # Python dependencies
 ├── README.md
 ├── reports/                        # Generated reports (created on run)
-│   ├── pretty.txt                  # Human-readable pretty output
-│   ├── results.json                # Machine-readable JSON summary
+│   ├── pretty.txt                  # Behave built-in pretty formatter
+│   ├── results.json                # Behave built-in JSON formatter
+│   ├── behave_modern_html_report.html  # Modern HTML report (behave-modern-html-report)
+│   ├── step_catalog.html           # HTML step catalog
+│   ├── results_rjson.json          # Modern JSON report (behave-modern-json-report)
+│   ├── results_cucumber.json       # Cucumber JSON format (CI-compatible)
+│   ├── results_markdown.md         # Markdown report (behave-modern-md-report)
+│   ├── step_catalog.md             # Markdown step catalog
 │   └── junit/                      # JUnit XML reports (one file per feature)
 └── features/
     ├── environment.py              # Lifecycle hooks (before_all, before_rule, ...)
@@ -108,34 +115,68 @@ behave features/calculator/calculator.feature
 ### Report configuration
 
 All outputs are configured in `behave.ini` using the `format` and `outfiles`
-multi-line keys (paired by position):
+multi-line keys (paired by position). Custom formatters are registered in the
+`[behave.formatters]` section.
+
+#### File formatters (paired with outfiles)
+
+| Formatter name | Library | Output file | Description |
+|---|---|---|---|
+| `pretty` | behave (built-in) | `reports/pretty.txt` | Human-readable colored output |
+| `json` | behave (built-in) | `reports/results.json` | Behave JSON summary |
+| `modern` | behave-modern-html-report | `reports/behave_modern_html_report.html` | Modern interactive HTML report |
+| `steps` | behave-modern-html-report | `reports/step_catalog.html` | HTML step catalog (all registered steps) |
+| `rjson` | behave-modern-json-report | `reports/results_rjson.json` | Enhanced JSON with metadata (project, branch, build) |
+| `cucumber` | behave-modern-json-report | `reports/results_cucumber.json` | Cucumber-compatible JSON (CI tools like Jenkins) |
+| `markdown` | behave-modern-md-report | `reports/results_markdown.md` | Markdown report for documentation/GitHub |
+| `stepcatalog` | behave-modern-md-report | `reports/step_catalog.md` | Markdown step catalog |
+| _(junit)_ | behave (built-in) | `reports/junit/*.xml` | JUnit XML — enabled via `junit = true` |
+
+#### Console formatters (default_format)
+
+The console output is controlled by `default_format` in `behave.ini`.
+Available console formatters (registered in `[behave.formatters]`):
+
+| Formatter name | Library | Description |
+|---|---|---|
+| `minimal` | behave-modern-console-report | Compact one-line-per-scenario output |
+| `progress` | behave-modern-console-report | Progress bar with percentage |
+| `modern` | behave-modern-console-report | Modern colored output with timestamps |
+| `modern-live` | behave-modern-console-report | Live-updating modern output |
+| `log` | behave-modern-console-report | Structured log format with timestamps |
+| `ci` | behave-modern-console-report | CI-optimized output |
+| `pretty` | behave (built-in) | Default behave pretty output |
+
+To switch the console format, change `default_format` in `behave.ini`:
 
 ```ini
-format = pretty
-    json
-outfiles = reports/pretty.txt
-    reports/results.json
+default_format = progress
 ```
 
-To try a new report library, add its formatter name and output path:
+#### Adding a new report library
 
-```ini
-format = pretty
-    json
-    html-pretty
-outfiles = reports/pretty.txt
-    reports/results.json
-    reports/report.html
-```
-
-| File | Description |
-|---|---|
-| `reports/pretty.txt` | Human-readable pretty output (same as console) |
-| `reports/results.json` | Machine-readable JSON summary (CI-friendly) |
-| `reports/junit/*.xml` | JUnit XML — one file per feature (CI integration) |
+1. Install the package: `pip install <package>`
+2. Register the formatter in `[behave.formatters]`:
+   ```ini
+   [behave.formatters]
+   myformat = my_package.formatter:MyFormatter
+   ```
+3. Add it to the `format` / `outfiles` lists:
+   ```ini
+   format = pretty
+       json
+       myformat
+   outfiles = reports/pretty.txt
+       reports/results.json
+       reports/my_report.html
+   ```
 
 ## Requirements
 
 - Python 3.10+
 - behave 1.3.3
 - Flask, requests, PyHamcrest, jsonschema
+- behave-modern-html-report 2.2.1
+- behave-modern-json-report 1.1.0
+- behave-modern-md-report 1.2.0
+- behave-modern-console-report 1.0.1

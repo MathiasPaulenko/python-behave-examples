@@ -1,8 +1,8 @@
 # ⚪ Behave Markdown Report
 
 **Status:** Untested  
-**Generated:** 2026-07-01 15:25:39  
-**Duration:** 2.33s
+**Generated:** 2026-07-01 16:18:26  
+**Duration:** 1.34s
 
 ---
 
@@ -32,7 +32,7 @@
 | Scenarios      | 44      |
 | Steps          | 194     |
 | Pass rate      | 100.00% |
-| Total duration | 2.33s   |
+| Total duration | 1.34s   |
 | Attachments    | 0       |
 | Log lines      | 0       |
 
@@ -40,43 +40,43 @@
 
 | Feature                                                 | Status     | Scenarios | Duration |
 | ------------------------------------------------------- | ---------- | --------- | -------- |
-| [Async step support](#feature-async-step-support)       | ✅ Passed   | 6         | 312ms    |
-| [Calculator](#feature-calculator)                       | ✅ Passed   | 11        | 21ms     |
+| [Async step support](#feature-async-step-support)       | ✅ Passed   | 6         | 299ms    |
+| [Calculator](#feature-calculator)                       | ✅ Passed   | 11        | 15ms     |
 | [External CSV examples](#feature-external-csv-examples) | ⚪ Untested | 0         | 0ms      |
-| [Shopping cart](#feature-shopping-cart)                 | ✅ Passed   | 6         | 11ms     |
-| [String utilities](#feature-string-utilities)           | ✅ Passed   | 10        | 10ms     |
-| [Users REST API](#feature-users-rest-api)               | ✅ Passed   | 11        | 548ms    |
+| [Shopping cart](#feature-shopping-cart)                 | ✅ Passed   | 6         | 7ms      |
+| [String utilities](#feature-string-utilities)           | ✅ Passed   | 10        | 8ms      |
+| [Users REST API](#feature-users-rest-api)               | ✅ Passed   | 11        | 355ms    |
 
 ## Tags
 
 | Tag           | Count | Passed | Failed | Duration | Pass rate |
 | ------------- | ----- | ------ | ------ | -------- | --------- |
-| `unit`        | 27    | 27     | 0      | 43ms     | 100.00%   |
-| `smoke`       | 13    | 13     | 0      | 215ms    | 100.00%   |
-| `calculator`  | 11    | 11     | 0      | 21ms     | 100.00%   |
-| `api`         | 11    | 11     | 0      | 548ms    | 100.00%   |
-| `integration` | 11    | 11     | 0      | 548ms    | 100.00%   |
-| `string`      | 10    | 10     | 0      | 10ms     | 100.00%   |
-| `shopping`    | 6     | 6      | 0      | 11ms     | 100.00%   |
-| `negative`    | 6     | 6      | 0      | 175ms    | 100.00%   |
-| `async`       | 6     | 6      | 0      | 312ms    | 100.00%   |
-| `math`        | 5     | 5      | 0      | 11ms     | 100.00%   |
+| `unit`        | 27    | 27     | 0      | 31ms     | 100.00%   |
+| `smoke`       | 13    | 13     | 0      | 148ms    | 100.00%   |
+| `calculator`  | 11    | 11     | 0      | 15ms     | 100.00%   |
+| `integration` | 11    | 11     | 0      | 355ms    | 100.00%   |
+| `api`         | 11    | 11     | 0      | 355ms    | 100.00%   |
+| `string`      | 10    | 10     | 0      | 8ms      | 100.00%   |
+| `shopping`    | 6     | 6      | 0      | 7ms      | 100.00%   |
+| `negative`    | 6     | 6      | 0      | 103ms    | 100.00%   |
+| `async`       | 6     | 6      | 0      | 299ms    | 100.00%   |
+| `math`        | 5     | 5      | 0      | 7ms      | 100.00%   |
 | `docstring`   | 1     | 1      | 0      | 0ms      | 100.00%   |
 
 ## Slowest Scenarios
 
 | Rank | Scenario                                                                                                        | Feature            | Duration |
 | ---- | --------------------------------------------------------------------------------------------------------------- | ------------------ | -------- |
-| 1    | [Create a user without required fields](#scenario-users-rest-api-create-a-user-without-required-fields)         | Users REST API     | 102ms    |
-| 2    | [List users with pagination](#scenario-users-rest-api-list-users-with-pagination)                               | Users REST API     | 80ms     |
-| 3    | [Health check](#scenario-users-rest-api-health-check)                                                           | Users REST API     | 65ms     |
-| 4    | [Async fetch with multiple keys -- @1.1 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-1-) | Async step support | 60ms     |
-| 5    | [Get a user by id](#scenario-users-rest-api-get-a-user-by-id)                                                   | Users REST API     | 60ms     |
-| 6    | [Async fetch with multiple keys -- @1.4 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-4-) | Async step support | 60ms     |
-| 7    | [Async fetch with multiple keys -- @1.3 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-3-) | Async step support | 58ms     |
-| 8    | [Fetching a value asynchronously](#scenario-async-step-support-fetching-a-value-asynchronously)                 | Async step support | 58ms     |
-| 9    | [Create a user with a data table](#scenario-users-rest-api-create-a-user-with-a-data-table)                     | Users REST API     | 53ms     |
-| 10   | [Async fetch with multiple keys -- @1.2 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-2-) | Async step support | 53ms     |
+| 1    | [Async fetch with multiple keys -- @1.3 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-3-) | Async step support | 58ms     |
+| 2    | [Async fetch with multiple keys -- @1.2 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-2-) | Async step support | 57ms     |
+| 3    | [Async fetch with multiple keys -- @1.4 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-4-) | Async step support | 57ms     |
+| 4    | [Health check](#scenario-users-rest-api-health-check)                                                           | Users REST API     | 57ms     |
+| 5    | [Async fetch with multiple keys -- @1.1 ](#scenario-async-step-support-async-fetch-with-multiple-keys-----1-1-) | Async step support | 57ms     |
+| 6    | [Fetching a value asynchronously](#scenario-async-step-support-fetching-a-value-asynchronously)                 | Async step support | 54ms     |
+| 7    | [Role-based user creation -- @1.3 ](#scenario-users-rest-api-role-based-user-creation-----1-3-)                 | Users REST API     | 50ms     |
+| 8    | [Get a user by id](#scenario-users-rest-api-get-a-user-by-id)                                                   | Users REST API     | 43ms     |
+| 9    | [Duplicate email is rejected](#scenario-users-rest-api-duplicate-email-is-rejected)                             | Users REST API     | 42ms     |
+| 10   | [List users with pagination](#scenario-users-rest-api-list-users-with-pagination)                               | Users REST API     | 36ms     |
 
 ## Scenario Details
 
@@ -109,7 +109,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 65ms
+**Duration:** 57ms
 
 **Location:** `features/api/users_api.feature:20`
 
@@ -127,15 +127,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `36ms` (Passed)
+✅ **Given** the API server is running — `28ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `6ms` (Passed)
+✅ **And** the users database is empty — `14ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a GET request to "/api/health" — `22ms` (Passed)
+✅ **When** I send a GET request to "/api/health" — `14ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:21`</sub>
 
@@ -154,7 +154,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 53ms
+**Duration:** 10ms
 
 **Location:** `features/api/users_api.feature:28`
 
@@ -172,11 +172,11 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `40ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `7ms` (Passed)
+✅ **And** the users database is empty — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
@@ -212,7 +212,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 102ms
+**Duration:** 27ms
 
 **Location:** `features/api/users_api.feature:41`
 
@@ -230,15 +230,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `22ms` (Passed)
+✅ **Given** the API server is running — `3ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `72ms` (Passed)
+✅ **And** the users database is empty — `20ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a POST request to "/api/users" with: — `6ms` (Passed)
+✅ **When** I send a POST request to "/api/users" with: — `4ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:42`</sub>
 | field | value |
@@ -261,7 +261,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 51ms
+**Duration:** 42ms
 
 **Location:** `features/api/users_api.feature:51`
 
@@ -279,15 +279,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `3ms` (Passed)
+✅ **Given** the API server is running — `21ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `5ms` (Passed)
+✅ **And** the users database is empty — `14ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **Given** a user exists with email "dup@example.com" — `38ms` (Passed)
+✅ **Given** a user exists with email "dup@example.com" — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:52`</sub>
 
@@ -314,7 +314,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 80ms
+**Duration:** 36ms
 
 **Location:** `features/api/users_api.feature:62`
 
@@ -330,15 +330,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `18ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `18ms` (Passed)
+✅ **And** the users database is empty — `19ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **Given** the following users exist: — `14ms` (Passed)
+✅ **Given** the following users exist: — `9ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:63`</sub>
 | name   | email          | role   |
@@ -347,7 +347,7 @@ Tags: `api` `integration`
 | User 2 | u2@example.com | viewer |
 | User 3 | u3@example.com | viewer |
 
-✅ **When** I send a GET request to "/api/users?page=1&limit=2" — `28ms` (Passed)
+✅ **When** I send a GET request to "/api/users?page=1&limit=2" — `4ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:68`</sub>
 
@@ -370,7 +370,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 60ms
+**Duration:** 43ms
 
 **Location:** `features/api/users_api.feature:74`
 
@@ -386,19 +386,19 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `3ms` (Passed)
+✅ **Given** the API server is running — `23ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `42ms` (Passed)
+✅ **And** the users database is empty — `12ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **Given** a user exists with email "getme@example.com" — `7ms` (Passed)
+✅ **Given** a user exists with email "getme@example.com" — `3ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:75`</sub>
 
-✅ **When** I send a GET request to the created user endpoint — `6ms` (Passed)
+✅ **When** I send a GET request to the created user endpoint — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:76`</sub>
 
@@ -433,19 +433,19 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `4ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `11ms` (Passed)
+✅ **And** the users database is empty — `5ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **Given** a user exists with email "deleteme@example.com" — `16ms` (Passed)
+✅ **Given** a user exists with email "deleteme@example.com" — `3ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:82`</sub>
 
-✅ **When** I send a DELETE request to the created user endpoint — `3ms` (Passed)
+✅ **When** I send a DELETE request to the created user endpoint — `24ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:83`</sub>
 
@@ -460,7 +460,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 14ms
+**Duration:** 29ms
 
 **Location:** `features/api/users_api.feature:88`
 
@@ -478,15 +478,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `5ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `3ms` (Passed)
+✅ **And** the users database is empty — `23ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a GET request to "/api/users/9999" — `3ms` (Passed)
+✅ **When** I send a GET request to "/api/users/9999" — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:89`</sub>
 
@@ -505,7 +505,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 16ms
+**Duration:** 9ms
 
 **Location:** `features/api/users_api.feature:107`
 
@@ -521,15 +521,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `4ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `4ms` (Passed)
+✅ **And** the users database is empty — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a POST request to "/api/users" with: — `7ms` (Passed)
+✅ **When** I send a POST request to "/api/users" with: — `3ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:97`</sub>
 | field | value              |
@@ -553,7 +553,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 41ms
+**Duration:** 12ms
 
 **Location:** `features/api/users_api.feature:108`
 
@@ -569,15 +569,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `5ms` (Passed)
+✅ **Given** the API server is running — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `31ms` (Passed)
+✅ **And** the users database is empty — `6ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a POST request to "/api/users" with: — `4ms` (Passed)
+✅ **When** I send a POST request to "/api/users" with: — `2ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:97`</sub>
 | field | value             |
@@ -601,7 +601,7 @@ Tags: `api` `integration`
 
 **Status:** ✅ Passed
 
-**Duration:** 24ms
+**Duration:** 50ms
 
 **Location:** `features/api/users_api.feature:109`
 
@@ -617,15 +617,15 @@ Tags: `api` `integration`
 
 ##### Steps
 
-✅ **Given** the API server is running — `4ms` (Passed)
+✅ **Given** the API server is running — `3ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:15`</sub>
 
-✅ **And** the users database is empty — `8ms` (Passed)
+✅ **And** the users database is empty — `20ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:16`</sub>
 
-✅ **When** I send a POST request to "/api/users" with: — `9ms` (Passed)
+✅ **When** I send a POST request to "/api/users" with: — `26ms` (Passed)
 
 <sub>Location: `features/api/users_api.feature:97`</sub>
 | field | value             |
@@ -662,7 +662,7 @@ Tags: `async`
 
 **Status:** ✅ Passed
 
-**Duration:** 58ms
+**Duration:** 54ms
 
 **Location:** `features/async/async_steps.feature:13`
 
@@ -670,7 +670,7 @@ Tags: `async`
 
 ##### Steps
 
-✅ **When** I asynchronously fetch the value for "hello" — `58ms` (Passed)
+✅ **When** I asynchronously fetch the value for "hello" — `53ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:14`</sub>
 
@@ -685,13 +685,13 @@ Tags: `async`
 
 **Status:** ✅ Passed
 
-**Duration:** 60ms
+**Duration:** 57ms
 
 **Location:** `features/async/async_steps.feature:27`
 
 ##### Steps
 
-✅ **When** I asynchronously fetch the value for "hello" — `60ms` (Passed)
+✅ **When** I asynchronously fetch the value for "hello" — `57ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:22`</sub>
 
@@ -706,13 +706,13 @@ Tags: `async`
 
 **Status:** ✅ Passed
 
-**Duration:** 53ms
+**Duration:** 57ms
 
 **Location:** `features/async/async_steps.feature:28`
 
 ##### Steps
 
-✅ **When** I asynchronously fetch the value for "behave" — `52ms` (Passed)
+✅ **When** I asynchronously fetch the value for "behave" — `57ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:22`</sub>
 
@@ -733,7 +733,7 @@ Tags: `async`
 
 ##### Steps
 
-✅ **When** I asynchronously fetch the value for "python" — `58ms` (Passed)
+✅ **When** I asynchronously fetch the value for "python" — `57ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:22`</sub>
 
@@ -748,13 +748,13 @@ Tags: `async`
 
 **Status:** ✅ Passed
 
-**Duration:** 60ms
+**Duration:** 57ms
 
 **Location:** `features/async/async_steps.feature:30`
 
 ##### Steps
 
-✅ **When** I asynchronously fetch the value for "unknown" — `60ms` (Passed)
+✅ **When** I asynchronously fetch the value for "unknown" — `57ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:22`</sub>
 
@@ -769,7 +769,7 @@ Tags: `async`
 
 **Status:** ✅ Passed
 
-**Duration:** 21ms
+**Duration:** 13ms
 
 **Location:** `features/async/async_steps.feature:35`
 
@@ -777,7 +777,7 @@ Tags: `async`
 
 ##### Steps
 
-✅ **When** I asynchronously double the number 21 — `20ms` (Passed)
+✅ **When** I asynchronously double the number 21 — `13ms` (Passed)
 
 <sub>Location: `features/async/async_steps.feature:36`</sub>
 
@@ -805,7 +805,7 @@ Tags: `calculator` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/calculator/calculator.feature:18`
 
@@ -997,7 +997,7 @@ Tags: `calculator` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/calculator/calculator.feature:47`
 
@@ -1046,7 +1046,7 @@ Tags: `calculator` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/calculator/calculator.feature:48`
 
@@ -1144,7 +1144,7 @@ Tags: `calculator` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/calculator/calculator.feature:53`
 
@@ -1174,7 +1174,7 @@ Tags: `calculator` `unit`
 
 <sub>Location: `features/calculator/calculator.feature:38`</sub>
 
-✅ **When** I divide 100 to the calculator — `1ms` (Passed)
+✅ **When** I divide 100 to the calculator — `0ms` (Passed)
 
 <sub>Location: `features/calculator/calculator.feature:39`</sub>
 
@@ -1287,7 +1287,7 @@ Tags: `calculator` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/calculator/calculator.feature:66`
 
@@ -1387,7 +1387,7 @@ Tags: `shopping` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/shopping_cart/shopping_cart.feature:42`
 
@@ -1439,7 +1439,7 @@ Tags: `shopping` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/shopping_cart/shopping_cart.feature:43`
 
@@ -1543,7 +1543,7 @@ Tags: `shopping` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 2ms
+**Duration:** 1ms
 
 **Location:** `features/shopping_cart/shopping_cart.feature:48`
 
@@ -1673,7 +1673,7 @@ Tags: `string` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 1ms
+**Duration:** 0ms
 
 **Location:** `features/string_utils/string_utils.feature:23`
 
@@ -1748,7 +1748,7 @@ Tags: `string` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 1ms
+**Duration:** 0ms
 
 **Location:** `features/string_utils/string_utils.feature:47`
 
@@ -1853,7 +1853,7 @@ Tags: `string` `unit`
 
 **Status:** ✅ Passed
 
-**Duration:** 1ms
+**Duration:** 0ms
 
 **Location:** `features/string_utils/string_utils.feature:58`
 
@@ -1875,29 +1875,29 @@ Tags: `string` `unit`
 
 ## Environment
 
-| Variable          | Value                                                                                                                        |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Python version    | 3.14.5                                                                                                                       |
-| Behave version    | 1.3.3                                                                                                                        |
-| Operating system  | Windows 10 (AMD64)                                                                                                           |
-| Hostname          | MathiasLaptop                                                                                                                |
-| Working directory | `D:\Codigo\python-behave-examples`                                                                                           |
-| Execution command | `D:\Codigo\python-behave-examples\.venv\Lib\site-packages\behave\__main__.py --format=progress --no-capture --no-logcapture` |
-| User              | mathi                                                                                                                        |
-| CPU count         | 12                                                                                                                           |
-| Memory (MB)       | unknown                                                                                                                      |
-| Git branch        | main                                                                                                                         |
-| Git commit        | 86913ab                                                                                                                      |
-| Git remote        | git@github.com:MathiasPaulenko/python-behave-examples.git                                                                    |
+| Variable          | Value                                                     |
+| ----------------- | --------------------------------------------------------- |
+| Python version    | 3.14.5                                                    |
+| Behave version    | 1.3.3                                                     |
+| Operating system  | Windows 10 (AMD64)                                        |
+| Hostname          | MathiasLaptop                                             |
+| Working directory | `D:\Codigo\python-behave-examples`                        |
+| Execution command | `D:\Codigo\python-behave-examples\.venv\Scripts\behave`   |
+| User              | mathi                                                     |
+| CPU count         | 12                                                        |
+| Memory (MB)       | unknown                                                   |
+| Git branch        | main                                                      |
+| Git commit        | 08806bb                                                   |
+| Git remote        | git@github.com:MathiasPaulenko/python-behave-examples.git |
 
 ### CI / Environment Variables
 
-| Variable    | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| LANG        | en_US.UTF-8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| PATH        | C:\Python314\Scripts\;C:\Python314\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;D:\Softwares\grpcurl;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\Maven\apache-maven-3.9.9\bin;C:\Program Files\AutoFirma\AutoFirma;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\mathi\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python312\;C:\Users\mathi\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python310\;C:\Users\mathi\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python39\;C:\Users\mathi\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python36-32\;C:\Users\mathi\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\bin;C:\Users\mathi\.dotnet\tools;C:\Users\mathi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm 2020.3.3\bin;C:\Program Files\JetBrains\PyCharm 2024.1.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2023.1.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.3\bin;;C:\Users\mathi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\mathi\AppData\Local\Programs\Windsurf\bin;C:\Users\mathi\AppData\Roaming\npm;C:\Users\mathi\AppData\Local\Programs\Devin\bin;c:\Users\mathi\.devin\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\scripts\noConfigScripts |
-| USERPROFILE | C:\Users\mathi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Variable    | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LANG        | en_US.UTF-8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| PATH        | D:\Codigo\python-behave-examples\.venv\Scripts;C:\Python314\Scripts\;C:\Python314\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;D:\Softwares\grpcurl;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\Maven\apache-maven-3.9.9\bin;C:\Program Files\AutoFirma\AutoFirma;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\mathi\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python312\;C:\Users\mathi\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python310\;C:\Users\mathi\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python39\;C:\Users\mathi\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\mathi\AppData\Local\Programs\Python\Python36-32\;C:\Users\mathi\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\bin;C:\Users\mathi\.dotnet\tools;C:\Users\mathi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm 2020.3.3\bin;C:\Program Files\JetBrains\PyCharm 2024.1.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2023.1.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.3\bin;;C:\Users\mathi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\mathi\AppData\Local\Programs\Windsurf\bin;C:\Users\mathi\AppData\Roaming\npm;C:\Users\mathi\AppData\Local\Programs\Devin\bin;c:\Users\mathi\.devin\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\scripts\noConfigScripts |
+| USERPROFILE | C:\Users\mathi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ---
 
-*Report generated by Behave Markdown Report on 2026-07-01 15:25:39.*
+*Report generated by Behave Markdown Report on 2026-07-01 16:18:26.*
