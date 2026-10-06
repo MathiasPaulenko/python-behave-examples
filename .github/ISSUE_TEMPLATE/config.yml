@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions & discussions
+    url: https://github.com/MathiasPaulenko/python-behave-examples/discussions
+    about: Ask questions and share ideas here instead of opening an issue.
+  - name: Security vulnerabilities
+    url: https://github.com/MathiasPaulenko/python-behave-examples/security/advisories/new
+    about: Report vulnerabilities privately — do not open a public issue.
