@@ -18,7 +18,7 @@ behave-steplib>=1.0.0
 
 # --- behave-* ecosystem: execution ---
 behave-priority>=1.1.0
-behave-retry>=1.0.0
+behave-retry>=1.8.4
 behave-pool>=1.2.0
 behave-runner>=1.3.0
 behave-trace>=1.3.1
