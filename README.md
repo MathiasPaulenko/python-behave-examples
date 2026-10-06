@@ -213,10 +213,11 @@ behave-trace show reports/trace.json
 - **The Flask SUT starts on every run.** `before_all` starts the server on
   port 5000 even when only unit-tagged features are selected, and the run fails
   entirely if the port is already in use.
-- **`behave --runner=parallel` conflicts with the SUT.** Each behave-pool
-  worker runs its own `before_all`, so all of them try to bind port 5000.
-  To run the suite in parallel, start the server externally or use a
-  per-worker port.
+- **`behave --runner=parallel` runs, with a caveat.** Each behave-pool
+  worker spawns its own `before_all`, so every worker binds port 5000 —
+  on Windows `SO_REUSEADDR` allows it and the run passes, but a worker's
+  requests may land on another worker's in-memory DB. For real parallel
+  use, start the SUT externally or use a per-worker port.
 - **`behave-doctor` reports expected diagnostics** on this suite: it flags
   `BD302` (undefined step) for steplib steps and behave-kit class-based steps
   because both are registered at runtime — doctor's AST scan cannot see them.
