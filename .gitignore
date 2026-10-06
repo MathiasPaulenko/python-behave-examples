@@ -29,9 +29,10 @@ reports/
 # Filesystem scratch space used by the behave-steplib io demo
 output/
 
-# behave-kit context dumps on failure and behave-lint cache
+# behave-kit context dumps on failure and behave-lint/pool caches
 debug/
 .behave-lint-cache/
+.behave-pool-timing.json
 
 # Ad-hoc run artifacts
 progress_stderr.txt
