@@ -23,10 +23,10 @@ Feature: Async step support
     Then the async result should be "<value>"
 
     Examples:
-      | key    | value    |
-      | hello  | world    |
-      | behave | rocks    |
-      | python | 3.12     |
+      | key     | value     |
+      | hello   | world     |
+      | behave  | rocks     |
+      | python  | 3.12      |
       | unknown | <unknown> |
 
   # Async step that returns an integer (not a string).

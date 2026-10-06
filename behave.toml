@@ -1,0 +1,18 @@
+# behave-kit environment profiles
+# Loaded by setup(context, env="test") in features/environment.py.
+# The selected [env.<name>] section is merged over [env.default] and
+# exposed as context.kit_config.
+
+[env.default]
+api_url = "http://localhost:5000"
+timeout = 30
+debug = false
+
+[env.test]
+debug = true
+
+# Example alternative profile — select it with:
+#   setup(context, env="dev")
+[env.dev]
+api_url = "http://localhost:8000"
+debug = true

@@ -1,0 +1,48 @@
+# pyproject.toml — tool configuration for the behave-* ecosystem.
+# This repo is not a package; the file only carries [tool.*] sections
+# read by the ecosystem CLIs.
+
+# ------------------------------------------------------------------
+# behave-runner — unified CLI for the whole ecosystem.
+# Run: behave-runner run / list / select / lint / format / doctor ...
+# ------------------------------------------------------------------
+[tool.behave-runner]
+parallel = 4
+
+# Named profiles — `behave-runner run --profile smoke`
+[tool.behave-runner.profiles.smoke]
+tags = ["@smoke"]
+
+[tool.behave-runner.profiles.unit]
+tags = ["@unit"]
+
+[tool.behave-runner.profiles.integration]
+tags = ["@integration"]
+
+# ------------------------------------------------------------------
+# behave-doctor — static diagnostics, no test execution.
+# Run: behave-doctor scan . | behave-doctor impact . --changed-files ...
+# ------------------------------------------------------------------
+[tool.behave-doctor]
+features_dir = "features/"
+steps_dir = "features/steps/"
+min_severity = "info"
+exclude_tags = ["@wip"]
+
+# ------------------------------------------------------------------
+# behave-lint — 50-rule Gherkin linter with auto-fix.
+# Run: behave-lint features/ | behave-lint features/ --fix
+# ------------------------------------------------------------------
+[tool.behave-lint]
+exclude = ["features/support/"]
+# BC004 rejects functional tags required by the ecosystem:
+# @priority(N), @retry:N, @load_examples:<source>, @timeout:N
+ignore = ["BC004"]
+
+# ------------------------------------------------------------------
+# behave-format — opinionated .feature formatter.
+# Run: behave-format features/ | behave-format --check features/
+# ------------------------------------------------------------------
+[tool.behave-format]
+indent = 2
+sort_tags = true

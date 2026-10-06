@@ -7,9 +7,9 @@ Feature: Calculator
   I want to perform arithmetic operations
   So that I can verify behave's Background and Scenario Outline support
 
-  # Background runs before every scenario in this feature.
-  # Ensures a fresh calculator instance with accumulator = 0.
   Background:
+    # Background runs before every scenario in this feature.
+    # Ensures a fresh calculator instance with accumulator = 0.
     Given I have a calculator
     And the calculator is reset
 
@@ -41,11 +41,11 @@ Feature: Calculator
     And the last operation should be "<op_name>"
 
     Examples: Basic arithmetic
-      | start | operation | value | expected | op_name   |
-      | 0     | add       | 5     | 5        | add       |
-      | 10    | subtract  | 4     | 6        | subtract  |
-      | 3     | multiply  | 4     | 12       | multiply  |
-      | 20    | divide    | 4     | 5        | divide    |
+      | start | operation | value | expected | op_name  |
+      | 0     | add       | 5     | 5        | add      |
+      | 10    | subtract  | 4     | 6        | subtract |
+      | 3     | multiply  | 4     | 12       | multiply |
+      | 20    | divide    | 4     | 5        | divide   |
 
     Examples: Edge cases
       | start | operation | value | expected | op_name  |

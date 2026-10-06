@@ -1,0 +1,14 @@
+# behave-data configuration
+# Loaded by setup_data(context) in features/environment.py.
+# See https://mathiaspaulenko.github.io/behave-data/configuration.html
+
+# Markers treated as None in typed tables (in addition to empty cells).
+null_markers: ["", "null", "N/A"]
+
+# Base directory for relative data sources (CSV/JSON/YAML files).
+load_base_dir: features/support/data/
+
+# Named sources for @load_examples:<name> tags. Paths containing "/"
+# are mangled by Behave's tag sanitizer, so they must be declared here.
+data_sources:
+  users_csv: csv:users.csv

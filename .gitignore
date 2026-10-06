@@ -26,6 +26,13 @@ build/
 # Behave generated reports (recreated on every run)
 reports/
 
+# Filesystem scratch space used by the behave-steplib io demo
+output/
+
+# behave-kit context dumps on failure and behave-lint cache
+debug/
+.behave-lint-cache/
+
 # Ad-hoc run artifacts
 progress_stderr.txt
 *.log

@@ -114,6 +114,12 @@ def step_response_field_int(context, field, value):
     assert actual == value, f"Field '{field}': expected {value}, got {actual}"
 
 
+@then("this scenario simply passes")
+def step_simply_passes(context):
+    """No-op assertion used by ordering/retry demonstration scenarios."""
+    assert True
+
+
 @then("the response should contain at most {count:d} items")
 def step_response_at_most(context, count):
     """Asserts that the ``data`` array in the response has at most ``count`` items.

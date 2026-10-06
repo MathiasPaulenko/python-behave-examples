@@ -7,8 +7,8 @@ Feature: Shopping cart
   I want to manage a shopping cart
   So that I can demonstrate data tables and DocStrings
 
-  # Background: ensures every scenario starts with a clean cart.
   Background:
+    # Background: ensures every scenario starts with a clean cart.
     Given I have an empty shopping cart
 
   # Data table: each row represents an item with name, price, and quantity.
@@ -16,10 +16,10 @@ Feature: Shopping cart
   @smoke
   Scenario: Adding items from a data table
     When I add the following items to the cart:
-      | name    | price | quantity |
-      | Apple   | 0.50  | 3        |
-      | Banana  | 0.30  | 2        |
-      | Milk    | 1.20  | 1        |
+      | name   | price | quantity |
+      | Apple  | 0.50  | 3        |
+      | Banana | 0.30  | 2        |
+      | Milk   | 1.20  | 1        |
     Then the cart should contain 6 items
     And the subtotal should be 3.30
 
@@ -47,8 +47,8 @@ Feature: Shopping cart
   @negative
   Scenario: Removing an item that does not exist
     When I add the following items to the cart:
-      | name  | price | quantity |
-      | Pen   | 1.50  | 2        |
+      | name | price | quantity |
+      | Pen  | 1.50  | 2        |
     And I remove "Notebook" from the cart
     Then the cart should contain 2 items
     And the subtotal should be 3.00
@@ -58,9 +58,9 @@ Feature: Shopping cart
   @docstring
   Scenario: Receipt preview via DocString
     When I add the following items to the cart:
-      | name  | price | quantity |
-      | Pen   | 1.50  | 2        |
-      | Book  | 12.00 | 1        |
+      | name | price | quantity |
+      | Pen  | 1.50  | 2        |
+      | Book | 12.00 | 1        |
     Then the receipt should be:
       """
       === RECEIPT ===

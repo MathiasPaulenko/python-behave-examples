@@ -14,7 +14,7 @@ behave 1.3.x — the framework no longer strips trailing colons.
 from __future__ import annotations
 
 import requests
-from behave import given, when, then
+from behave import given, when
 
 
 @given('a user exists with email "{email}"')

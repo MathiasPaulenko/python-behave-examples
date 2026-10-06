@@ -9,9 +9,9 @@ Feature: Users REST API
   I want to manage users via a REST API
   So that I can demonstrate behave testing against a real HTTP server
 
-  # Background: runs before every scenario in this feature.
-  # Ensures the SUT server is alive and the database is clean.
   Background:
+    # Background: runs before every scenario in this feature.
+    # Ensures the SUT server is alive and the database is clean.
     Given the API server is running
     And the users database is empty
 
@@ -61,10 +61,10 @@ Feature: Users REST API
   # The response includes "data" (array) and "total" (int).
   Scenario: List users with pagination
     Given the following users exist:
-      | name   | email             | role   |
-      | User 1 | u1@example.com    | viewer |
-      | User 2 | u2@example.com    | viewer |
-      | User 3 | u3@example.com    | viewer |
+      | name   | email          | role   |
+      | User 1 | u1@example.com | viewer |
+      | User 2 | u2@example.com | viewer |
+      | User 3 | u3@example.com | viewer |
     When I send a GET request to "/api/users?page=1&limit=2"
     Then the response status should be 200
     And the response should contain at most 2 items
@@ -103,7 +103,7 @@ Feature: Users REST API
     And the response field "role" should be "<role>"
 
     Examples:
-      | name      | email              | role   |
-      | Admin 1   | admin1@example.com | admin  |
-      | Editor 1  | edit1@example.com  | editor |
-      | Viewer 1  | view1@example.com  | viewer |
+      | name     | email              | role   |
+      | Admin 1  | admin1@example.com | admin  |
+      | Editor 1 | edit1@example.com  | editor |
+      | Viewer 1 | view1@example.com  | viewer |
