@@ -13,7 +13,7 @@ Note: Steps that accept a data table or DocString MUST end with a colon
 """
 from __future__ import annotations
 
-from behave import given, when, then
+from behave import given, then, when
 
 
 @given("I have an empty shopping cart")

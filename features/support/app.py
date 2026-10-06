@@ -8,9 +8,9 @@ from __future__ import annotations
 
 import threading
 import time
-from werkzeug.serving import make_server
 
-from flask import Flask, jsonify, request, Response
+from flask import Flask, Response, jsonify, request
+from werkzeug.serving import make_server
 
 
 def create_app() -> Flask:

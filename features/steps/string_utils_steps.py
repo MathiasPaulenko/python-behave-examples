@@ -10,7 +10,7 @@ in ``context.string_utils``. Intermediate results are kept in
 """
 from __future__ import annotations
 
-from behave import given, when, then
+from behave import given, then, when
 
 
 @given("I have the string utilities")

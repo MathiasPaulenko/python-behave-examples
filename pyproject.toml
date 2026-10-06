@@ -46,3 +46,17 @@ ignore = ["BC004"]
 [tool.behave-format]
 indent = 2
 sort_tags = true
+
+# ------------------------------------------------------------------
+# ruff — Python lint for steps/, support/ and environment.py.
+# Run: ruff check .
+# ------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
+# E501 (line length) is off — feature strings and URLs legitimately
+# exceed it in step decorators.
+ignore = ["E501"]

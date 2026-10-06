@@ -36,3 +36,6 @@ behave-modern-md-report>=1.3.0
 behave-modern-console-report>=1.3.0
 behave-modern-sheets-report[xlsx,ods]>=1.1.0
 behave-modern-file-report[docx,pdf]>=1.1.0
+
+# --- Python lint (the .feature files are covered by behave-lint/format) ---
+ruff>=0.8.0

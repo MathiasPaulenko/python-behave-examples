@@ -11,7 +11,7 @@ integers automatically.
 """
 from __future__ import annotations
 
-from behave import given, when, then
+from behave import given, then, when
 
 
 @given("I have a calculator")
