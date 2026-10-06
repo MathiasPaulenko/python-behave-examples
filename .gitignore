@@ -7,14 +7,36 @@ __pycache__/
 .venv/
 venv/
 
-# Test / build artifacts
+# Secrets / local config
+.env
+.env.*
+
+# Tool caches
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .coverage
 htmlcov/
+
+# Build artifacts
 dist/
 build/
 *.egg-info/
 
+# Behave generated reports (recreated on every run)
+reports/
+
 # Ad-hoc run artifacts
 progress_stderr.txt
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
 nul
