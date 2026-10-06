@@ -1,38 +1,42 @@
 # python-behave-examples
 
-Repository with examples of use of the **Behave** library in Python.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![behave 1.3.3](https://img.shields.io/badge/behave-1.3.3-brightgreen.svg)](https://github.com/behave/behave)
 
-This project is a **complete, self-contained Behave automation suite** that
-demonstrates every major Gherkin / Behave feature using **behave 1.3.x**
-(latest release: `1.3.3`).
+A complete, self-contained [Behave](https://behave.readthedocs.io/) example suite
+for Python (behave 1.3.x). It exercises every major Gherkin and Behave feature
+against small in-memory domain objects and a real Flask REST API started in a
+background thread — no external services needed.
 
 ## What's inside
 
 | Feature file | Demonstrates |
 |---|---|
-| `features/calculator.feature` | **Background**, **Scenario Outline** with multiple `Examples` tables, tags |
-| `features/string_utils.feature` | **Gherkin v6 `Rule`** blocks, `Example` keyword, `Background` inside a Rule |
-| `features/shopping_cart.feature` | **Data tables**, **DocStrings** (`"""`), Scenario Outline with tables |
-| `features/async_steps.feature` | **Async step definitions** (behave 1.3.x native support) |
-| `features/api/users_api.feature` | **REST API testing** with `requests` against a real Flask server, data tables, pagination, Scenario Outline |
-| `features/api/csv_examples.feature` | **External CSV** file as `Examples` source |
+| `features/calculator/calculator.feature` | `Background`, `Scenario Outline` with multiple `Examples` tables, tags |
+| `features/string_utils/string_utils.feature` | Gherkin v6 `Rule` blocks, `Example` keyword, `Background` inside a Rule |
+| `features/shopping_cart/shopping_cart.feature` | Data tables, DocStrings (`"""`), Scenario Outline with an embedded table |
+| `features/async/async_steps.feature` | Async step definitions (`async def`, native behave 1.3.x support) |
+| `features/api/users_api.feature` | REST API testing with `requests` against a live Flask server, pagination, CRUD |
+| `features/api/csv_examples.feature` | Attempts to load `Examples` rows from an external CSV — see [Known issues](#known-issues) |
 
 ### Behave capabilities showcased
 
-- **Gherkin v6 grammar**: `Rule`, `Example`, `Background` (including inside Rules)
+- **Gherkin v6 grammar**: `Rule`, `Example`, `Background` at feature and rule level
 - **Scenario Outline** with multiple `Examples` tables
 - **Data tables** (step-level) and **DocStrings**
-- **Tags** (`@smoke`, `@negative`, `@api`, `@unit`, `@integration`, `@wip`) and tag filtering
+- **Tags** (`@smoke`, `@negative`, `@unit`, `@integration`, `@api`, `@math`,
+  `@docstring`, `@csv`) with tag-expression filtering (`default_tags = not @wip`
+  in `behave.ini`)
 - **Async steps** (`async def` step functions)
 - **Custom type converters** (`register_type`)
-- **Environment hooks**: `before_all` / `after_all`, `before_feature` / `after_feature`,
+- **Full lifecycle hooks**: `before_all` / `after_all`, `before_feature` / `after_feature`,
   `before_rule` / `after_rule`, `before_scenario` / `after_scenario`,
   `before_step` / `after_step`
 - **`context.add_cleanup`** for stack-based teardown
-- **External CSV** Examples tables
 - **In-memory Flask SUT** started in a background thread (no external services needed)
-- **Multiple report formats**: pretty, JSON, JUnit XML, HTML, Markdown, Cucumber JSON,
-  step catalogs — all via configurable formatters in `behave.ini`
+- **Multiple report formats**: pretty, JSON, JUnit XML, HTML, Markdown, Cucumber
+  JSON, step catalogs — all via configurable formatters in `behave.ini`
 
 ## Project structure
 
@@ -59,7 +63,7 @@ python-behave-examples/
     │   ├── app.py                  # Flask SUT (in-memory REST API)
     │   ├── domain.py               # Calculator, StringUtils, ShoppingCart, async helpers
     │   └── data/
-    │       └── users.csv           # External Examples data (CSV)
+    │       └── users.csv           # CSV data file (see Known issues)
     │
     ├── calculator/                 # Domain: calculator
     │   └── calculator.feature      # Background + Scenario Outline
@@ -75,7 +79,7 @@ python-behave-examples/
     │
     ├── api/                        # Domain: REST API
     │   ├── users_api.feature       # CRUD testing with requests
-    │   └── csv_examples.feature    # External CSV Examples
+    │   └── csv_examples.feature    # External CSV Examples (currently a no-op)
     │
     └── steps/                      # Step definitions (auto-discovered by behave)
         ├── common_steps.py         # Shared steps + register_type
@@ -88,6 +92,8 @@ python-behave-examples/
 
 ## Setup
 
+Requires Python 3.10+.
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -96,7 +102,7 @@ pip install -r requirements.txt
 
 ```bash
 # Run everything — reports are auto-generated in reports/ via behave.ini
-# (pretty.txt, results.json, junit/*.xml)
+# (pretty.txt, results.json, junit/*.xml, HTML/Markdown reports)
 behave
 
 # Run only smoke tests
@@ -117,6 +123,10 @@ behave features/calculator/calculator.feature
 All outputs are configured in `behave.ini` using the `format` and `outfiles`
 multi-line keys (paired by position). Custom formatters are registered in the
 `[behave.formatters]` section.
+
+> **Note:** the formatter packages are required to run the suite at all —
+> `behave` refuses to start if a registered formatter cannot be imported.
+> `pip install -r requirements.txt` installs all of them.
 
 #### File formatters (paired with outfiles)
 
@@ -171,12 +181,26 @@ default_format = progress
        reports/my_report.html
    ```
 
-## Requirements
+## Known issues
 
-- Python 3.10+
-- behave 1.3.3
-- Flask, requests, PyHamcrest, jsonschema
-- behave-modern-html-report 2.2.1
-- behave-modern-json-report 1.1.0
-- behave-modern-md-report 1.2.0
-- behave-modern-console-report 1.0.1
+- **`csv_examples.feature` generates zero scenarios.** Behave does not support
+  loading `Examples` tables from external files — the text after `Examples:` is
+  parsed as the example *name*, not a file path. The file is kept as a
+  cautionary example; the scenario outline silently runs nothing.
+- **The Flask SUT starts on every run.** `before_all` starts the server on
+  port 5000 even when only unit-tagged features are selected, and the run fails
+  entirely if the port is already in use.
+- **Reported scenario/step counters are always zero.** `before_scenario` and
+  `before_step` increment counters on the scenario layer of `context`, which
+  behave discards when each scenario finishes.
+
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Please note that this project follows a
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+Distributed under the MIT License — see [LICENSE](LICENSE) for details.
