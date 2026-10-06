@@ -23,14 +23,30 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   dependabot config, this CHANGELOG.
 - `.gitignore` covering reports, caches, venvs, IDE and OS artifacts.
 
+### Changed
+
+- Removed the `junit` formatter — behave 1.3 no longer ships it.
+- Applied `behave-format` across all feature files.
+- `features/async/` renamed to `features/async_ops/` (`async` is a Python
+  keyword).
+- The Flask SUT now starts lazily — only when an `@integration` feature
+  runs — and reuses an already-listening server instead of failing on a
+  busy port.
+
 ### Fixed
 
 - Hook counters (`context.run_stats`) — attributes assigned inside a
   scenario layer were discarded; a shared dict now survives layer pops.
 - `behave-data` dynamic Examples marked `table.modified` so scenario
   outlines rebuild after row injection.
+- `step_db_empty` now deletes users across all pages instead of only the
+  first one.
+- Async `Then` steps read `context.last_async_key` instead of guessing the
+  last dict key.
+- Removed the dead `pending_user` step.
 
-### Changed
+### CI
 
-- Removed the `junit` formatter — behave 1.3 no longer ships it.
-- Applied `behave-format` across all feature files.
+- GitHub Actions workflow: ruff, `behave-format --check`, full behave suite
+  and `behave-lint`/`behave-doctor` (informational) on Python 3.11–3.13,
+  with reports uploaded as artifacts.

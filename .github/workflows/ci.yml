@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  behave:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Python lint
+        run: ruff check .
+
+      - name: Feature format check
+        run: behave-format --check features/
+
+      - name: Run behave suite
+        run: behave
+
+      - name: Feature lint
+        continue-on-error: true
+        run: behave-lint features/
+
+      - name: Static diagnostics
+        continue-on-error: true
+        run: behave-doctor scan .
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: behave-reports-py${{ matrix.python-version }}
+          path: reports/
+          retention-days: 14

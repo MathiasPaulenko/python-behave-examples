@@ -1,5 +1,6 @@
 # python-behave-examples
 
+[![Tests](https://github.com/MathiasPaulenko/python-behave-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/MathiasPaulenko/python-behave-examples/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![behave 1.3.3](https://img.shields.io/badge/behave-1.3.3-brightgreen.svg)](https://github.com/behave/behave)
@@ -51,7 +52,7 @@ about a second. Reports are written to `reports/` (gitignored).
 | `features/calculator/calculator.feature` | `Background`, `Scenario Outline` with multiple `Examples` tables, tags |
 | `features/string_utils/string_utils.feature` | Gherkin v6 `Rule` blocks, `Example` keyword, `Background` inside a Rule |
 | `features/shopping_cart/shopping_cart.feature` | Data tables, DocStrings (`"""`), Scenario Outline with an embedded table |
-| `features/async/async_steps.feature` | Async step definitions (`async def`, native behave 1.3.x support) |
+| `features/async_ops/async_steps.feature` | Async step definitions (`async def`, native behave 1.3.x support) |
 | `features/api/users_api.feature` | REST API testing with `requests` against a live Flask server, pagination, CRUD |
 
 Also covered: tag expressions (`default_tags = not @wip`), custom type
@@ -211,7 +212,7 @@ python-behave-examples/
     ├── calculator/                 # Domain: calculator
     ├── string_utils/               # Domain: string utilities (Gherkin v6 Rules)
     ├── shopping_cart/              # Domain: shopping cart
-    ├── async/                      # Domain: async steps
+    ├── async_ops/                  # Domain: async steps
     ├── api/                        # Domain: REST API + dynamic CSV examples
     │   ├── users_api.feature
     │   └── csv_examples.feature
@@ -267,14 +268,14 @@ Console formatters from **behave-modern-console-report** (`modern-console`,
 
 ## Known issues and caveats
 
-- **The Flask SUT starts on every run.** `before_all` starts the server on
-  port 5000 even when only unit-tagged features are selected, and the run fails
-  entirely if the port is already in use.
-- **`behave --runner=parallel` runs, with a caveat.** Each behave-pool
-  worker spawns its own `before_all`, so every worker binds port 5000 —
-  on Windows `SO_REUSEADDR` allows it and the run passes, but a worker's
-  requests may land on another worker's in-memory DB. For real parallel
-  use, start the SUT externally or use a per-worker port.
+- **The SUT starts lazily, only for `@integration` features.** `before_feature`
+  starts it on first use; if the configured port already serves the API
+  (externally started server, another behave-pool worker) it is reused
+  instead of rebound. Run the SUT externally to control the port.
+- **`behave --runner=parallel` runs, with a caveat.** Workers share the SUT
+  (the first to reach an `@integration` feature wins the bind), so
+  concurrent scenarios can mutate the same in-memory users DB. For real
+  parallel use, start the SUT externally or shard by tag.
 - **`behave-doctor` reports expected diagnostics** on this suite: it flags
   `BD302` (undefined step) for steplib steps and behave-kit class-based steps
   because both are registered at runtime — doctor's AST scan cannot see them.
