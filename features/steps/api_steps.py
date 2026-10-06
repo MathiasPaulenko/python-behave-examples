@@ -50,16 +50,6 @@ def step_users_exist_table(context):
         assert resp.status_code == 201, f"Could not create user {row}: {resp.text}"
 
 
-@given('a user named "{name}" with email "{email}"')
-def step_user_named(context, name, email):
-    """Stores pending user data for use in a subsequent POST step.
-
-    Used by the CSV examples feature where the user data comes from
-    an external CSV file.
-    """
-    context.pending_user = {"name": name, "email": email}
-
-
 @when('I send a {method} request to "{url}"')
 def step_send_request(context, method, url):
     """Sends an HTTP request with no body and stores the response.

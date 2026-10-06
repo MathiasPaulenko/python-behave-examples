@@ -89,14 +89,12 @@ def before_all(context):
     setup_lifecycle_hooks_from_path(context, "features/")
     run_before_all(context)
 
-    # -- SUT server for the API features --
+    # -- SUT server address (the server itself starts lazily, see below) --
     host = context.config.userdata.get("host", "localhost")
     port = int(context.config.userdata.get("port", 5000))
     context.api_url = f"http://{host}:{port}"
-
-    logger.info("Starting SUT server on %s:%s", host, port)
-    context.server = start_server(host=host, port=port)
-    context.add_cleanup(_stop_server, context)
+    context.sut_host = host
+    context.sut_port = port
 
     # Shared counters — a plain dict so mutations survive context layer pops
     # (attributes assigned inside a scenario are discarded when it ends).
@@ -105,6 +103,8 @@ def before_all(context):
 
 def after_all(context):
     """Runs once after all features."""
+    _stop_server()
+
     stats = getattr(context, "run_stats", {})
     logger.info(
         "Test run finished — scenarios executed: %d, steps: %d",
@@ -128,12 +128,43 @@ def after_all(context):
     run_after_all(context)
 
 
-def _stop_server(context):
-    """Internal helper — shuts down the SUT server if it was started."""
-    server = getattr(context, "server", None)
+# Module-level SUT state — attributes set on ``context`` inside a feature or
+# scenario layer are discarded when that layer pops, so the server handle must
+# live outside the context stack.
+_SUT: dict = {"server": None, "shared": False}
+
+
+def _stop_server():
+    """Internal helper — shuts down the SUT server if we started it."""
+    server = _SUT["server"]
     if server is not None:
         logger.info("Stopping SUT server")
         server.shutdown()
+        _SUT["server"] = None
+
+
+def _ensure_server(context):
+    """Start the SUT on first use — only @integration features need it.
+
+    If the configured port is already serving the API (e.g. an externally
+    started instance or another behave-pool worker), the existing server is
+    reused instead of binding the port again.
+    """
+    if _SUT["server"] is not None or _SUT["shared"]:
+        return
+
+    import requests
+
+    try:
+        if requests.get(f"{context.api_url}/api/health", timeout=0.5).ok:
+            logger.info("Reusing running SUT on %s", context.api_url)
+            _SUT["shared"] = True  # not ours — do not shut it down
+            return
+    except requests.RequestException:
+        pass
+
+    logger.info("Starting SUT server on %s", context.api_url)
+    _SUT["server"] = start_server(host=context.sut_host, port=context.sut_port)
 
 
 # --------------------------------------------------------------------- #
@@ -166,6 +197,10 @@ def before_feature(context, feature):
     inject_metadata(context, feature)
     setup_lifecycle_hooks(context, feature)
     run_before_feature(context, feature)
+
+    # -- SUT server: started only for features that hit the REST API --
+    if "integration" in getattr(feature, "effective_tags", feature.tags):
+        _ensure_server(context)
 
     # -- behave-kit: feature-scoped fixtures --
     context.kit_fixtures.setup_for_feature(context, feature)

@@ -15,7 +15,7 @@ the Flask SUT or assert on HTTP responses.
 """
 from __future__ import annotations
 
-from behave import given, then, register_type
+from behave import given, register_type, then
 
 
 # --------------------------------------------------------------------- #
@@ -59,14 +59,24 @@ def step_db_empty(context):
     Fetches all users via GET, then DELETEs each one individually.
     This guarantees test isolation between scenarios that share
     the same SUT instance.
+
+    The listing endpoint is paginated, so the loop re-reads page 1 until
+    it comes back empty — deletion shrinks the dataset on each pass.
     """
     import requests
 
-    resp = requests.get(f"{context.api_url}/api/users", timeout=2)
-    assert resp.ok
-    body = resp.json()
-    for user in body.get("data", []):
-        requests.delete(f"{context.api_url}/api/users/{user['id']}", timeout=2)
+    while True:
+        resp = requests.get(
+            f"{context.api_url}/api/users", params={"page": 1}, timeout=2
+        )
+        assert resp.ok
+        users = resp.json().get("data", [])
+        if not users:
+            break
+        for user in users:
+            requests.delete(
+                f"{context.api_url}/api/users/{user['id']}", timeout=2
+            )
 
 
 @then('the response status should be {status:d}')

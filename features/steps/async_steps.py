@@ -9,7 +9,7 @@ assert on them without needing to be async themselves.
 """
 from __future__ import annotations
 
-from behave import when, then
+from behave import then, when
 
 
 @when('I asynchronously fetch the value for "{key}"')
@@ -22,6 +22,7 @@ async def step_async_fetch(context, key):
     from features.support.domain import async_fetch_value
 
     context.async_results[key] = await async_fetch_value(key)
+    context.last_async_key = key
 
 
 @when("I asynchronously double the number {value:d}")
@@ -33,18 +34,20 @@ async def step_async_double(context, value):
     """
     from features.support.domain import async_double
 
-    context.async_results[f"double_{value}"] = await async_double(value)
+    result_key = f"double_{value}"
+    context.async_results[result_key] = await async_double(value)
+    context.last_async_key = result_key
 
 
 @then('the async result should be "{expected}"')
 def step_async_result_str(context, expected):
     """Asserts that the last async result (as a string) equals ``expected``.
 
-    This step is synchronous — it reads from ``context.async_results``
-    which was populated by a preceding async ``When`` step.
+    This step is synchronous — it reads ``context.last_async_key``, set by
+    the preceding async ``When`` step, so the asserted result is explicit
+    even when several async operations ran in the same scenario.
     """
-    last_key = list(context.async_results.keys())[-1]
-    actual = str(context.async_results[last_key])
+    actual = str(context.async_results[context.last_async_key])
     assert actual == expected, f"Expected '{expected}', got '{actual}'"
 
 
@@ -55,6 +58,5 @@ def step_async_result_int(context, expected):
     Uses the ``{expected:d}`` type converter so behave parses the integer
     automatically from the step text.
     """
-    last_key = list(context.async_results.keys())[-1]
-    actual = context.async_results[last_key]
+    actual = context.async_results[context.last_async_key]
     assert actual == expected, f"Expected {expected}, got {actual}"
