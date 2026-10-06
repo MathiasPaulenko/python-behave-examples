@@ -10,7 +10,41 @@ ecosystem. It exercises every major Gherkin and Behave feature against small
 in-memory domain objects and a real Flask REST API started in a background
 thread — no external services needed.
 
+## Table of contents
+
+- [Quick start](#quick-start)
+- [What's inside](#whats-inside)
+- [The behave-* ecosystem](#the-behave--ecosystem)
+- [How libraries are wired](#how-libraries-are-wired)
+- [Running tests](#running-tests)
+- [Configuration files](#configuration-files)
+- [Project structure](#project-structure)
+- [Reports](#reports)
+- [Known issues and caveats](#known-issues-and-caveats)
+
+## Quick start
+
+Requires Python 3.11+.
+
+```bash
+# Create and activate a virtual environment
+python -m venv .venv
+.venv\Scripts\activate      # Windows
+source .venv/bin/activate   # Linux/macOS
+
+# Install all dependencies (framework + the 21 behave-* libraries)
+pip install -r requirements.txt
+
+# Run the full suite — 12 report files land in reports/
+behave
+```
+
+Expected result: **14 features, 77 scenarios, ~300 steps, all passing** in
+about a second. Reports are written to `reports/` (gitignored).
+
 ## What's inside
+
+### Core Behave features
 
 | Feature file | Demonstrates |
 |---|---|
@@ -19,33 +53,24 @@ thread — no external services needed.
 | `features/shopping_cart/shopping_cart.feature` | Data tables, DocStrings (`"""`), Scenario Outline with an embedded table |
 | `features/async/async_steps.feature` | Async step definitions (`async def`, native behave 1.3.x support) |
 | `features/api/users_api.feature` | REST API testing with `requests` against a live Flask server, pagination, CRUD |
-| `features/api/csv_examples.feature` | Dynamic `Examples` loaded from an external CSV via **behave-data** |
-| `features/libraries/kit.feature` | **behave-kit**: soft assertions, `env()`, `get_path`, `wait_until`, `@parameter_type`, `@scoped`, class-based steps |
-| `features/libraries/tables.feature` | **behave-tables**: `wrap()`, `as_dicts`, `as_models`, `find_row`, `select`, `sort`, `to_csv`/`to_json` |
-| `features/libraries/data.feature` | **behave-data**: typed table columns (`age:int`, `active:bool`, `created:date`), null resolution |
-| `features/libraries/comments.feature` | **behave-comments**: `# @key value` metadata, `"""json` doc strings, comment-declared lifecycle hooks |
-| `features/libraries/steplib.feature` | **behave-steplib**: ready-made API/data/IO/CLI steps — zero step code in this repo |
-| `features/libraries/priority.feature` | **behave-priority**: `@priority(N)` ordering, `@critical`, execution report |
-| `features/libraries/retry.feature` | **behave-retry**: `@flaky` tag filtering, `@retry:N` override, flakiness stats |
-| `features/libraries/model.feature` | **behave-model**: `load_project()` meta-analysis of this very suite |
 
-### Behave capabilities showcased
+Also covered: tag expressions (`default_tags = not @wip`), custom type
+converters (`register_type`), every lifecycle hook (`before_all` …
+`after_step`), and `context.add_cleanup` for teardown.
 
-- **Gherkin v6 grammar**: `Rule`, `Example`, `Background` at feature and rule level
-- **Scenario Outline** with multiple `Examples` tables
-- **Data tables** (step-level) and **DocStrings**
-- **Tags** (`@smoke`, `@negative`, `@unit`, `@integration`, `@api`, `@math`,
-  `@docstring`, `@csv`) with tag-expression filtering (`default_tags = not @wip`
-  in `behave.ini`)
-- **Async steps** (`async def` step functions)
-- **Custom type converters** (`register_type`, behave-kit `@parameter_type`)
-- **Full lifecycle hooks**: `before_all` / `after_all`, `before_feature` / `after_feature`,
-  `before_rule` / `after_rule`, `before_scenario` / `after_scenario`,
-  `before_step` / `after_step`
-- **`context.add_cleanup`** for stack-based teardown
-- **In-memory Flask SUT** started in a background thread (no external services needed)
-- **12 report formatters** wired in `behave.ini`: console, HTML, JSON, Markdown,
-  Cucumber JSON, step catalogs, trace, CSV/XLSX, TXT/DOCX/PDF
+### Ecosystem library demos
+
+| Feature file | Library | Demonstrates |
+|---|---|---|
+| `features/api/csv_examples.feature` | behave-data | `@load_examples:<source>` — Scenario Outline rows loaded from `users.csv` |
+| `features/libraries/kit.feature` | behave-kit | Soft assertions, typed `env()` reads, `get_path`, `wait_until`, `@parameter_type`, `@scoped`, class-based steps |
+| `features/libraries/tables.feature` | behave-tables | `wrap()` — `as_dicts`, `as_models`, `find_row`, `select`, `sort`, `to_csv`/`to_json` |
+| `features/libraries/data.feature` | behave-data | Typed columns (`age:int`, `active:bool`, `created:date`), empty cells → `None` |
+| `features/libraries/comments.feature` | behave-comments | `# @key value` metadata, `"""json` doc strings, comment-declared lifecycle hooks |
+| `features/libraries/steplib.feature` | behave-steplib | Ready-made API/data/IO/CLI steps — zero step code in this repo |
+| `features/libraries/priority.feature` | behave-priority | `@priority(N)` ordering, `@critical`, execution report |
+| `features/libraries/retry.feature` | behave-retry | `@flaky` tag filtering, `@retry:N` override, flakiness stats |
+| `features/libraries/model.feature` | behave-model | `load_project()` meta-analysis of this very suite |
 
 ## The behave-* ecosystem
 
@@ -75,7 +100,7 @@ Every library in the ecosystem is exercised either by a feature file, by
 | Library | Usage |
 |---|---|
 | [behave-runner](https://github.com/MathiasPaulenko/behave-runner) | `behave-runner run / list / select / watch / lint / format / doctor`. Profiles in `[tool.behave-runner]` (`pyproject.toml`): `smoke`, `unit`, `integration` |
-| [behave-pool](https://github.com/MathiasPaulenko/behave-pool) | Parallel runner registered as `[behave.runners] parallel` in `behave.ini` — `behave --runner=parallel`, `behave-pool --parallel 4`, `pool.*` userdata keys. **Note:** this suite binds port 5000 in `before_all`, so parallel workers conflict — the config is illustrative |
+| [behave-pool](https://github.com/MathiasPaulenko/behave-pool) | Parallel runner registered as `[behave.runners] parallel` in `behave.ini` — `behave --runner=parallel`, `behave-pool --parallel 4`, `pool.*` userdata keys |
 | [behave-trace](https://github.com/MathiasPaulenko/behave-trace) | `behave-trace` formatter writes `reports/trace.json`; `trace_log()` attaches failures. View: `behave-trace show reports/trace.json` |
 
 ### Quality & scaffolding tools — CLI/config examples
@@ -87,21 +112,80 @@ Every library in the ecosystem is exercised either by a feature file, by
 | [behave-format](https://github.com/MathiasPaulenko/behave-format) | `behave-format features/` (already applied), `--check` for CI. Configured in `[tool.behave-format]` |
 | [behave-gen](https://github.com/MathiasPaulenko/behave-gen) | `behave-gen init`, `add feature`, `add steps`, `from-openapi`, `migrate`, `stats` |
 
-### Report formatters — registered in `[behave.formatters]`
+## How libraries are wired
 
-| Alias | Library | Output |
+`features/environment.py` is the integration centerpiece — a real-world
+example of combining the runtime libraries in one suite:
+
+```python
+def before_all(context):
+    kit_setup(context, env="test")          # behave-kit: env profiles, fixtures
+    setup_data(context)                     # behave-data: typed tables, examples
+    setup_retry(context, max_retries=2, retry_tags=["@flaky"])
+    setup_priority(context, order=True, report=True)
+    context.steplib = autoload(context, categories=["api", "data", "io", "cli"],
+                               backends={"api": "requests"})
+    setup_lifecycle_hooks_from_path(context, "features/")  # behave-comments
+    ...
+```
+
+Runtime behavior is also tunable without touching code — via `-D` userdata
+flags or environment variables:
+
+```bash
+# behave-retry / behave-priority read env vars when no explicit arg is given
+BEHAVE_RETRY_MAX_RETRIES=3 behave
+BEHAVE_PRIORITY_FAIL_FAST=1 behave
+
+# Report formatter options via userdata
+behave -D bmfr.title="QA Report" -D bmr.theme=dark
+behave -D report_only_failed=true -f csv-modern -o reports/failed.csv
+```
+
+## Running tests
+
+```bash
+# Run everything — reports are auto-generated in reports/ via behave.ini
+behave
+
+# Run only smoke tests
+behave --tags=@smoke
+
+# Run only the ecosystem library demos
+behave features/libraries/
+
+# Tag expression: smoke tests that are not negative
+behave --tags="@smoke and not @negative"
+
+# Run a single feature file
+behave features/calculator/calculator.feature
+
+# Via the unified CLI (profiles are defined in pyproject.toml)
+behave-runner run
+behave-runner run --profile smoke
+behave-runner list
+
+# Quality tools
+behave-doctor scan .
+behave-lint features/
+behave-format --check features/
+
+# Parallel execution (see the SUT caveat below)
+behave --runner=parallel
+behave-pool --parallel 4
+
+# Open the trace viewer
+behave-trace show reports/trace.json
+```
+
+## Configuration files
+
+| File | Consumed by | Purpose |
 |---|---|---|
-| `modern` | behave-modern-html-report | `reports/behave_modern_html_report.html` — `bmr.*` userdata options |
-| `steps` | behave-modern-html-report | `reports/steps_catalog.html` |
-| `cucumber-json` | behave-modern-json-report | `reports/cucumber.json` |
-| `modern-md` | behave-modern-md-report | `reports/behave_modern_md_report.md` |
-| `behave-trace` | behave-trace | `reports/trace.json` (viewable with `behave-trace show`) |
-| `csv-modern` / `xlsx-modern` / `ods-modern` | behave-modern-sheets-report | `reports/report.csv` / `.xlsx` (+ ODS registered) — `report_*` userdata options |
-| `behave-modern-txt` / `behave-modern-docx` / `behave-modern-pdf` | behave-modern-file-report | `reports/report.txt` / `.docx` / `.pdf` — `bmfr.*` userdata options |
-
-Console formatters from **behave-modern-console-report** (`modern-console`,
-`modern-console-live`, `progress`, `log`, `ci`, `minimal`) can be selected with
-`-f`, e.g. `behave -f modern-console`.
+| `behave.ini` | behave + all formatters | `format`/`outfiles`, `[behave.formatters]` aliases, `[behave.runners]`, `[behave.userdata]` (`bmr.*`, `bmfr.*`, `report_*`, `pool.*`) |
+| `behave_data.yml` | behave-data | `null_markers`, `load_base_dir`, `data_sources` for `@load_examples` |
+| `behave.toml` | behave-kit | `[env.*]` profiles loaded by `setup(context, env=...)` |
+| `pyproject.toml` | runner/doctor/lint/format | `[tool.behave-runner]` profiles, `[tool.behave-doctor]`, `[tool.behave-lint]`, `[tool.behave-format]` |
 
 ## Project structure
 
@@ -156,57 +240,30 @@ python-behave-examples/
         └── model_steps.py          # behave-model demos
 ```
 
-## Setup
+## Reports
 
-Requires Python 3.11+.
+A single `behave` run produces every format at once — `format` and `outfiles`
+in `behave.ini` are paired positionally:
 
-```bash
-pip install -r requirements.txt
-```
-
-## Running tests
-
-```bash
-# Run everything — reports are auto-generated in reports/ via behave.ini
-behave
-
-# Run only smoke tests
-behave --tags=@smoke
-
-# Run only the ecosystem library demos
-behave features/libraries/
-
-# Tag expression: smoke tests that are not negative
-behave --tags="@smoke and not @negative"
-
-# Run a single feature file
-behave features/calculator/calculator.feature
-
-# Via the unified CLI (profiles are defined in pyproject.toml)
-behave-runner run
-behave-runner run --profile smoke
-behave-runner list
-
-# Quality tools
-behave-doctor scan .
-behave-lint features/
-behave-format --check features/
-
-# Parallel execution (requires the SUT caveat below — illustrative config)
-behave --runner=parallel
-
-# Open the trace viewer
-behave-trace show reports/trace.json
-```
-
-## Configuration files
-
-| File | Consumed by | Purpose |
+| Alias | Library | Output |
 |---|---|---|
-| `behave.ini` | behave + all formatters | `format`/`outfiles`, `[behave.formatters]` aliases, `[behave.runners]`, `[behave.userdata]` (`bmr.*`, `bmfr.*`, `report_*`, `pool.*`) |
-| `behave_data.yml` | behave-data | `null_markers`, `load_base_dir`, `data_sources` for `@load_examples` |
-| `behave.toml` | behave-kit | `[env.*]` profiles loaded by `setup(context, env=...)` |
-| `pyproject.toml` | runner/doctor/lint/format | `[tool.behave-runner]` profiles, `[tool.behave-doctor]`, `[tool.behave-lint]`, `[tool.behave-format]` |
+| `plain` / `progress3` | behave (built-in) | `reports/plain.txt`, `reports/progress3.txt` |
+| `json` | behave (built-in) | `reports/results.json` |
+| `modern` | behave-modern-html-report | `reports/behave_modern_html_report.html` — `bmr.*` userdata options |
+| `steps` | behave-modern-html-report | `reports/steps_catalog.html` |
+| `cucumber-json` | behave-modern-json-report | `reports/cucumber.json` |
+| `modern-md` | behave-modern-md-report | `reports/behave_modern_md_report.md` |
+| `behave-trace` | behave-trace | `reports/trace.json` (viewable with `behave-trace show`) |
+| `csv-modern` / `xlsx-modern` / `ods-modern` | behave-modern-sheets-report | `reports/report.csv` / `.xlsx` (+ ODS registered) — `report_*` userdata options |
+| `behave-modern-txt` / `behave-modern-docx` / `behave-modern-pdf` | behave-modern-file-report | `reports/report.txt` / `.docx` (+ PDF registered, `bmfr.pdf_engine`) — `bmfr.*` options |
+
+Console formatters from **behave-modern-console-report** (`modern-console`,
+`modern-console-live`, `progress`, `log`, `ci`, `minimal`) can be selected with
+`-f`, e.g. `behave -f modern-console`.
+
+> **Note:** the formatter packages are required to run the suite at all —
+> `behave` refuses to start if a registered formatter cannot be imported.
+> `pip install -r requirements.txt` installs all of them.
 
 ## Known issues and caveats
 
@@ -227,8 +284,6 @@ behave-trace show reports/trace.json
   block must declare headers plus at least one row; the injected rows replace
   it. An empty `Examples:` block is skipped by the loader (and crashes
   `behave-model`'s parser — upstream issue).
-- **Empty `Examples:` blocks crash `behave-model`** (`table=None` is not
-  handled by its adapter) — keep a placeholder row in the table.
 - **The flaky retry demo intentionally logs a failed first attempt.** The
   final result is a pass; the retry report in `after_all` counts it as
   retried.
