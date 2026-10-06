@@ -11,7 +11,7 @@ requests-toolbelt>=1.0.0
 # --- behave-* ecosystem: runtime libraries ---
 behave-kit>=1.6.0
 behave-data>=1.0.0
-behave-tables>=1.0.0
+behave-tables>=1.3.2
 behave-comments>=1.0.0
 behave-model>=1.1.0
 behave-steplib>=1.0.0
