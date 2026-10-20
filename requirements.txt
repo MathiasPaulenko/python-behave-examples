@@ -24,7 +24,7 @@ behave-runner>=1.3.0
 behave-trace>=1.3.1
 
 # --- behave-* ecosystem: quality & scaffolding ---
-behave-doctor>=1.4.0
+behave-doctor>=1.5.1
 behave-lint>=2.5.0
 behave-format>=1.0.0
 behave-gen>=1.0.0
